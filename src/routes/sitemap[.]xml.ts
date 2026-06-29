@@ -23,6 +23,3 @@ export const Route = createFileRoute("/sitemap.xml")({
     },
   },
 });
-*** Add File: public/robots.txt
-User-agent: *
-Allow: /
