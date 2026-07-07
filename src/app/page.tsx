@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowUpRight,
   Building2,
@@ -16,26 +18,19 @@ import {
   Scale,
   TrendingUp,
 } from "lucide-react";
-import heroImg from "@/assets/hero-financial.jpg";
-import boardroomImg from "@/assets/boardroom.jpg";
-import aviationImg from "@/assets/aviation.jpg";
-import maritimeImg from "@/assets/maritime.jpg";
-import worldMapImg from "@/assets/world-map.jpg";
-import chairmanImg from "@/assets/chairman.jpg";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "NAMI Group — Building the Next Global Financial Corridor" },
-      { name: "description", content: "Institutional Investment Banking, Treasury, Aviation & Maritime Leasing, Trade Finance and GIFT IFSC advisory across India, UAE, USA, Canada and GIFT IFSC." },
-      { property: "og:title", content: "NAMI Group — Building the Next Global Financial Corridor" },
-      { property: "og:description", content: "A professionally managed corporate ecosystem delivering Investment Banking, Treasury, Cross-Border Capital, Leasing and GIFT IFSC solutions." },
-    ],
-  }),
-  component: HomePage,
-});
+export const metadata: Metadata = {
+  title: "NAMI Group — Building the Next Global Financial Corridor",
+  description:
+    "Institutional Investment Banking, Treasury, Aviation & Maritime Leasing, Trade Finance and GIFT IFSC advisory across India, UAE, USA, Canada and GIFT IFSC.",
+  openGraph: {
+    title: "NAMI Group — Building the Next Global Financial Corridor",
+    description:
+      "A professionally managed corporate ecosystem delivering Investment Banking, Treasury, Cross-Border Capital, Leasing and GIFT IFSC solutions.",
+  },
+};
 
-function HomePage() {
+export default function HomePage() {
   return (
     <>
       <Hero />
@@ -62,7 +57,14 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex items-end overflow-hidden pt-20">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Global financial district at dusk" className="h-full w-full object-cover" width={1920} height={1280} />
+        <Image
+          src="/assets/hero-financial.jpg"
+          alt="Global financial district at dusk"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/80 via-navy-deep/55 to-navy-deep" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-radial-gold)" }} />
       </div>
@@ -77,24 +79,25 @@ function Hero() {
           <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.98] font-light text-platinum tracking-tight">
             Building the next
             <br />
-            <span className="italic font-extralight text-gradient-gold">global financial</span> corridor.
+            <span className="italic font-extralight text-gradient-gold">global financial</span>{" "}
+            corridor.
           </h1>
 
           <p className="mt-10 max-w-2xl text-lg md:text-xl text-platinum/75 leading-relaxed font-light">
-            A professionally managed corporate ecosystem delivering Investment Banking,
-            Treasury, Cross-Border Capital, Leasing, Technology and GIFT IFSC Solutions.
+            A professionally managed corporate ecosystem delivering Investment Banking, Treasury,
+            Cross-Border Capital, Leasing, Technology and GIFT IFSC Solutions.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-4">
             <Link
-              to="/businesses"
+              href="/businesses"
               className="group inline-flex items-center gap-3 bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
             >
               Explore Our Businesses
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-3 border border-platinum/30 text-platinum px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:border-gold hover:text-gold transition-all"
             >
               Contact Us
@@ -134,7 +137,10 @@ function Marquee() {
   ];
   return (
     <section className="border-y border-white/5 bg-[oklch(0.13_0.03_250)] py-6 overflow-hidden">
-      <div className="flex gap-16 animate-[shimmer_40s_linear_infinite] whitespace-nowrap will-change-transform" style={{ animationDuration: "60s" }}>
+      <div
+        className="flex gap-16 animate-[shimmer_40s_linear_infinite] whitespace-nowrap will-change-transform"
+        style={{ animationDuration: "60s" }}
+      >
         {[...items, ...items, ...items].map((it, i) => (
           <span key={i} className="flex items-center gap-16 text-xs tracking-[0.4em] text-platinum/60">
             {it}
@@ -153,7 +159,14 @@ function About() {
       <div className="container-x grid lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-5 relative">
           <div className="relative aspect-[4/5] overflow-hidden">
-            <img src={boardroomImg} alt="Executive boardroom" className="h-full w-full object-cover" loading="lazy" width={1600} height={1104} />
+            <Image
+              src="/assets/boardroom.jpg"
+              alt="Executive boardroom"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              loading="lazy"
+            />
             <div className="absolute inset-0 ring-1 ring-inset ring-gold/20" />
           </div>
           <div className="absolute -bottom-8 -right-8 hidden md:block w-48 h-48 border border-gold/40" />
@@ -162,12 +175,13 @@ function About() {
         <div className="lg:col-span-7">
           <span className="eyebrow">About NAMI Group</span>
           <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-platinum font-light tracking-tight">
-            An integrated financial ecosystem — <span className="italic text-gradient-gold">engineered for institutions.</span>
+            An integrated financial ecosystem —{" "}
+            <span className="italic text-gradient-gold">engineered for institutions.</span>
           </h2>
           <p className="mt-8 text-platinum/70 text-lg leading-relaxed font-light">
-            NAMI Group is dedicated to providing premier Investment Banking, Treasury, cross-border capital raising
-            and GIFT IFSC solutions — directing institutional wealth frameworks and cutting-edge technology
-            deployment pathways across global markets.
+            NAMI Group is dedicated to providing premier Investment Banking, Treasury, cross-border
+            capital raising and GIFT IFSC solutions — directing institutional wealth frameworks and
+            cutting-edge technology deployment pathways across global markets.
           </p>
 
           <div className="mt-12 grid sm:grid-cols-2 gap-px bg-white/5">
@@ -202,7 +216,9 @@ function Stats() {
       <div className="container-x grid grid-cols-2 lg:grid-cols-4 gap-y-12">
         {stats.map((s, i) => (
           <div key={s.l} className={`px-6 ${i > 0 ? "lg:border-l border-white/10" : ""}`}>
-            <div className="font-display text-6xl md:text-7xl font-extralight text-gradient-gold tabular-nums">{s.n}</div>
+            <div className="font-display text-6xl md:text-7xl font-extralight text-gradient-gold tabular-nums">
+              {s.n}
+            </div>
             <div className="mt-3 text-xs tracking-[0.28em] uppercase text-platinum/70">{s.l}</div>
           </div>
         ))}
@@ -227,24 +243,35 @@ function GlobalPresence() {
           <div className="lg:col-span-7">
             <span className="eyebrow">Global Presence</span>
             <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-platinum font-light tracking-tight">
-              Capital corridors spanning <span className="italic text-gradient-gold">four regions.</span>
+              Capital corridors spanning{" "}
+              <span className="italic text-gradient-gold">four regions.</span>
             </h2>
           </div>
           <p className="lg:col-span-5 text-platinum/65 text-base leading-relaxed">
-            A connected platform of regulated entities, banking relationships and execution desks — purpose-built to
-            move capital, advisory and structured solutions across jurisdictions.
+            A connected platform of regulated entities, banking relationships and execution desks —
+            purpose-built to move capital, advisory and structured solutions across jurisdictions.
           </p>
         </div>
 
         <div className="relative">
           <div className="relative aspect-[16/9] overflow-hidden">
-            <img src={worldMapImg} alt="Global network" className="h-full w-full object-cover opacity-80" loading="lazy" width={1600} height={900} />
+            <Image
+              src="/assets/world-map.jpg"
+              alt="Global network"
+              fill
+              className="object-cover opacity-80"
+              sizes="100vw"
+              loading="lazy"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent" />
           </div>
 
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-px bg-white/5">
             {markets.map((m) => (
-              <div key={m.name} className="bg-navy-deep p-6 hover:bg-[oklch(0.18_0.04_250)] transition-colors">
+              <div
+                key={m.name}
+                className="bg-navy-deep p-6 hover:bg-[oklch(0.18_0.04_250)] transition-colors"
+              >
                 <div className="flex items-center gap-2 mb-3">
                   <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                   <span className="text-[10px] tracking-[0.28em] uppercase text-gold">Active</span>
@@ -296,11 +323,18 @@ function Verticals() {
                   <span className="font-display text-xs tracking-[0.3em] text-gold/70">{v.no}</span>
                   <Icon className="h-6 w-6 text-gold/70 group-hover:text-gold transition-colors" strokeWidth={1.2} />
                 </div>
-                <h3 className="font-display text-xl text-platinum leading-tight mb-3 min-h-[3rem]">{v.name}</h3>
+                <h3 className="font-display text-xl text-platinum leading-tight mb-3 min-h-[3rem]">
+                  {v.name}
+                </h3>
                 <p className="text-sm text-platinum/60 leading-relaxed">{v.desc}</p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {v.tags.map((t) => (
-                    <span key={t} className="text-[10px] tracking-[0.2em] uppercase border border-white/10 px-2 py-1 text-platinum/60">{t}</span>
+                    <span
+                      key={t}
+                      className="text-[10px] tracking-[0.2em] uppercase border border-white/10 px-2 py-1 text-platinum/60"
+                    >
+                      {t}
+                    </span>
                   ))}
                 </div>
                 <div className="mt-8 h-px bg-gradient-to-r from-gold/40 to-transparent w-0 group-hover:w-full transition-all duration-700" />
@@ -328,12 +362,16 @@ function Industries() {
           <div className="lg:col-span-5">
             <span className="eyebrow">Industries Served</span>
             <h2 className="mt-6 font-display text-4xl md:text-5xl text-platinum font-light tracking-tight">
-              Capital and advisory for the institutions that <span className="italic text-gradient-gold">build economies.</span>
+              Capital and advisory for the institutions that{" "}
+              <span className="italic text-gradient-gold">build economies.</span>
             </h2>
           </div>
           <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-px bg-white/5">
             {items.map((it) => (
-              <div key={it} className="bg-navy-deep p-5 text-sm text-platinum/80 tracking-wide hover:text-gold transition-colors flex items-center gap-3">
+              <div
+                key={it}
+                className="bg-navy-deep p-5 text-sm text-platinum/80 tracking-wide hover:text-gold transition-colors flex items-center gap-3"
+              >
                 <span className="h-1 w-1 bg-gold" />
                 {it}
               </div>
@@ -363,14 +401,18 @@ function WhyChoose() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="eyebrow">Why Choose NAMI</span>
           <h2 className="mt-6 font-display text-4xl md:text-5xl text-platinum font-light tracking-tight">
-            A platform designed for <span className="italic text-gradient-gold">institutional trust.</span>
+            A platform designed for{" "}
+            <span className="italic text-gradient-gold">institutional trust.</span>
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
           {reasons.map((r) => {
             const Icon = r.i;
             return (
-              <div key={r.t} className="bg-[oklch(0.10_0.03_250)] p-8 group hover:bg-[oklch(0.14_0.03_250)] transition-all">
+              <div
+                key={r.t}
+                className="bg-[oklch(0.10_0.03_250)] p-8 group hover:bg-[oklch(0.14_0.03_250)] transition-all"
+              >
                 <Icon className="h-7 w-7 text-gold mb-6" strokeWidth={1.2} />
                 <h3 className="font-display text-lg text-platinum mb-3">{r.t}</h3>
                 <p className="text-sm text-platinum/60 leading-relaxed">{r.d}</p>
@@ -398,20 +440,27 @@ function Gift() {
             <div className="lg:col-span-5">
               <span className="eyebrow">GIFT IFSC Solutions</span>
               <h2 className="mt-6 font-display text-4xl md:text-5xl text-platinum font-light tracking-tight">
-                The gateway to <span className="italic text-gradient-gold">India's global financial</span> jurisdiction.
+                The gateway to{" "}
+                <span className="italic text-gradient-gold">India&apos;s global financial</span>{" "}
+                jurisdiction.
               </h2>
               <p className="mt-8 text-platinum/65 leading-relaxed">
-                Dedicated IFSC structuring, advisory and execution — purpose-built for funds, treasuries, leasing
-                vehicles and international institutional capital.
+                Dedicated IFSC structuring, advisory and execution — purpose-built for funds,
+                treasuries, leasing vehicles and international institutional capital.
               </p>
-              <Link to="/businesses" className="mt-10 inline-flex items-center gap-3 text-gold text-sm tracking-[0.22em] uppercase hover:gap-5 transition-all">
+              <Link
+                href="/businesses"
+                className="mt-10 inline-flex items-center gap-3 text-gold text-sm tracking-[0.22em] uppercase hover:gap-5 transition-all"
+              >
                 Explore IFSC capability <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>
             <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-white/5">
               {items.map((it, i) => (
                 <div key={it} className="bg-[oklch(0.13_0.03_250)] p-6 flex items-center gap-4">
-                  <span className="font-display text-xs text-gold tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-display text-xs text-gold tabular-nums">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <span className="text-platinum/90 text-sm">{it}</span>
                 </div>
               ))}
@@ -433,7 +482,8 @@ function Treasury() {
         <div className="max-w-3xl mb-16">
           <span className="eyebrow">Treasury & Capital Markets</span>
           <h2 className="mt-6 font-display text-4xl md:text-5xl text-platinum font-light tracking-tight">
-            Institutional fixed-income, <span className="italic text-gradient-gold">at scale.</span>
+            Institutional fixed-income,{" "}
+            <span className="italic text-gradient-gold">at scale.</span>
           </h2>
         </div>
 
@@ -469,8 +519,18 @@ function Treasury() {
 /* ───────────────────────── AVIATION + MARITIME ───────────────────────── */
 function AviationMaritime() {
   const cards = [
-    { img: aviationImg, eyebrow: "NAMI Aviation", title: "Aircraft Leasing & Aviation Finance", items: ["Operating Lease", "Sale & Leaseback", "Fleet Expansion", "Asset Portfolio Structuring"] },
-    { img: maritimeImg, eyebrow: "NAMI Ship", title: "Maritime Leasing & Vessel Finance", items: ["Vessel Acquisition Finance", "Cross-border Shipping", "Charter Structuring", "Asset Financing"] },
+    {
+      img: "/assets/aviation.jpg",
+      eyebrow: "NAMI Aviation",
+      title: "Aircraft Leasing & Aviation Finance",
+      items: ["Operating Lease", "Sale & Leaseback", "Fleet Expansion", "Asset Portfolio Structuring"],
+    },
+    {
+      img: "/assets/maritime.jpg",
+      eyebrow: "NAMI Ship",
+      title: "Maritime Leasing & Vessel Finance",
+      items: ["Vessel Acquisition Finance", "Cross-border Shipping", "Charter Structuring", "Asset Financing"],
+    },
   ];
   return (
     <section className="py-0">
@@ -478,12 +538,21 @@ function AviationMaritime() {
         {cards.map((c) => (
           <article key={c.title} className="relative group overflow-hidden">
             <div className="relative aspect-[4/5] md:aspect-[3/4]">
-              <img src={c.img} alt={c.title} className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105" loading="lazy" width={1280} height={900} />
+              <Image
+                src={c.img}
+                alt={c.title}
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading="lazy"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-navy-deep/10" />
             </div>
             <div className="absolute inset-0 flex flex-col justify-end p-10 lg:p-16">
               <span className="eyebrow">{c.eyebrow}</span>
-              <h3 className="mt-4 font-display text-3xl md:text-4xl text-platinum font-light max-w-md leading-tight">{c.title}</h3>
+              <h3 className="mt-4 font-display text-3xl md:text-4xl text-platinum font-light max-w-md leading-tight">
+                {c.title}
+              </h3>
               <ul className="mt-8 grid grid-cols-2 gap-y-3 gap-x-6 max-w-md">
                 {c.items.map((it) => (
                   <li key={it} className="text-sm text-platinum/75 flex items-center gap-2">
@@ -508,16 +577,20 @@ function Technology() {
         <div className="lg:col-span-5">
           <span className="eyebrow">Technology</span>
           <h2 className="mt-6 font-display text-4xl md:text-5xl text-platinum font-light tracking-tight">
-            A modern stack underpinning <span className="italic text-gradient-gold">institutional execution.</span>
+            A modern stack underpinning{" "}
+            <span className="italic text-gradient-gold">institutional execution.</span>
           </h2>
           <p className="mt-8 text-platinum/65 leading-relaxed">
-            AI-assisted analytics, automated workflows, embedded risk engines and a secure client portal — built
-            for the operating tempo of capital markets and cross-border finance.
+            AI-assisted analytics, automated workflows, embedded risk engines and a secure client
+            portal — built for the operating tempo of capital markets and cross-border finance.
           </p>
         </div>
         <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5">
           {items.map((it) => (
-            <div key={it} className="bg-[oklch(0.10_0.03_250)] aspect-square p-5 flex flex-col justify-between hover:bg-[oklch(0.15_0.03_250)] transition-all">
+            <div
+              key={it}
+              className="bg-[oklch(0.10_0.03_250)] aspect-square p-5 flex flex-col justify-between hover:bg-[oklch(0.15_0.03_250)] transition-all"
+            >
               <Cpu className="h-5 w-5 text-gold/70" strokeWidth={1.2} />
               <span className="text-sm text-platinum/90 leading-tight">{it}</span>
             </div>
@@ -536,12 +609,21 @@ function Leadership() {
         <div className="grid lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-5 relative">
             <div className="aspect-[4/5] overflow-hidden relative">
-              <img src={chairmanImg} alt="Dipen U Shah, Chairman" className="h-full w-full object-cover" loading="lazy" width={900} height={1100} />
+              <Image
+                src="/assets/chairman.jpg"
+                alt="Dipen U Shah, Chairman"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                loading="lazy"
+              />
               <div className="absolute inset-0 ring-1 ring-inset ring-gold/20" />
             </div>
             <div className="absolute top-6 -left-6 hidden md:flex flex-col gap-2">
               <span className="h-12 w-px bg-gold" />
-              <span className="text-[10px] tracking-[0.4em] uppercase text-gold rotate-180 [writing-mode:vertical-rl]">Chairman</span>
+              <span className="text-[10px] tracking-[0.4em] uppercase text-gold rotate-180 [writing-mode:vertical-rl]">
+                Chairman
+              </span>
             </div>
           </div>
           <div className="lg:col-span-7">
@@ -551,13 +633,15 @@ function Leadership() {
             </h2>
             <div className="mt-3 text-sm tracking-[0.32em] uppercase text-gold">CA · CS · Chairman</div>
             <blockquote className="mt-10 text-xl md:text-2xl text-platinum/85 font-light italic leading-relaxed border-l border-gold pl-6">
-              "We are building an institutional platform that combines the trust of traditional finance with the
-              precision of modern technology — a corridor for global capital, advisory and execution."
+              &quot;We are building an institutional platform that combines the trust of traditional
+              finance with the precision of modern technology — a corridor for global capital,
+              advisory and execution.&quot;
             </blockquote>
             <p className="mt-8 text-platinum/65 leading-relaxed">
-              A Chartered Accountant and Company Secretary by training, Dipen has spent decades structuring capital,
-              advising boards and building regulated financial businesses across India and global markets. He leads
-              NAMI Group's strategy across investment banking, treasury, leasing and IFSC mandates.
+              A Chartered Accountant and Company Secretary by training, Dipen has spent decades
+              structuring capital, advising boards and building regulated financial businesses across
+              India and global markets. He leads NAMI Group&apos;s strategy across investment banking,
+              treasury, leasing and IFSC mandates.
             </p>
             <div className="mt-10 grid grid-cols-3 gap-px bg-white/5 max-w-md">
               {[
@@ -594,13 +678,16 @@ function Esg() {
         <div className="max-w-3xl mb-16">
           <span className="eyebrow">ESG & Governance</span>
           <h2 className="mt-6 font-display text-4xl md:text-5xl text-platinum font-light tracking-tight">
-            Governance as a <span className="italic text-gradient-gold">first principle.</span>
+            Governance as a{" "}
+            <span className="italic text-gradient-gold">first principle.</span>
           </h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
           {items.map((it, i) => (
             <div key={it.t} className="bg-[oklch(0.11_0.03_250)] p-8">
-              <span className="font-display text-xs text-gold tabular-nums tracking-[0.28em]">{String(i + 1).padStart(2, "0")}</span>
+              <span className="font-display text-xs text-gold tabular-nums tracking-[0.28em]">
+                {String(i + 1).padStart(2, "0")}
+              </span>
               <h3 className="mt-4 font-display text-xl text-platinum">{it.t}</h3>
               <p className="mt-3 text-sm text-platinum/60 leading-relaxed">{it.d}</p>
             </div>
@@ -615,21 +702,32 @@ function Esg() {
 function CTA() {
   return (
     <section className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none opacity-40" style={{ background: "var(--gradient-radial-gold)" }} />
+      <div
+        className="absolute inset-0 pointer-events-none opacity-40"
+        style={{ background: "var(--gradient-radial-gold)" }}
+      />
       <div className="container-x relative">
         <div className="text-center max-w-4xl mx-auto">
           <span className="eyebrow">Engage NAMI</span>
           <h2 className="mt-6 font-display text-4xl md:text-6xl lg:text-7xl text-platinum font-light tracking-tight leading-[1.05]">
-            Let's build the next <span className="italic text-gradient-gold">capital corridor</span> — together.
+            Let&apos;s build the next{" "}
+            <span className="italic text-gradient-gold">capital corridor</span> — together.
           </h2>
           <p className="mt-8 text-platinum/65 text-lg max-w-2xl mx-auto leading-relaxed">
-            Engage our institutional desks for Investment Banking, Treasury, Leasing, Trade Finance or GIFT IFSC mandates.
+            Engage our institutional desks for Investment Banking, Treasury, Leasing, Trade Finance
+            or GIFT IFSC mandates.
           </p>
           <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <Link to="/contact" className="inline-flex items-center gap-3 bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
+            >
               Schedule a Briefing <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <Link to="/businesses" className="inline-flex items-center gap-3 border border-platinum/30 text-platinum px-8 py-4 text-sm tracking-[0.2em] uppercase hover:border-gold hover:text-gold transition-all">
+            <Link
+              href="/businesses"
+              className="inline-flex items-center gap-3 border border-platinum/30 text-platinum px-8 py-4 text-sm tracking-[0.2em] uppercase hover:border-gold hover:text-gold transition-all"
+            >
               View All Businesses
             </Link>
           </div>
