@@ -13,7 +13,6 @@ const nav = [
   { to: "/leadership", label: "Leadership" },
   { to: "/careers", label: "Careers" },
   { to: "/insights", label: "Insights" },
-  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function Header() {
@@ -50,7 +49,11 @@ export function Header() {
 
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {nav.map((n) => {
-            const isActive = n.to === "/" ? pathname === "/" : pathname.startsWith(n.to);
+            const isActive = pathname
+              ? n.to === "/"
+                ? pathname === "/"
+                : pathname.startsWith(n.to)
+              : false;
             return (
               <Link
                 key={n.to}
@@ -66,7 +69,7 @@ export function Header() {
         </nav>
 
         <Link
-          href="/contact"
+          href="/#briefing"
           className="hidden lg:inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase border border-gold/40 px-4 py-2 text-gold hover:bg-gold hover:text-navy-deep transition-all"
         >
           Schedule Briefing

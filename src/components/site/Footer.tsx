@@ -87,11 +87,6 @@ export function Footer() {
                 Insights
               </Link>
             </li>
-            <li>
-              <Link href="/contact" className="hover:text-gold transition-colors">
-                Contact
-              </Link>
-            </li>
           </ul>
         </div>
 

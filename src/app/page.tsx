@@ -18,6 +18,7 @@ import {
   Scale,
   TrendingUp,
 } from "lucide-react";
+import { ContactForm } from "./contact/ContactForm";
 
 export const metadata: Metadata = {
   title: "NAMI Group — Building the Next Global Financial Corridor",
@@ -940,35 +941,52 @@ function Faq() {
 /* ───────────────────────── CTA ───────────────────────── */
 function CTA() {
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section
+      id="briefing"
+      className="py-32 relative overflow-hidden scroll-mt-20 border-t border-border/40"
+    >
       <div
         className="absolute inset-0 pointer-events-none opacity-40"
         style={{ background: "var(--gradient-radial-gold)" }}
       />
       <div className="container-x relative">
-        <div className="text-center max-w-4xl mx-auto">
-          <span className="eyebrow">Engage NAMI</span>
-          <h2 className="mt-6 font-display text-4xl md:text-6xl lg:text-7xl text-foreground font-light tracking-tight leading-[1.05]">
-            Let&apos;s build the next{" "}
-            <span className="italic text-gradient-gold">capital corridor</span> — together.
-          </h2>
-          <p className="mt-8 text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Engage our institutional desks for Investment Banking, Treasury, Leasing, Trade Finance
-            or GIFT IFSC mandates.
-          </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
-            >
-              Schedule a Briefing <ArrowUpRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/businesses"
-              className="inline-flex items-center gap-3 border border-border text-foreground px-8 py-4 text-sm tracking-[0.2em] uppercase hover:border-gold hover:text-gold transition-all"
-            >
-              View All Businesses
-            </Link>
+        <div className="grid lg:grid-cols-12 gap-16 items-start">
+          <div className="lg:col-span-5">
+            <span className="eyebrow">Engage NAMI</span>
+            <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-foreground font-light tracking-tight leading-[1.1]">
+              Let&apos;s build the next{" "}
+              <span className="italic text-gradient-gold">capital corridor</span> — together.
+            </h2>
+            <p className="mt-8 text-muted-foreground text-base leading-relaxed">
+              Schedule an institutional briefing with our client relationships desk for Investment
+              Banking, Treasury, Aviation &amp; Maritime Leasing, or GIFT City IFSC advisory.
+            </p>
+            <div className="mt-8 space-y-6 text-sm text-foreground/80">
+              <div>
+                <span className="block text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                  Direct Desk
+                </span>
+                <a href="mailto:ib@namigroup.in" className="text-gold font-medium hover:underline">
+                  ib@namigroup.in
+                </a>
+              </div>
+              <div>
+                <span className="block text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
+                  Hotlines
+                </span>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+919725053938" className="hover:text-gold transition-colors">
+                    +91-97250 53938 (India)
+                  </a>
+                  <a href="tel:+971585743938" className="hover:text-gold transition-colors">
+                    +971 58 57 4 3938 (UAE)
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="lg:col-span-7 bg-card border border-border/60 p-8 md:p-12">
+            <ContactForm />
           </div>
         </div>
       </div>
