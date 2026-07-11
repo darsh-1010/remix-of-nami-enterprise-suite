@@ -50,7 +50,7 @@
   --color-gold: var(--gold);
   --color-gold-bright: var(--gold-bright);
   --color-platinum: var(--platinum);
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui;
+  --font-display: "Playfair Display", "Space Grotesk", ui-serif, Georgia, serif;
   --font-sans: "Manrope", ui-sans-serif, system-ui;
   --font-body: "Inter", ui-sans-serif, system-ui;
 }
@@ -58,53 +58,65 @@
 :root {
   --radius: 0.25rem;
 
-  /* Brand */
-  --navy-deep: oklch(0.16 0.04 250);     /* #071A2F */
-  --navy: oklch(0.20 0.045 250);
-  --navy-elevated: oklch(0.26 0.04 250);
-  --gold: oklch(0.76 0.10 80);            /* #C8A96A */
-  --gold-bright: oklch(0.85 0.12 85);
-  --platinum: oklch(0.92 0.005 250);
+  /* Brand Constants */
+  --brand-navy-deep: oklch(0.16 0.04 250); /* #071A2F */
+  --brand-navy: oklch(0.2 0.045 250);
+  --brand-navy-elevated: oklch(0.26 0.04 250);
+  --brand-gold: oklch(0.62 0.08 80); /* #A3844C - slightly darker gold for light background */
+  --brand-gold-bright: oklch(0.72 0.1 82);
+  --brand-platinum: oklch(0.92 0.005 250);
 
-  /* Semantic — dark by default */
-  --background: var(--navy-deep);
-  --foreground: oklch(0.96 0.005 250);
-  --card: oklch(0.20 0.04 250 / 0.6);
-  --card-foreground: oklch(0.96 0.005 250);
-  --popover: var(--navy);
-  --popover-foreground: oklch(0.96 0.005 250);
-  --primary: var(--gold);
-  --primary-foreground: var(--navy-deep);
-  --secondary: oklch(0.24 0.04 250);
-  --secondary-foreground: oklch(0.96 0.005 250);
-  --muted: oklch(0.22 0.035 250);
-  --muted-foreground: oklch(0.70 0.02 250);
-  --accent: var(--gold);
-  --accent-foreground: var(--navy-deep);
+  /* Semantic — light by default */
+  --background: oklch(0.98 0.003 250); /* Soft warm off-white #FAF9F6 */
+  --foreground: var(--brand-navy-deep); /* Deep navy for text */
+  --card: oklch(1 0 0); /* Pure white for cards */
+  --card-foreground: var(--brand-navy-deep);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--brand-navy-deep);
+  --primary: var(--brand-gold);
+  --primary-foreground: oklch(0.98 0.003 250);
+  --secondary: oklch(0.95 0.005 250); /* Very light gray/slate background */
+  --secondary-foreground: var(--brand-navy-deep);
+  --muted: oklch(0.96 0.004 250); /* Light warm gray for section backgrounds */
+  --muted-foreground: oklch(0.45 0.01 250); /* Medium slate gray for subtext */
+  --accent: var(--brand-gold);
+  --accent-foreground: oklch(0.98 0.003 250);
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(1 0 0 / 0.08);
-  --input: oklch(1 0 0 / 0.12);
-  --ring: var(--gold);
-  --chart-1: var(--gold);
-  --chart-2: oklch(0.55 0.08 220);
-  --chart-3: oklch(0.7 0.04 250);
-  --chart-4: oklch(0.85 0.12 85);
-  --chart-5: oklch(0.4 0.04 250);
-  --sidebar: var(--navy);
-  --sidebar-foreground: oklch(0.96 0 0);
-  --sidebar-primary: var(--gold);
-  --sidebar-primary-foreground: var(--navy-deep);
-  --sidebar-accent: oklch(0.24 0.04 250);
-  --sidebar-accent-foreground: oklch(0.96 0 0);
-  --sidebar-border: oklch(1 0 0 / 0.08);
-  --sidebar-ring: var(--gold);
+  --border: oklch(0.16 0.04 250 / 0.08); /* Subtle navy/gray borders */
+  --input: oklch(0.16 0.04 250 / 0.12);
+  --ring: var(--brand-gold);
+  --chart-1: var(--brand-gold);
+  --chart-2: oklch(0.2 0.045 250);
+  --chart-3: oklch(0.45 0.01 250);
+  --chart-4: oklch(0.72 0.1 82);
+  --chart-5: oklch(0.3 0.02 250);
+  --sidebar: oklch(0.98 0.003 250);
+  --sidebar-foreground: var(--brand-navy-deep);
+  --sidebar-primary: var(--brand-gold);
+  --sidebar-primary-foreground: oklch(0.98 0.003 250);
+  --sidebar-accent: oklch(0.95 0.005 250);
+  --sidebar-accent-foreground: var(--brand-navy-deep);
+  --sidebar-border: oklch(0.16 0.04 250 / 0.08);
+  --sidebar-ring: var(--brand-gold);
 
-  --gradient-gold: linear-gradient(135deg, oklch(0.85 0.12 85), oklch(0.7 0.1 75));
-  --gradient-navy: linear-gradient(180deg, oklch(0.16 0.04 250), oklch(0.10 0.03 250));
-  --gradient-radial-gold: radial-gradient(ellipse at top, oklch(0.76 0.1 80 / 0.18), transparent 60%);
-  --shadow-elegant: 0 30px 80px -30px oklch(0 0 0 / 0.6);
-  --shadow-gold: 0 20px 60px -20px oklch(0.76 0.1 80 / 0.35);
+  /* Backward Compatibility Mappings */
+  --navy-deep: var(--brand-navy-deep);
+  --navy: var(--brand-navy);
+  --navy-elevated: var(--brand-navy-elevated);
+  --gold: var(--brand-gold);
+  --gold-bright: var(--brand-gold-bright);
+  --platinum: var(--brand-platinum);
+
+  --gradient-gold: linear-gradient(135deg, oklch(0.72 0.1 82), oklch(0.6 0.08 78));
+  --gradient-navy: linear-gradient(180deg, oklch(0.22 0.04 250), oklch(0.14 0.03 250));
+  --gradient-radial-gold: radial-gradient(
+    ellipse at top,
+    oklch(0.62 0.08 80 / 0.06),
+    transparent 60%
+  );
+  --shadow-elegant: 0 30px 80px -30px oklch(0.16 0.04 250 / 0.1);
+  --shadow-gold: 0 20px 60px -20px oklch(0.62 0.08 80 / 0.15);
 }
 
 @layer base {
@@ -120,14 +132,22 @@
     text-rendering: optimizeLegibility;
   }
 
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
 
-  ::selection { background: var(--gold); color: var(--navy-deep); }
+  ::selection {
+    background: var(--gold);
+    color: var(--navy-deep);
+  }
 }
 
 @utility container-x {
@@ -135,7 +155,9 @@
   margin-inline: auto;
   padding-inline: 1.5rem;
   max-width: 80rem;
-  @media (min-width: 1280px) { padding-inline: 2.5rem; }
+  @media (min-width: 1280px) {
+    padding-inline: 2.5rem;
+  }
 }
 
 @utility eyebrow {
@@ -160,30 +182,45 @@
 }
 
 @utility glass {
-  background: oklch(1 0 0 / 0.03);
+  background: oklch(1 0 0 / 0.7);
   backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid oklch(1 0 0 / 0.08);
+  border: 1px solid oklch(0.16 0.04 250 / 0.08);
 }
 
 @utility glass-strong {
-  background: oklch(0.16 0.04 250 / 0.6);
+  background: oklch(1 0 0 / 0.85);
   backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid oklch(1 0 0 / 0.1);
+  border: 1px solid oklch(0.16 0.04 250 / 0.12);
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @utility animate-fade-up {

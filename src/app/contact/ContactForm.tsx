@@ -16,7 +16,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="text-[11px] tracking-[0.28em] uppercase text-platinum/70">
+      <label className="text-[11px] tracking-[0.28em] uppercase text-muted-foreground">
         {label}
         {required && <span className="text-gold ml-1">*</span>}
       </label>
@@ -24,7 +24,7 @@ function Field({
         name={name}
         type={type}
         required={required}
-        className="mt-3 w-full bg-transparent border border-white/15 px-4 py-3 text-platinum focus:border-gold outline-none transition-colors"
+        className="mt-3 w-full bg-transparent border border-border px-4 py-3 text-foreground focus:border-gold outline-none transition-colors"
       />
     </div>
   );
@@ -41,17 +41,17 @@ export function ContactForm() {
       }}
       className="glass-strong p-8 md:p-12"
     >
-      <h2 className="font-display text-2xl text-platinum mb-8">Enquiry</h2>
+      <h2 className="font-display text-2xl text-foreground mb-8">Enquiry</h2>
       <div className="grid sm:grid-cols-2 gap-6">
         <Field label="Full name" required name="name" />
         <Field label="Organisation" name="org" />
         <Field label="Email" type="email" required name="email" />
         <Field label="Phone" name="phone" />
         <div className="sm:col-span-2">
-          <label className="text-[11px] tracking-[0.28em] uppercase text-platinum/70">
+          <label className="text-[11px] tracking-[0.28em] uppercase text-muted-foreground">
             Area of interest
           </label>
-          <select className="mt-3 w-full bg-transparent border border-white/15 px-4 py-3 text-platinum focus:border-gold outline-none">
+          <select className="mt-3 w-full bg-transparent border border-border px-4 py-3 text-foreground focus:border-gold outline-none">
             {[
               "Investment Banking",
               "Treasury & Bonds",
@@ -62,19 +62,19 @@ export function ContactForm() {
               "Healthcare Finance",
               "Other",
             ].map((o) => (
-              <option key={o} className="bg-navy-deep">
+              <option key={o} className="bg-card border border-border/40">
                 {o}
               </option>
             ))}
           </select>
         </div>
         <div className="sm:col-span-2">
-          <label className="text-[11px] tracking-[0.28em] uppercase text-platinum/70">
+          <label className="text-[11px] tracking-[0.28em] uppercase text-muted-foreground">
             Message
           </label>
           <textarea
             rows={5}
-            className="mt-3 w-full bg-transparent border border-white/15 px-4 py-3 text-platinum focus:border-gold outline-none resize-none"
+            className="mt-3 w-full bg-transparent border border-border px-4 py-3 text-foreground focus:border-gold outline-none resize-none"
           />
         </div>
       </div>

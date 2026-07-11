@@ -24,14 +24,16 @@ export default function ContactPage() {
   return (
     <>
       <section className="pt-44 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30" style={{ background: "var(--gradient-radial-gold)" }} />
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{ background: "var(--gradient-radial-gold)" }}
+        />
         <div className="container-x relative">
           <span className="eyebrow">Engage NAMI</span>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl text-platinum font-light tracking-tight max-w-4xl leading-[1]">
-            Schedule an{" "}
-            <span className="italic text-gradient-gold">institutional briefing.</span>
+          <h1 className="mt-6 font-display text-5xl md:text-7xl text-foreground font-light tracking-tight max-w-4xl leading-[1]">
+            Schedule an <span className="italic text-gradient-gold">institutional briefing.</span>
           </h1>
-          <p className="mt-8 max-w-2xl text-platinum/70 text-lg">
+          <p className="mt-8 max-w-2xl text-muted-foreground text-lg">
             Submit your enquiry below or reach the relevant desk directly. We respond within one
             business day.
           </p>
@@ -49,7 +51,7 @@ export default function ContactPage() {
           <aside className="lg:col-span-5">
             <div className="glass p-8 md:p-10">
               <h3 className="text-xs tracking-[0.28em] uppercase text-gold mb-6">Direct</h3>
-              <ul className="space-y-5 text-platinum/85">
+              <ul className="space-y-5 text-foreground/85">
                 <li className="flex gap-4">
                   <Mail className="h-4 w-4 text-gold mt-1 shrink-0" />
                   contact@namigroup.com
@@ -71,12 +73,12 @@ export default function ContactPage() {
 
             <div className="mt-6 glass p-8 md:p-10">
               <h3 className="text-xs tracking-[0.28em] uppercase text-gold mb-6">Global Offices</h3>
-              <ul className="divide-y divide-white/5">
+              <ul className="divide-y divide-border/40">
                 {offices.map((o) => (
                   <li key={o.city} className="py-4 flex items-center justify-between">
                     <div>
-                      <div className="font-display text-platinum">{o.city}</div>
-                      <div className="text-xs text-platinum/55">{o.country}</div>
+                      <div className="font-display text-foreground">{o.city}</div>
+                      <div className="text-xs text-muted-foreground">{o.country}</div>
                     </div>
                     <span className="text-[10px] tracking-[0.28em] uppercase text-gold/70">
                       {o.label}

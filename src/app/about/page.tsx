@@ -9,7 +9,8 @@ export const metadata: Metadata = {
     "NAMI Group is an integrated financial ecosystem delivering Investment Banking, Treasury, Cross-Border Capital and GIFT IFSC solutions, led by Chairman Dipen U Shah (CA, CS).",
   openGraph: {
     title: "About NAMI Group",
-    description: "Professionally managed corporate ecosystem across India, UAE, USA, Canada and GIFT IFSC.",
+    description:
+      "Professionally managed corporate ecosystem across India, UAE, USA, Canada and GIFT IFSC.",
   },
 };
 
@@ -17,14 +18,17 @@ export default function AboutPage() {
   return (
     <>
       <section className="relative pt-44 pb-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-30" style={{ background: "var(--gradient-radial-gold)" }} />
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{ background: "var(--gradient-radial-gold)" }}
+        />
         <div className="container-x relative">
           <span className="eyebrow">About</span>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl lg:text-8xl text-platinum font-light tracking-tight leading-[0.98] max-w-5xl">
+          <h1 className="mt-6 font-display text-5xl md:text-7xl lg:text-8xl text-foreground font-light tracking-tight leading-[0.98] max-w-5xl">
             A professionally managed{" "}
             <span className="italic text-gradient-gold">corporate ecosystem.</span>
           </h1>
-          <p className="mt-10 max-w-2xl text-lg text-platinum/70 leading-relaxed">
+          <p className="mt-10 max-w-2xl text-lg text-muted-foreground leading-relaxed">
             NAMI Group is dedicated to providing premier Investment Banking, Treasury, cross-border
             capital raising and GIFT IFSC solutions — directing institutional wealth frameworks and
             cutting-edge technology deployment pathways across global markets.
@@ -32,17 +36,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-24 border-y border-white/5">
+      <section className="py-24 border-y border-border/40">
         <div className="container-x grid lg:grid-cols-2 gap-16">
           <div>
             <span className="eyebrow">Vision</span>
-            <h2 className="mt-6 font-display text-3xl md:text-4xl text-platinum font-light leading-tight">
+            <h2 className="mt-6 font-display text-3xl md:text-4xl text-foreground font-light leading-tight">
               To be the most trusted institutional financial corridor connecting India to the world.
             </h2>
           </div>
           <div>
             <span className="eyebrow">Mission</span>
-            <p className="mt-6 text-platinum/75 text-lg leading-relaxed">
+            <p className="mt-6 text-foreground/75 text-lg leading-relaxed">
               Deliver institutional-grade Investment Banking, Treasury and Cross-Border Capital
               solutions through a regulated, technology-driven platform — purpose-built for funds,
               corporates, banks and sovereign institutions.
@@ -67,16 +71,18 @@ export default function AboutPage() {
           </div>
           <div className="lg:col-span-7">
             <span className="eyebrow">Chairman&apos;s Message</span>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl text-platinum font-light tracking-tight">
+            <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
               Dipen U Shah
             </h2>
-            <div className="mt-2 text-sm tracking-[0.32em] uppercase text-gold">CA · CS · Chairman</div>
-            <blockquote className="mt-10 text-xl text-platinum/85 font-light italic leading-relaxed border-l border-gold pl-6">
+            <div className="mt-2 text-sm tracking-[0.32em] uppercase text-gold">
+              CA · CS · Chairman
+            </div>
+            <blockquote className="mt-10 text-xl text-foreground/85 font-light italic leading-relaxed border-l border-gold pl-6">
               &quot;Capital follows trust. Our work at NAMI is to engineer the structures,
               relationships and technology that make institutional trust portable across
               jurisdictions.&quot;
             </blockquote>
-            <p className="mt-8 text-platinum/65 leading-relaxed">
+            <p className="mt-8 text-muted-foreground leading-relaxed">
               Dipen leads NAMI Group&apos;s strategic direction across eight business verticals. A
               Chartered Accountant and Company Secretary with deep capital-markets, treasury and
               regulatory expertise, he has structured and advised on mandates spanning equity, debt,
@@ -86,7 +92,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="relative py-32 overflow-hidden border-y border-white/5">
+      <section className="relative py-32 overflow-hidden border-y border-border/40">
         <div className="absolute inset-0">
           <Image
             src="/assets/boardroom.jpg"
@@ -96,11 +102,11 @@ export default function AboutPage() {
             sizes="100vw"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-navy-deep/80" />
+          <div className="absolute inset-0 bg-background/80" />
         </div>
         <div className="container-x relative text-center max-w-3xl mx-auto">
           <span className="eyebrow">Corporate Philosophy</span>
-          <h2 className="mt-6 font-display text-3xl md:text-5xl text-platinum font-light tracking-tight">
+          <h2 className="mt-6 font-display text-3xl md:text-5xl text-foreground font-light tracking-tight">
             Pristine compliance. Strategic footprint.{" "}
             <span className="italic text-gradient-gold">Institutional discipline.</span>
           </h2>
