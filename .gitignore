@@ -56,3 +56,5 @@ next-env.d.ts
 .DS_Store
 ehthumbs.db
 Desktop.ini
+
+.vercel
