@@ -107,6 +107,115 @@ export default function WhoWeServePage() {
         </div>
       </section>
 
+      {/* Sector Coverage */}
+      <section className="py-24 border-t border-border/40">
+        <div className="container-x">
+          <div className="grid lg:grid-cols-12 gap-12 items-start mb-16">
+            <div className="lg:col-span-6">
+              <span className="eyebrow">Sector Expertise</span>
+              <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
+                Global sector coverage &amp;{" "}
+                <span className="italic text-gradient-gold">market depths.</span>
+              </h2>
+            </div>
+            <p className="lg:col-span-6 text-muted-foreground text-base leading-relaxed">
+              We leverage deep vertical domain expertise to structure, advise, and execute
+              transactions across key global growth segments.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Tech & FinTech",
+                depth: "30% Market Depth",
+                desc: "Enterprise SaaS, payments infrastructure, cybersecurity, and advanced software platforms seeking capital rounds.",
+              },
+              {
+                title: "Industrials & Manufacturing",
+                depth: "25% Market Depth",
+                desc: "Aerospace components, precision engineering systems, advanced automotive parts, and specialty chemicals.",
+              },
+              {
+                title: "Consumer & Retail",
+                depth: "15% Market Depth",
+                desc: "Omnichannel premium brands, e-commerce platforms, food & beverage chains, and consumer network setups.",
+              },
+              {
+                title: "Healthcare",
+                depth: "12% Market Depth",
+                desc: "Medical devices, tech-enabled clinical setups, specialized diagnostic networks, and digital healthcare platforms.",
+              },
+              {
+                title: "Energy & Resources",
+                depth: "10% Market Depth",
+                desc: "Solar arrays, infrastructure projects, traditional utilities, and renewable transition syndicates.",
+              },
+              {
+                title: "Real Estate & PropTech",
+                depth: "8% Market Depth",
+                desc: "Logistics spaces, commercial properties, hotel developments, and property technology software setups.",
+              },
+            ].map((s) => (
+              <div
+                key={s.title}
+                className="bg-card border border-border/40 p-8 hover:border-gold/60 transition-colors"
+              >
+                <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+                  {s.depth}
+                </span>
+                <h3 className="mt-4 font-display text-2xl text-foreground font-light">{s.title}</h3>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Channels */}
+      <section className="py-24 border-t border-border/40 bg-muted/40">
+        <div className="container-x">
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5">
+              <span className="eyebrow">Connectivity</span>
+              <h2 className="mt-6 font-display text-4xl text-foreground font-light tracking-tight">
+                Global connectivity &amp;{" "}
+                <span className="italic text-gradient-gold">strategic channels.</span>
+              </h2>
+              <p className="mt-8 text-sm text-muted-foreground leading-relaxed">
+                NAMI maintains direct links with cross-border institutional bodies and offshore
+                regulatory agencies to accelerate client execution corridors outside mainland India.
+              </p>
+            </div>
+            <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-border/40">
+              {[
+                {
+                  c: "BRICS Chamber",
+                  d: "Official chamber alignments to accelerate capital flow pathways.",
+                },
+                {
+                  c: "UK Dept of Trade",
+                  d: "Active corridor support with deputy high commissions.",
+                },
+                {
+                  c: "Embassy Networks",
+                  d: "Structural transaction pathways across key sovereign business hubs.",
+                },
+                {
+                  c: "135+ Global Lenders",
+                  d: "Direct connections with global banks, sovereign wealth, and private family offices.",
+                },
+              ].map((ch) => (
+                <div key={ch.c} className="bg-card border border-border/40 p-6">
+                  <h4 className="font-display text-base text-gold mb-2">{ch.c}</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{ch.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 border-t border-border/40 bg-muted/20">
         <div className="container-x text-center max-w-3xl">
           <span className="eyebrow">Client Engagement</span>

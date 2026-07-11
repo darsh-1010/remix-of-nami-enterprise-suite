@@ -5,7 +5,7 @@ import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact NAMI Group — Schedule an Institutional Briefing",
   description:
-    "Engage NAMI Group's institutional desks across GIFT IFSC, India, UAE, USA and Canada for Investment Banking, Treasury, Leasing and IFSC mandates.",
+    "Engage NAMI Group's institutional desks across GIFT IFSC, India, UAE, UK and USA for Investment Banking, Treasury, Leasing and IFSC mandates.",
   openGraph: {
     title: "Contact NAMI Group",
     description: "Schedule an institutional briefing across our global offices.",
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 const offices = [
   { city: "GIFT IFSC", country: "Gandhinagar · India", label: "Headquarters" },
   { city: "Mumbai", country: "India", label: "Capital Markets Desk" },
-  { city: "Dubai", country: "United Arab Emirates", label: "Middle East Capital" },
-  { city: "New York", country: "United States", label: "North America Desk" },
-  { city: "Toronto", country: "Canada", label: "Cross-Border Advisory" },
+  { city: "Dubai", country: "United Arab Emirates", label: "Middle East Desk" },
+  { city: "London", country: "United Kingdom", label: "UK Corridor Desk" },
+  { city: "New York", country: "United States", label: "US Corridor Desk" },
 ];
 
 export default function ContactPage() {
@@ -54,15 +54,31 @@ export default function ContactPage() {
               <ul className="space-y-5 text-foreground/85">
                 <li className="flex gap-4">
                   <Mail className="h-4 w-4 text-gold mt-1 shrink-0" />
-                  contact@namigroup.com
+                  <a href="mailto:ib@namigroup.in" className="hover:text-gold transition-colors">
+                    ib@namigroup.in
+                  </a>
                 </li>
                 <li className="flex gap-4">
                   <Phone className="h-4 w-4 text-gold mt-1 shrink-0" />
-                  +91 79 0000 0000
+                  <div className="flex flex-col gap-1">
+                    <a href="tel:+919725053938" className="hover:text-gold transition-colors">
+                      +91-97250 53938 (India)
+                    </a>
+                    <a href="tel:+971585743938" className="hover:text-gold transition-colors">
+                      +971 58 57 4 3938 (UAE)
+                    </a>
+                  </div>
                 </li>
                 <li className="flex gap-4">
                   <Linkedin className="h-4 w-4 text-gold mt-1 shrink-0" />
-                  linkedin.com/company/nami-group
+                  <a
+                    href="https://linkedin.com/company/nami-group"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gold transition-colors"
+                  >
+                    linkedin.com/company/nami-group
+                  </a>
                 </li>
                 <li className="flex gap-4">
                   <MapPin className="h-4 w-4 text-gold mt-1 shrink-0" />

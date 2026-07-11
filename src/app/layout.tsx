@@ -37,7 +37,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <div className="min-h-screen flex flex-col bg-background text-foreground">
           <Header />
           <main className="flex-1">{children}</main>

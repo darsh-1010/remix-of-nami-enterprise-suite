@@ -7,40 +7,76 @@ import { ArrowUpRight, Award, BadgeCheck, CheckCircle2 } from "lucide-react";
 
 const leadership = [
   {
-    name: "CA Dipen U Shah",
-    role: "Founder & Chairman",
+    name: "CA Dipen U. Shah",
+    role: "Founder Director",
     qualifications: "CA · CS · Advisor",
-    bio: "Dipen leads NAMI Group's strategic direction across eight business verticals. A Chartered Accountant and Company Secretary with deep capital-markets, treasury and regulatory expertise, he has structured and advised on mandates spanning equity, debt, leasing and cross-border capital corridors. Under his guidance, NAMI has positioned itself as the primary corridor connecting GIFT City to international financial jurisdictions.",
+    bio: "Founder Director of NAMI Group. Over 18 years of corporate experience across ING, Kotak Mahindra Bank, and senior advisory positions. Deep specialization in capital markets, offshore corporate structures, and institutional fund mobilization.",
     stats: [
-      { v: "25+", l: "Years Experience" },
-      { v: "100+", l: "Mandates Handled" },
-      { v: "08", l: "Verticals Orchestrated" },
+      { v: "18+ Yrs", l: "Experience" },
+      { v: "Kotak / ING", l: "Senior Banking" },
+      { v: "CapDesks", l: "Specialization" },
     ],
     image: "/assets/chairman.jpg",
   },
   {
-    name: "Dr. Sarah Jenkins",
-    role: "Managing Director — Capital Markets",
-    qualifications: "PhD (Economics) — Wharton",
-    bio: "Sarah leads our Cross-Border Advisory desk. With 18 years of investment banking experience across New York, London, and Mumbai, she specializes in M&A syndication and private placements for high-growth tech and infrastructure groups.",
+    name: "CA Shail Shah",
+    role: "Director — M&A & Tax",
+    qualifications: "Chartered Accountant (CA)",
+    bio: "Over 15 years of regulatory and transaction execution experience. Shail coordinates NAMI Group's advanced M&A valuations, international taxation schemes, and cross-border corporate restructure frameworks.",
     stats: [
-      { v: "$4B+", l: "Capital Raised" },
-      { v: "50+", l: "M&A Closures" },
-      { v: "New York", l: "Desk Lead" },
+      { v: "15+ Yrs", l: "Experience" },
+      { v: "Tax Structuring", l: "Focus Area" },
+      { v: "M&A Valuations", l: "Specialization" },
     ],
-    image: "/assets/boardroom.jpg", // reuse courtroom/boardroom image
+    image: "/assets/boardroom.jpg",
   },
   {
-    name: "Amitabh Roy",
-    role: "Head — Fixed Income & Treasury",
-    qualifications: "Ex-Executive Director, PSU Bank",
-    bio: "Amitabh has over three decades of institutional treasury management experience. He directs NAMI's yield strategy, G-Sec duration allocations, and corporate bond secondary placements for primary treasuries.",
+    name: "Dhiren Panchal",
+    role: "Director — Global Banking",
+    qualifications: "Chartered Financial Analyst (CFA)",
+    bio: "CFA charterholder with 20+ years of institutional banking depth across ICICI Bank, ABN Amro, HSBC, Yes Bank, and DBS Bank. Dhiren coordinates international bank relations, offshore syndications, and FEMA regulatory guidelines.",
     stats: [
-      { v: "30+", l: "Years in Banking" },
-      { v: "12%", l: "Avg Portfolio Yield" },
-      { v: "GIFT IFSC", l: "Desk Lead" },
+      { v: "20+ Yrs", l: "Banking Depth" },
+      { v: "HSBC / DBS", l: "Global Track" },
+      { v: "FEMA Limits", l: "Specialization" },
     ],
-    image: "/assets/hero-financial.jpg", // reuse existing assets
+    image: "/assets/hero-financial.jpg",
+  },
+  {
+    name: "Piyush Akhaja",
+    role: "Director — Equity Advisory",
+    qualifications: "Director — Equity Advisory",
+    bio: "Over 15 years of investment banking experience. Piyush leads NAMI's structural modeling, detailed cash-flow projection, DCF valuations, and exit preparations.",
+    stats: [
+      { v: "15+ Yrs", l: "Experience" },
+      { v: "Equity Models", l: "Focus Area" },
+      { v: "DCF Valuations", l: "Specialization" },
+    ],
+    image: "/assets/boardroom.jpg",
+  },
+  {
+    name: "CA Mahit Puri",
+    role: "Director — Valuation",
+    qualifications: "Chartered Accountant (CA)",
+    bio: "A Chartered Accountant with 14+ years of institutional experience. Mahit oversees NAMI's debt syndication, capital placement operations, and structured finance corridors.",
+    stats: [
+      { v: "14+ Yrs", l: "Valuations Experience" },
+      { v: "Syndication", l: "Focus Area" },
+      { v: "Offshore Flows", l: "Specialization" },
+    ],
+    image: "/assets/hero-financial.jpg",
+  },
+  {
+    name: "Arpi Akhaja",
+    role: "Head — Modeling & MIS",
+    qualifications: "Financial Modeling Lead",
+    bio: "Over 12 years of corporate financial planning and portfolio analysis experience. Arpi leads NAMI's structural modeling, database validation, and transactional support desks.",
+    stats: [
+      { v: "12+ Yrs", l: "Experience" },
+      { v: "MIS Desks", l: "Focus Area" },
+      { v: "Validation", l: "Specialization" },
+    ],
+    image: "/assets/chairman.jpg",
   },
 ];
 

@@ -226,17 +226,17 @@ function About() {
 /* ───────────────────────── STATS ───────────────────────── */
 function Stats() {
   const stats = [
-    { n: "08", l: "Business Verticals" },
-    { n: "05", l: "Global Markets" },
-    { n: "14+", l: "Active Industries" },
-    { n: "01", l: "Integrated Platform" },
+    { n: "110+", l: "Combined Team Years" },
+    { n: "USD 277M+", l: "Funds Mobilized (INR 2500+ Cr)" },
+    { n: "135+", l: "Global Lenders Connected" },
+    { n: "USD 2.0B+", l: "Combined Deal Advisory Value" },
   ];
   return (
     <section className="border-y border-border/40 bg-muted/50 py-20">
       <div className="container-x grid grid-cols-2 lg:grid-cols-4 gap-y-12">
         {stats.map((s, i) => (
           <div key={s.l} className={`px-6 ${i > 0 ? "lg:border-l border-border/60" : ""}`}>
-            <div className="font-display text-6xl md:text-7xl font-extralight text-gradient-gold tabular-nums">
+            <div className="font-display text-5xl md:text-6xl font-extralight text-gradient-gold tabular-nums">
               {s.n}
             </div>
             <div className="mt-3 text-xs tracking-[0.28em] uppercase text-muted-foreground">
@@ -252,11 +252,11 @@ function Stats() {
 /* ───────────────────────── GLOBAL PRESENCE ───────────────────────── */
 function GlobalPresence() {
   const markets = [
-    { name: "India & GIFT IFSC", desc: "Primary regulatory gateway" },
-    { name: "United Arab Emirates", desc: "Capital structuring center" },
-    { name: "United States", desc: "North America capital desk" },
-    { name: "Canada", desc: "Cross-border advisory" },
-    { name: "Global Outsourcing", desc: "KPO / BPO & FinTech" },
+    { name: "India & GIFT IFSC", desc: "Foundational regulatory gateway & HQs" },
+    { name: "United States", desc: "North America sovereign capital corridors" },
+    { name: "United Kingdom", desc: "UK Dept of Trade & London connectivity" },
+    { name: "United Arab Emirates", desc: "Middle East capital structuring hubs" },
+    { name: "Europe (FR & CH)", desc: "Offshore wealth and banking access" },
   ];
   return (
     <section className="py-32 relative overflow-hidden">
@@ -472,43 +472,43 @@ function WhyChoose() {
   const reasons = [
     {
       i: Shield,
-      t: "Institutional Expertise",
-      d: "Seasoned bankers, treasury specialists and structured-finance professionals.",
-    },
-    {
-      i: Globe2,
-      t: "Global Network",
-      d: "Active execution desks across India, UAE, USA, Canada and IFSC.",
+      t: "Senior-Led Focus",
+      d: "Direct operational management from highly experienced directors on every transaction.",
     },
     {
       i: Scale,
-      t: "Regulatory Excellence",
-      d: "Compliant platform across multiple jurisdictions and asset classes.",
+      t: "Institutional Grade",
+      d: "Impeccable quality controls and structured finance models designed to clear regulatory audits.",
     },
     {
       i: Network,
-      t: "Cross-Border Execution",
-      d: "Capital corridors and partner banks connecting four key regions.",
+      t: "Domain Expertise",
+      d: "Decades of combined corporate transaction experience with global capital corridors.",
     },
     {
-      i: LineChart,
-      t: "Treasury Specialists",
-      d: "Bond, SDL, G-Sec and money-market expertise at institutional scale.",
+      i: Globe2,
+      t: "Global Placement",
+      d: "Vast network linking strategic partners across major offshore investment corridors.",
     },
     {
-      i: Cpu,
-      t: "Technology Integration",
-      d: "AI, automation and analytics built into every workflow.",
+      i: TrendingUp,
+      t: "Result Orientation",
+      d: "Committed to robust advisory execution, corporate targets, and final deal closing.",
     },
     {
       i: Building2,
-      t: "Banking Relationships",
-      d: "Decades of relationships with public, private and global banks.",
+      t: "135+ Global Lenders",
+      d: "Direct access to Tier-1 banks, sovereign funds, and institutional family offices.",
     },
     {
-      i: Sparkles,
-      t: "End-to-End Solutions",
-      d: "From mandate to execution under one integrated platform.",
+      i: LineChart,
+      t: "285+ Valuations",
+      d: "Asset and business valuations prepared, assessed, and backed across regulatory bodies.",
+    },
+    {
+      i: Cpu,
+      t: "150+ Blueprints",
+      d: "Rigorous compilation of investment structure files and institutional sanction documents.",
     },
   ];
   return (

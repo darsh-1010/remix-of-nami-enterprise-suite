@@ -24,9 +24,7 @@ export function Footer() {
             <span className="text-gold">·</span>
             <span>USA</span>
             <span className="text-gold">·</span>
-            <span>Canada</span>
-            <span className="text-gold">·</span>
-            <span>GIFT IFSC</span>
+            <span>UK</span>
           </div>
         </div>
 
@@ -106,11 +104,20 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Mail className="h-4 w-4 text-gold mt-0.5 shrink-0" />
-              contact@namigroup.com
+              <a href="mailto:ib@namigroup.in" className="hover:text-gold transition-colors">
+                ib@namigroup.in
+              </a>
             </li>
             <li className="flex gap-3">
               <Phone className="h-4 w-4 text-gold mt-0.5 shrink-0" />
-              +91 79 0000 0000
+              <div className="flex flex-col gap-1">
+                <a href="tel:+919725053938" className="hover:text-gold transition-colors">
+                  +91-97250 53938
+                </a>
+                <a href="tel:+971585743938" className="hover:text-gold transition-colors">
+                  +971 58 57 4 3938
+                </a>
+              </div>
             </li>
             <li className="flex gap-3 items-center">
               <Linkedin className="h-4 w-4 text-gold shrink-0" />
