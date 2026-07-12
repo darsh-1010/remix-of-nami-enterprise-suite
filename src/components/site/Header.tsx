@@ -14,22 +14,26 @@ const nav = [
 ] as const;
 
 export function Header() {
+  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const headerClass = mounted && scrolled
+    ? "bg-white/80 border-b border-border/40 backdrop-blur-xl"
+    : "bg-transparent";
+
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-white/80 border-b border-border/40 backdrop-blur-xl" : "bg-transparent"
-      }`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${headerClass}`}
     >
       <div className="container-x flex items-center justify-between h-20">
         <Link href="/" className="flex items-center gap-3 group">

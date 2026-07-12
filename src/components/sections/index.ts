@@ -1,0 +1,16 @@
+export { Hero } from "./Hero";
+export { Marquee } from "./Marquee";
+export { About } from "./About";
+export { Stats } from "./Stats";
+export { GlobalPresence } from "./GlobalPresence";
+export { Verticals } from "./Verticals";
+export { Industries } from "./Industries";
+export { WhyChoose } from "./WhyChoose";
+export { Gift } from "./Gift";
+export { Treasury } from "./Treasury";
+export { AviationMaritime } from "./AviationMaritime";
+export { Technology } from "./Technology";
+export { Leadership } from "./Leadership";
+export { Esg } from "./Esg";
+export { Faq } from "./Faq";
+export { CTA } from "./CTA";
