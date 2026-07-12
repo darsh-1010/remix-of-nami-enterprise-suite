@@ -10,11 +10,13 @@
 Your CI/CD pipeline was failing due to **3 major issues** introduced during the refactoring:
 
 ### Issue #1: Prettier Formatting (CRITICAL) ❌ → ✅
+
 **Status**: FIXED
 
 **Problem**: 17 newly created/modified files did not match Prettier formatting rules.
 
 **Files affected**:
+
 - `.claude/settings.json`
 - `src/app/api/contact/route.ts`
 - `src/app/api/careers/route.ts`
@@ -30,6 +32,7 @@ Your CI/CD pipeline was failing due to **3 major issues** introduced during the 
 - Plus 5 markdown documentation files
 
 **Root cause**: New code files weren't formatted to match the project's Prettier configuration:
+
 ```json
 {
   "semi": true,
@@ -41,6 +44,7 @@ Your CI/CD pipeline was failing due to **3 major issues** introduced during the 
 ```
 
 **Fix applied**:
+
 ```bash
 npx prettier --write .
 ```
@@ -50,25 +54,30 @@ npx prettier --write .
 ---
 
 ### Issue #2: ESLint - Unescaped Entities (CRITICAL) ❌ → ✅
+
 **Status**: FIXED
 
 **Problem**: 3 JSX files contained unescaped single quotes, violating `react/no-unescaped-entities` rule.
 
 **Files affected**:
+
 1. `src/app/contact/ContactForm.tsx` (line 84)
 2. `src/app/contact/page.tsx` (lines 20-21)
 
 **Root cause**: Text strings in JSX contained literal apostrophes that must be HTML-escaped:
-- ❌ "We've" 
+
+- ❌ "We've"
 - ❌ "We'd"
 - ❌ "we'll"
 
 **Fix applied**: Replaced with HTML entities:
+
 - ✅ "We&apos;ve"
 - ✅ "We&apos;d"
 - ✅ "we&apos;ll"
 
 **Files fixed**:
+
 ```typescript
 // Before
 Thank you! We've received your inquiry...
@@ -84,6 +93,7 @@ We&apos;d love to hear from you. Send us a message and we&apos;ll respond...
 ---
 
 ### Issue #3: Custom Font Warning (NON-CRITICAL) ⚠️
+
 **Status**: ACKNOWLEDGED (Not blocking CI)
 
 **Problem**: ESLint warning about custom fonts in `src/app/layout.tsx` line 35.
@@ -91,6 +101,7 @@ We&apos;d love to hear from you. Send us a message and we&apos;ll respond...
 **Why it's not blocking**: This is a **warning**, not an error. The CI pipeline only fails on errors, not warnings.
 
 **Message**:
+
 ```
 Custom fonts not added in `pages/_document.js` will only load for a single page.
 This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font
@@ -106,13 +117,14 @@ This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font
 
 ```
 ✅ Prettier formatting check      - PASSED
-✅ ESLint linting                 - PASSED  
+✅ ESLint linting                 - PASSED
 ✅ TypeScript type checking       - PASSED
 ✅ Production build compilation   - PASSED
 ✅ Vercel deployment ready        - YES
 ```
 
 ### Build Output Summary
+
 ```
 Route (app)                                 Size  First Load JS
 ┌ ○ /                                    2.13 kB         127 kB
@@ -134,11 +146,13 @@ Route (app)                                 Size  First Load JS
 ## What Was Fixed
 
 ### Files Modified
+
 - `src/app/contact/ContactForm.tsx` - Fixed unescaped apostrophe
-- `src/app/contact/page.tsx` - Fixed 2 unescaped apostrophes  
+- `src/app/contact/page.tsx` - Fixed 2 unescaped apostrophes
 - 17 files - Prettier formatting applied
 
 ### Total Changes
+
 - **Lines modified**: ~5 lines in TSX files
 - **Formatting applied**: 17 files
 - **Build time**: 4.1 seconds
@@ -166,7 +180,7 @@ All CI/CD pipeline steps now pass:
 # Step 1: Check code formatting ✅
 npx prettier --check .
 
-# Step 2: Lint codebase ✅  
+# Step 2: Lint codebase ✅
 npm run lint
 
 # Step 3: TypeScript typecheck ✅
@@ -183,6 +197,7 @@ npm run build
 ## Next Steps
 
 1. **Push these fixes to GitHub**:
+
    ```bash
    git add -A
    git commit -m "fix: resolve CI/CD pipeline formatting and linting issues"
@@ -200,11 +215,13 @@ npm run build
 To prevent similar issues in the future:
 
 1. **Before pushing**, run locally:
+
    ```bash
    npm run lint && npx prettier --write . && npm run build
    ```
 
 2. **Or** set up a pre-commit hook to auto-format:
+
    ```bash
    npm install --save-dev husky lint-staged
    npx husky install
@@ -222,12 +239,12 @@ To prevent similar issues in the future:
 
 ## Summary
 
-| Issue | Problem | Fix | Status |
-|-------|---------|-----|--------|
-| **Prettier** | 17 files not formatted | Applied prettier --write | ✅ Fixed |
-| **ESLint** | Unescaped apostrophes | Replaced with HTML entities | ✅ Fixed |
-| **TypeScript** | No errors found | N/A | ✅ Passing |
-| **Build** | No errors found | N/A | ✅ Passing |
+| Issue          | Problem                | Fix                         | Status     |
+| -------------- | ---------------------- | --------------------------- | ---------- |
+| **Prettier**   | 17 files not formatted | Applied prettier --write    | ✅ Fixed   |
+| **ESLint**     | Unescaped apostrophes  | Replaced with HTML entities | ✅ Fixed   |
+| **TypeScript** | No errors found        | N/A                         | ✅ Passing |
+| **Build**      | No errors found        | N/A                         | ✅ Passing |
 
 **Result**: CI/CD pipeline is now fully functional and ready for deployment! 🚀
 
@@ -236,10 +253,12 @@ To prevent similar issues in the future:
 ## Files Changed Summary
 
 **CI/CD Fixed**:
+
 - `src/app/contact/ContactForm.tsx` - 1 entity fix
 - `src/app/contact/page.tsx` - 2 entity fixes
 
 **Prettier Formatted** (17 files):
+
 - Configuration files (1)
 - API routes (2)
 - Components (5)
