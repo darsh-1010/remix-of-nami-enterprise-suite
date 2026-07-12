@@ -73,11 +73,15 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="card-glass">
       <h2 className="font-display text-2xl text-foreground mb-8">Enquiry</h2>
 
-      {error && <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded text-red-700 text-sm">{error}</div>}
+      {error && (
+        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
+          {error}
+        </div>
+      )}
 
       {success && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded text-green-700 text-sm">
-          Thank you! We've received your inquiry and will be in touch shortly.
+          Thank you! We&apos;ve received your inquiry and will be in touch shortly.
         </div>
       )}
 

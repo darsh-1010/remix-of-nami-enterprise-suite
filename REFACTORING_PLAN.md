@@ -7,6 +7,7 @@
 ## Phase Overview
 
 ### Phase 1: Foundation & Quick Wins (2-3 hours)
+
 - [x] Create project settings
 - [ ] Extract CSS utility classes to globals.css
 - [ ] Create constants file (lib/constants.ts)
@@ -15,6 +16,7 @@
 - [ ] Fix Header hydration issue
 
 ### Phase 2: Component Architecture (4-6 hours)
+
 - [ ] Extract page sections from src/app/page.tsx to src/components/sections/
 - [ ] Create Section components index file
 - [ ] Update home page to import sections instead of defining inline
@@ -22,6 +24,7 @@
 - [ ] Refactor ContactForm and CareersForm to use new FormField
 
 ### Phase 3: Form Infrastructure (3-4 hours)
+
 - [ ] Create API route for form submissions (contact)
 - [ ] Create API route for careers form
 - [ ] Implement form validation with Zod
@@ -29,6 +32,7 @@
 - [ ] Integrate form submission with real API calls
 
 ### Phase 4: Performance & Polish (2-3 hours)
+
 - [ ] Add image optimization with blur placeholders
 - [ ] Extract repeated CSS classes to utilities
 - [ ] Remove unused dependencies from imports
@@ -36,6 +40,7 @@
 - [ ] Performance audit and fixes
 
 ### Phase 5: Accessibility & Testing (2-3 hours)
+
 - [ ] Fix form label associations (htmlFor)
 - [ ] Add ARIA attributes
 - [ ] Fix mobile menu focus trapping

@@ -3,7 +3,8 @@ import { ContactForm } from "./ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us — NAMI Group",
-  description: "Get in touch with NAMI Group for inquiries about our investment banking, treasury, and leasing services.",
+  description:
+    "Get in touch with NAMI Group for inquiries about our investment banking, treasury, and leasing services.",
 };
 
 export default function ContactPage() {
@@ -16,7 +17,8 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-lg text-foreground/75 font-light">
-            Have a question about our services? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            Have a question about our services? We&apos;d love to hear from you. Send us a message
+            and we&apos;ll respond as soon as possible.
           </p>
         </div>
       </section>
@@ -33,13 +35,19 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="font-display text-lg font-light text-foreground mb-3">Email</h3>
-            <a href="mailto:contact@namigroup.com" className="text-gold hover:text-gold-bright transition-colors">
+            <a
+              href="mailto:contact@namigroup.com"
+              className="text-gold hover:text-gold-bright transition-colors"
+            >
               contact@namigroup.com
             </a>
           </div>
           <div>
             <h3 className="font-display text-lg font-light text-foreground mb-3">Phone</h3>
-            <a href="tel:+12345678900" className="text-gold hover:text-gold-bright transition-colors">
+            <a
+              href="tel:+12345678900"
+              className="text-gold hover:text-gold-bright transition-colors"
+            >
               +1 (234) 567-8900
             </a>
           </div>

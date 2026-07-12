@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     if (!checkRateLimit(rateLimitKey)) {
       return NextResponse.json(
         { success: false, message: "Too many requests. Please try again in a minute." },
-        { status: 429 }
+        { status: 429 },
       );
     }
 
@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
             message: e.message,
           })),
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
         success: false,
         message: "An error occurred while processing your application.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

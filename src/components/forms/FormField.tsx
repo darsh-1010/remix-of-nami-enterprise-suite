@@ -7,14 +7,7 @@ interface FormFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   required?: boolean;
 }
 
-export function FormField({
-  label,
-  name,
-  error,
-  helperText,
-  required,
-  ...props
-}: FormFieldProps) {
+export function FormField({ label, name, error, helperText, required, ...props }: FormFieldProps) {
   const id = `field-${name}`;
 
   return (

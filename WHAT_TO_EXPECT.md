@@ -3,11 +3,13 @@
 ## Step-by-Step: From Terminal to Browser
 
 ### Step 1: Install Dependencies
+
 ```bash
 npm install
 ```
 
 **What you'll see:**
+
 ```
 added 500+ packages in 45s
 ```
@@ -17,11 +19,13 @@ Takes 30-60 seconds depending on internet speed.
 ---
 
 ### Step 2: Start Dev Server
+
 ```bash
 npm run dev
 ```
 
 **What you'll see:**
+
 ```
   ▲ Next.js 15.3.4
   - Local:        http://localhost:3000
@@ -35,6 +39,7 @@ The server starts in a few seconds. Keep this terminal window open.
 ---
 
 ### Step 3: Open in Browser
+
 Navigate to: **http://localhost:3000**
 
 **What you'll see:**
@@ -117,9 +122,11 @@ A modern corporate website with:
 ## Testing the Contact Form
 
 ### Located At
+
 Bottom of the home page, right side (in the CTA section)
 
 ### Form Fields
+
 - Full name (required)
 - Organization (optional)
 - Email (required)
@@ -132,6 +139,7 @@ Bottom of the home page, right side (in the CTA section)
 1. **Scroll to bottom** of home page
 2. **See the contact form** on the right side
 3. **Fill in the form:**
+
    ```
    Full name: John Doe
    Organization: Test Company
@@ -149,6 +157,7 @@ Bottom of the home page, right side (in the CTA section)
    - Form is read-only
 
 6. **Success message appears:**
+
    ```
    ✅ Thank you! We've received your inquiry and will be in touch shortly.
    ```
@@ -175,30 +184,36 @@ Each error appears **below the field** in red text. Fix the error and try again.
 ## Testing API Directly
 
 ### Open Browser Console
+
 Press: **F12** (or Cmd+Option+I on Mac)
 
 ### Go to Console Tab
+
 Click: **Console** tab
 
 ### Paste This Test Code
+
 ```javascript
-fetch('/api/contact', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
+fetch("/api/contact", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
-    name: 'Test User',
-    email: 'test@example.com',
-    org: 'Test Corp',
-    phone: '123-456-7890',
-    interest: 'Investment Banking',
-    message: 'This is a test message to verify the API works'
-  })
-}).then(r => r.json()).then(d => console.log(d))
+    name: "Test User",
+    email: "test@example.com",
+    org: "Test Corp",
+    phone: "123-456-7890",
+    interest: "Investment Banking",
+    message: "This is a test message to verify the API works",
+  }),
+})
+  .then((r) => r.json())
+  .then((d) => console.log(d));
 ```
 
 ### Press Enter
 
 ### You'll See
+
 ```json
 {
   "success": true,
@@ -213,6 +228,7 @@ This confirms the API is working! ✅
 ## Testing Rate Limiting
 
 ### Do This
+
 1. **Submit contact form 6+ times** in quick succession (within 60 seconds)
 2. **On the 6th submit**, instead of success, you'll see:
    ```
@@ -226,24 +242,29 @@ This is **good!** It means rate limiting is protecting against spam. ✅
 ## Testing Responsive Design
 
 ### Desktop (1920px)
+
 - Full layout with 3 columns
 - Navigation visible
 - All content spread out
 
 ### Tablet (768px)
+
 ```bash
 # In Chrome DevTools: Press Ctrl+Shift+M
 # Select "iPad" or "iPad Pro"
 ```
+
 - Layout adjusts to 2 columns
 - Menu becomes hamburger
 - Content still readable
 
 ### Mobile (375px)
+
 ```bash
 # In Chrome DevTools
 # Select "iPhone 12"
 ```
+
 - Single column layout
 - Menu is hamburger (click to open/close)
 - Touch-friendly buttons
@@ -271,9 +292,11 @@ All pages should load without errors.
 ## Testing the Careers Form
 
 ### Located At
+
 `http://localhost:3000/careers`
 
 ### Form Fields
+
 - Full Name (required)
 - Email Address (required)
 - Phone Number (required)
@@ -283,6 +306,7 @@ All pages should load without errors.
 - Cover Letter (optional)
 
 ### How to Test
+
 1. Navigate to `/careers`
 2. Fill in all fields
 3. Upload a PDF file (any PDF works for testing)
@@ -294,16 +318,19 @@ All pages should load without errors.
 ## Checking for Errors
 
 ### Open Browser Console
+
 Press: **F12**
 
 ### Look at Console Tab
+
 - **Green text** = Normal logs (OK)
 - **Yellow text** = Warnings (OK)
 - **Red text** = Errors (Not OK)
 
 **Expected:** No red errors, maybe some warnings
 
-**Not expected:** 
+**Not expected:**
+
 - `Cannot find module...`
 - `Hydration mismatch...`
 - `API endpoint not found...`
@@ -313,12 +340,14 @@ Press: **F12**
 ## Performance Check
 
 ### Open DevTools Network Tab
+
 1. Press **F12**
 2. Click **Network** tab
 3. Refresh page (Cmd+R or Ctrl+R)
 4. Wait for page to fully load
 
 ### Look for
+
 - ✅ Main JS bundle < 200KB
 - ✅ No 404 errors (red)
 - ✅ All images load
@@ -329,25 +358,30 @@ Press: **F12**
 ## Troubleshooting
 
 ### "Cannot GET /"
+
 - Dev server not running
 - Solution: Run `npm run dev` in terminal
 
 ### "Cannot find module '@/components/sections'"
+
 - Import path wrong
 - Solution: Check `tsconfig.json` has path aliases
 - Should have: `"@/*": ["./src/*"]`
 
 ### Form doesn't submit
+
 - Check browser console for errors
 - Make sure you filled all required fields
 - Check Network tab to see API response
 
 ### Mobile menu doesn't work
+
 - Make sure you're below 768px width
 - Try refreshing page (F5)
 - Check console for JavaScript errors
 
 ### Styles look broken
+
 - Clear browser cache (Ctrl+Shift+Delete)
 - Restart dev server (Ctrl+C, then `npm run dev`)
 - Make sure Tailwind CSS is loaded (check Network tab)
@@ -377,21 +411,25 @@ If all above are checked ✅, **everything is working perfectly!**
 ## What This Proves
 
 ✅ **Functionality Preserved**
+
 - All pages display the same
 - All navigation works
 - All animations play
 
 ✅ **New Features Working**
+
 - Forms submit via API
 - Validation works
 - Rate limiting protects against spam
 
 ✅ **Code Quality Improved**
+
 - Component extracted cleanly
 - Proper error handling
 - Security headers configured
 
 ✅ **Ready for Production**
+
 - Code is maintainable
 - Forms are functional
 - Security is implemented
