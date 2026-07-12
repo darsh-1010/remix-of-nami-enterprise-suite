@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { InsightsList } from "./InsightsList";
 import { ARTICLES } from "@/lib/articles";
 
@@ -21,6 +22,26 @@ export const metadata: Metadata = {
   },
 };
 
+function InsightsLoadingSkeleton() {
+  return (
+    <div className="pb-32">
+      <div className="container-x">
+        <div className="mb-12 h-12 bg-muted rounded animate-pulse" />
+        <div className="mb-8 flex gap-2">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <div key={i} className="h-8 w-20 bg-muted rounded animate-pulse" />
+          ))}
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="h-64 bg-muted rounded animate-pulse" />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function InsightsPage() {
   return (
     <>
@@ -34,11 +55,9 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      <section className="pb-32">
-        <div className="container-x">
-          <InsightsList initialArticles={ARTICLES} />
-        </div>
-      </section>
+      <Suspense fallback={<InsightsLoadingSkeleton />}>
+        <InsightsList initialArticles={ARTICLES} />
+      </Suspense>
     </>
   );
 }

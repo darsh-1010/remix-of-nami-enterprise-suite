@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Calendar, Clock, User, Landmark } from "lucide-react";
-import { ARTICLES } from "@/lib/articles";
+import { ARTICLES, getRelatedArticles } from "@/lib/articles";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -63,7 +63,7 @@ export default async function ArticlePage({ params }: PageProps) {
     bio: "Member of NAMI Group's senior executive team, leading structured advisory desks.",
   };
 
-  const relatedArticles = ARTICLES.filter((a) => a.slug !== slug).slice(0, 2);
+  const relatedArticles = getRelatedArticles(article, ARTICLES, 2);
 
   return (
     <>
@@ -180,9 +180,7 @@ export default async function ArticlePage({ params }: PageProps) {
                     </span>
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {authorInfo.bio}
-                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">{authorInfo.bio}</p>
               </div>
 
               {/* Related Articles */}
@@ -215,7 +213,8 @@ export default async function ArticlePage({ params }: PageProps) {
                   Have a specific mandate?
                 </h4>
                 <p className="text-xs text-muted-foreground leading-relaxed mb-6">
-                  Discuss strategic advisory, capital placement, or tax-structured options with NAMI Group&apos;s desks.
+                  Discuss strategic advisory, capital placement, or tax-structured options with NAMI
+                  Group&apos;s desks.
                 </p>
                 <Link
                   href="/contact"

@@ -5,7 +5,12 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://namigroup.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
-    { url: `${BASE_URL}/`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 1.0 },
+    {
+      url: `${BASE_URL}/`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 1.0,
+    },
     {
       url: `${BASE_URL}/about`,
       lastModified: new Date(),
