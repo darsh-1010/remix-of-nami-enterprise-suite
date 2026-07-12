@@ -21,10 +21,30 @@ import {
 import { ContactForm } from "./contact/ContactForm";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://remix-of-nami-enterprise-suite.vercel.app"),
   title: "NAMI Group — Building the Next Global Financial Corridor",
   description:
-    "Institutional Investment Banking, Treasury, Aviation & Maritime Leasing, Trade Finance and GIFT IFSC advisory across India, UAE, USA, Canada and GIFT IFSC.",
+    "A professionally managed corporate ecosystem delivering Investment Banking, Treasury, Cross-Border Capital, Aviation & Maritime Leasing, and GIFT City IFSC solutions.",
+  keywords: [
+    "NAMI Group",
+    "Investment Banking",
+    "Treasury Advisory",
+    "GIFT City IFSC",
+    "Capfin Advisory",
+    "Cross-Border Capital Corridor",
+    "Aviation Leasing",
+    "Maritime Leasing",
+    "Trade Finance",
+    "Bond Placement",
+  ],
   openGraph: {
+    title: "NAMI Group — Building the Next Global Financial Corridor",
+    description:
+      "A professionally managed corporate ecosystem delivering Investment Banking, Treasury, Cross-Border Capital, Leasing and GIFT IFSC solutions.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "NAMI Group — Building the Next Global Financial Corridor",
     description:
       "A professionally managed corporate ecosystem delivering Investment Banking, Treasury, Cross-Border Capital, Leasing and GIFT IFSC solutions.",
@@ -966,9 +986,22 @@ function CTA() {
                 <span className="block text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
                   Direct Desk
                 </span>
-                <a href="mailto:ib@namigroup.in" className="text-gold font-medium hover:underline">
-                  ib@namigroup.in
-                </a>
+                <div className="flex flex-col gap-1.5">
+                  <a
+                    href="mailto:ib@namigroup.in"
+                    className="text-gold font-medium hover:underline"
+                  >
+                    ib@namigroup.in
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/nami-investment-banking/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gold text-xs font-medium hover:underline flex items-center gap-1"
+                  >
+                    LinkedIn Profile
+                  </a>
+                </div>
               </div>
               <div>
                 <span className="block text-[10px] uppercase tracking-widest text-muted-foreground mb-1">

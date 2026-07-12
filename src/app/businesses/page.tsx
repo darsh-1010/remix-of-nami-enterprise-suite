@@ -13,12 +13,22 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Businesses — NAMI Group Verticals",
+  title: "NAMI Group Businesses — Specialized Financial & Leasing Desks",
   description:
-    "Eight specialised verticals — Investment Banking, Capfin Advisory, Bond & Treasury, Aviation, Maritime, KPO/BPO, Trade Finance and Healthcare Financing.",
+    "Explore NAMI Group's eight specialized business verticals: Investment Banking, ICASPER Capfin, Bond & Treasury, Aviation & Maritime Leasing, KPO/BPO, and Trade Finance.",
+  keywords: [
+    "NAMI Investment Banking",
+    "ICASPER Capfin Advisors",
+    "Bond and Treasury Desk",
+    "Aviation Leasing",
+    "Ship Leasing",
+    "Financial KPO Support",
+    "International Factoring",
+    "HealthTech Financing",
+  ],
   openGraph: {
-    title: "NAMI Group — Business Ecosystem",
-    description: "Eight specialised verticals. One integrated platform.",
+    title: "NAMI Group Businesses — Specialized Financial & Leasing Desks",
+    description: "Eight specialized verticals. One integrated corporate advisory platform.",
   },
 };
 

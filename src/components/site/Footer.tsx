@@ -68,16 +68,6 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/who-we-serve" className="hover:text-gold transition-colors">
-                Who We Serve
-              </Link>
-            </li>
-            <li>
-              <Link href="/leadership" className="hover:text-gold transition-colors">
-                Leadership &amp; Awards
-              </Link>
-            </li>
-            <li>
               <Link href="/careers" className="hover:text-gold transition-colors">
                 Careers
               </Link>
@@ -117,7 +107,7 @@ export function Footer() {
             <li className="flex gap-3 items-center">
               <Linkedin className="h-4 w-4 text-gold shrink-0" />
               <a
-                href="https://linkedin.com/company/nami-group"
+                href="https://www.linkedin.com/company/nami-investment-banking/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gold transition-colors"

@@ -2,12 +2,21 @@ import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Insights — NAMI Group Research & Market Commentary",
+  title: "NAMI Group Insights — Financial Market Research & Commentary",
   description:
-    "Bond markets, treasury, investment banking, leasing, GIFT IFSC, capital markets and macro updates from NAMI Group.",
+    "Stay informed with Next-Gen market intelligence: research on bond markets, corporate treasury duration strategies, GIFT City IFSC regulations, and macro finance commentary.",
+  keywords: [
+    "NAMI Group Insights",
+    "Bond Market Research",
+    "GIFT City Regulations",
+    "Treasury Strategy",
+    "Mid-Market M&A",
+    "Capital Corridor Analysis",
+    "Aviation Finance Insights",
+  ],
   openGraph: {
-    title: "NAMI Group Insights",
-    description: "Research, market commentary and capital-markets perspective.",
+    title: "NAMI Group Insights — Financial Market Research & Commentary",
+    description: "Research, market commentary and capital-markets perspectives.",
   },
 };
 

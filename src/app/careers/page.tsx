@@ -3,9 +3,21 @@ import { Shield, Globe2, Network } from "lucide-react";
 import { CareersForm } from "./CareersForm";
 
 export const metadata: Metadata = {
-  title: "Careers — Join NAMI Group",
+  title: "Careers at NAMI Group — Join Our Capital Advisory Desks",
   description:
-    "Explore career opportunities in Investment Banking, Treasury, Leasing and GIFT IFSC advisory at NAMI Group.",
+    "Explore career opportunities in Investment Banking, Corporate Treasury, structured trade finance, and GIFT City IFSC advisory at NAMI Group.",
+  keywords: [
+    "NAMI Group Careers",
+    "Finance Jobs Gandhinagar",
+    "Investment Banking Analyst",
+    "Treasury Operations Jobs",
+    "GIFT City IFSC Careers",
+    "Financial Analyst Openings",
+  ],
+  openGraph: {
+    title: "Careers at NAMI Group — Join Our Capital Advisory Desks",
+    description: "Build the next global financial corridor. Join our institutional teams.",
+  },
 };
 
 const benefits = [
