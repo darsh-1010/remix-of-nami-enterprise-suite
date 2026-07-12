@@ -28,12 +28,13 @@ export function Hero() {
           <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.98] font-light text-foreground tracking-tight">
             Building the next
             <br />
-            <span className="italic font-extralight text-gradient-gold">global financial</span> corridor.
+            <span className="italic font-extralight text-gradient-gold">global financial</span>{" "}
+            corridor.
           </h1>
 
           <p className="mt-10 max-w-2xl text-lg md:text-xl text-foreground/75 leading-relaxed font-light">
-            A professionally managed corporate ecosystem delivering Investment Banking, Treasury, Cross-Border Capital,
-            Leasing, Technology and GIFT IFSC Solutions.
+            A professionally managed corporate ecosystem delivering Investment Banking, Treasury,
+            Cross-Border Capital, Leasing, Technology and GIFT IFSC Solutions.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-4">

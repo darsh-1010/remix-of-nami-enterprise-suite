@@ -27,14 +27,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const headerClass = mounted && scrolled
-    ? "bg-white/80 border-b border-border/40 backdrop-blur-xl"
-    : "bg-transparent";
+  const headerClass =
+    mounted && scrolled
+      ? "bg-white/80 border-b border-border/40 backdrop-blur-xl"
+      : "bg-transparent";
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${headerClass}`}
-    >
+    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${headerClass}`}>
       <div className="container-x flex items-center justify-between h-20">
         <Link href="/" className="flex items-center gap-3 group">
           <span className="relative flex h-9 w-9 items-center justify-center">

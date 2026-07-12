@@ -25,7 +25,7 @@ export const careersFormSchema = z.object({
     .refine((file) => file.size <= 5 * 1024 * 1024, "Resume must be under 5MB")
     .refine(
       (file) => ["application/pdf", "application/msword"].includes(file.type),
-      "Resume must be PDF or DOC"
+      "Resume must be PDF or DOC",
     ),
   coverLetter: z.string().optional().or(z.literal("")),
 });
