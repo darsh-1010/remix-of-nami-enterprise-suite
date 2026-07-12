@@ -77,7 +77,7 @@ export function ContactForm() {
 
       {success && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded text-green-700 text-sm">
-          Thank you! We've received your inquiry and will be in touch shortly.
+          Thank you! We&apos;ve received your inquiry and will be in touch shortly.
         </div>
       )}
 
