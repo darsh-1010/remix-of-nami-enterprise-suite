@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SplitReveal } from "@/components/motion/SplitReveal";
 import {
   ArrowUpRight,
   Landmark,
@@ -159,11 +160,16 @@ export default function BusinessesPage() {
         />
         <div className="container-x relative">
           <span className="eyebrow">Business Ecosystem</span>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl text-foreground font-light tracking-tight leading-[1]">
-            Eight specialised verticals.
-            <br />
-            <span className="italic text-gradient-gold">One integrated platform.</span>
-          </h1>
+          <SplitReveal
+            as="h1"
+            className="mt-6 font-display text-5xl md:text-7xl text-foreground font-light tracking-tight leading-[1]"
+          >
+            <>
+              Eight specialised verticals.
+              <br />
+              <span className="text-gradient-gold">One integrated platform.</span>
+            </>
+          </SplitReveal>
           <p className="mt-8 max-w-2xl text-muted-foreground text-lg leading-relaxed">
             Each vertical operates as a focused, regulated business — connected by shared
             infrastructure, governance and capital relationships across India, UAE, USA, Canada and
@@ -218,13 +224,18 @@ export default function BusinessesPage() {
 
       <section className="py-24 border-t border-border/40 bg-muted/80">
         <div className="container-x text-center">
-          <h2 className="font-display text-3xl md:text-5xl text-foreground font-light tracking-tight">
-            Discuss a mandate with the relevant{" "}
-            <span className="italic text-gradient-gold">institutional desk.</span>
-          </h2>
+          <SplitReveal
+            as="h2"
+            className="font-display text-3xl md:text-5xl text-foreground font-light tracking-tight"
+          >
+            <>
+              Discuss a mandate with the relevant{" "}
+              <span className="text-gradient-gold">institutional desk.</span>
+            </>
+          </SplitReveal>
           <Link
             href="/contact"
-            className="mt-10 inline-flex items-center gap-3 bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
+            className="mt-10 inline-flex items-center gap-3 rounded-full bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
           >
             Contact the Desk <ArrowUpRight className="h-4 w-4" />
           </Link>

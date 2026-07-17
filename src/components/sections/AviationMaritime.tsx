@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Reveal } from "@/components/motion/Reveal";
+import { SplitReveal } from "@/components/motion/SplitReveal";
 
 interface Card {
   img: string;
@@ -48,11 +50,14 @@ export function AviationMaritime() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-background/40 to-background/10" />
             </div>
-            <div className="absolute inset-0 flex flex-col justify-end p-10 lg:p-16">
+            <Reveal className="absolute inset-0 flex flex-col justify-end p-10 lg:p-16">
               <span className="eyebrow">{c.eyebrow}</span>
-              <h3 className="mt-4 font-display text-3xl md:text-4xl text-foreground font-light max-w-md leading-tight">
-                {c.title}
-              </h3>
+              <SplitReveal
+                as="h3"
+                className="mt-4 font-display text-3xl md:text-4xl text-foreground font-light max-w-md leading-tight"
+              >
+                <>{c.title}</>
+              </SplitReveal>
               <ul className="mt-8 grid grid-cols-2 gap-y-3 gap-x-6 max-w-md">
                 {c.items.map((it) => (
                   <li key={it} className="text-sm text-foreground/75 flex items-center gap-2">
@@ -61,7 +66,7 @@ export function AviationMaritime() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           </article>
         ))}
       </div>

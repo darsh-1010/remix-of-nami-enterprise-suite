@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Calendar, Clock, User, Landmark } from "lucide-react";
 import { ARTICLES, getRelatedArticles } from "@/lib/articles";
+import { SplitReveal } from "@/components/motion/SplitReveal";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -80,9 +81,12 @@ export default async function ArticlePage({ params }: PageProps) {
 
           <span className="eyebrow">{article.cat}</span>
 
-          <h1 className="mt-6 font-display text-3xl md:text-5xl lg:text-6xl text-foreground font-light tracking-tight leading-[1.15] max-w-5xl">
-            {article.title}
-          </h1>
+          <SplitReveal
+            as="h1"
+            className="mt-6 font-display text-3xl md:text-5xl lg:text-6xl text-foreground font-light tracking-tight leading-[1.15] max-w-5xl"
+          >
+            <>{article.title}</>
+          </SplitReveal>
 
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs tracking-wider uppercase text-muted-foreground">
             <div className="flex items-center gap-2">
@@ -207,7 +211,7 @@ export default async function ArticlePage({ params }: PageProps) {
               </div>
 
               {/* Action Callout */}
-              <div className="bg-muted/40 border border-border/60 p-8 text-center">
+              <div className="rounded-2xl bg-muted/40 border border-border/60 p-8 text-center">
                 <Landmark className="h-8 w-8 text-gold mx-auto mb-4" strokeWidth={1.2} />
                 <h4 className="font-display text-lg text-foreground font-light mb-3">
                   Have a specific mandate?
@@ -218,7 +222,7 @@ export default async function ArticlePage({ params }: PageProps) {
                 </p>
                 <Link
                   href="/contact"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-gold text-navy-deep py-3 text-xs tracking-wider uppercase font-medium hover:bg-gold-bright transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gold text-navy-deep py-3 text-xs tracking-wider uppercase font-medium hover:bg-gold-bright transition-all"
                 >
                   Contact the Desk
                   <ArrowUpRight className="h-3.5 w-3.5" />

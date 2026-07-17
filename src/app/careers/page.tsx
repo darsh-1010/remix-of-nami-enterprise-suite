@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Shield, Globe2, Network } from "lucide-react";
 import { CareersForm } from "./CareersForm";
+import { SplitReveal } from "@/components/motion/SplitReveal";
 
 export const metadata: Metadata = {
   title: "Careers at NAMI Group — Join Our Capital Advisory Desks",
@@ -69,9 +70,14 @@ export default function CareersPage() {
         />
         <div className="container-x relative">
           <span className="eyebrow">Careers</span>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl text-foreground font-light tracking-tight max-w-4xl leading-[1]">
-            Join the <span className="italic text-gradient-gold">corridor of trust.</span>
-          </h1>
+          <SplitReveal
+            as="h1"
+            className="mt-6 font-display text-5xl md:text-7xl text-foreground font-light tracking-tight max-w-4xl leading-[1]"
+          >
+            <>
+              Join the <span className="text-gradient-gold">corridor of trust.</span>
+            </>
+          </SplitReveal>
           <p className="mt-8 max-w-2xl text-muted-foreground text-lg">
             NAMI Group is built on professional integrity, pristine compliance, and strategic
             footprints. We recruit professionals who seek to lead in capital markets, treasury
@@ -86,7 +92,7 @@ export default function CareersPage() {
             {benefits.map((b, i) => {
               const Icon = b.icon;
               return (
-                <div key={i} className="bg-card border border-border/40 p-8">
+                <div key={i} className="rounded-2xl bg-card border border-border/40 p-8">
                   <Icon className="h-8 w-8 text-gold mb-6" strokeWidth={1.2} />
                   <h3 className="font-display text-xl text-foreground mb-3">{b.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{b.desc}</p>
@@ -101,14 +107,17 @@ export default function CareersPage() {
         <div className="container-x grid lg:grid-cols-12 gap-16">
           {/* Jobs List */}
           <div className="lg:col-span-7">
-            <h2 className="font-display text-3xl text-foreground font-light mb-8">
-              Open Opportunities
-            </h2>
+            <SplitReveal
+              as="h2"
+              className="font-display text-3xl text-foreground font-light mb-8"
+            >
+              <>Open Opportunities</>
+            </SplitReveal>
             <div className="space-y-6">
               {jobs.map((job, idx) => (
                 <div
                   key={idx}
-                  className="border border-border/60 bg-card p-8 hover:border-gold/60 transition-colors"
+                  className="rounded-2xl border border-border/60 bg-card p-8 hover:border-gold/60 transition-colors"
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2 text-xs tracking-wider uppercase text-gold">
                     <span>{job.dept}</span>

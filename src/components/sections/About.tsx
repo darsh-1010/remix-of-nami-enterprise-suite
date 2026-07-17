@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SplitReveal } from "@/components/motion/SplitReveal";
 
 export function About() {
   return (
@@ -21,10 +22,12 @@ export function About() {
 
         <div className="lg:col-span-7">
           <span className="eyebrow">About NAMI Group</span>
-          <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-foreground font-light tracking-tight">
-            An integrated financial ecosystem —{" "}
-            <span className="italic text-gradient-gold">engineered for institutions.</span>
-          </h2>
+          <SplitReveal as="h2" className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-foreground font-light tracking-tight">
+            <>
+              An integrated financial ecosystem —{" "}
+              <span className="text-gradient-gold">engineered for institutions.</span>
+            </>
+          </SplitReveal>
           <p className="mt-8 text-muted-foreground text-lg leading-relaxed font-light">
             NAMI Group is dedicated to providing premier Investment Banking, Treasury, cross-border
             capital raising and GIFT IFSC solutions — directing institutional wealth frameworks and
@@ -50,7 +53,7 @@ export function About() {
                 d: "Workflow, risk and data infrastructure integrated end-to-end.",
               },
             ].map((b) => (
-              <div key={b.t} className="bg-card border border-border/40 p-6">
+              <div key={b.t} className="rounded-2xl bg-card border border-border/40 p-6">
                 <h3 className="font-display text-base text-gold mb-2">{b.t}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{b.d}</p>
               </div>

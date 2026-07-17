@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { Reveal } from "@/components/motion/Reveal";
+import { SplitReveal } from "@/components/motion/SplitReveal";
 
 export function Gift() {
   const items = [
@@ -19,15 +21,20 @@ export function Gift() {
         style={{ background: "var(--gradient-radial-gold)" }}
       />
       <div className="container-x relative">
-        <div className="glass-strong p-10 md:p-16 lg:p-20">
+        <div className="glass-strong rounded-3xl p-10 md:p-16 lg:p-20">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5">
+            <Reveal className="lg:col-span-5">
               <span className="eyebrow">GIFT IFSC Solutions</span>
-              <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
-                The gateway to{" "}
-                <span className="italic text-gradient-gold">India&apos;s global financial</span>{" "}
-                jurisdiction.
-              </h2>
+              <SplitReveal
+                as="h2"
+                className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
+              >
+                <>
+                  The gateway to{" "}
+                  <span className="text-gradient-gold">India&apos;s global financial</span>{" "}
+                  jurisdiction.
+                </>
+              </SplitReveal>
               <p className="mt-8 text-muted-foreground leading-relaxed">
                 Dedicated IFSC structuring, advisory and execution — purpose-built for funds,
                 treasuries, leasing vehicles and international institutional capital.
@@ -38,15 +45,19 @@ export function Gift() {
               >
                 Explore IFSC capability <ArrowUpRight className="h-4 w-4" />
               </Link>
-            </div>
-            <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-border/40">
+            </Reveal>
+            <div className="lg:col-span-7 grid sm:grid-cols-2 gap-3">
               {items.map((it, i) => (
-                <div key={it} className="bg-muted/40 p-6 flex items-center gap-4">
+                <Reveal
+                  key={it}
+                  delay={(i % 4) * 0.08}
+                  className="rounded-xl bg-muted/40 p-6 flex items-center gap-4"
+                >
                   <span className="font-display text-xs text-gold tabular-nums">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="text-foreground/90 text-sm">{it}</span>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>

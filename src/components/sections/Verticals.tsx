@@ -9,6 +9,8 @@ import {
   HeartPulse,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { Reveal } from "@/components/motion/Reveal";
+import { SplitReveal } from "@/components/motion/SplitReveal";
 
 interface Vertical {
   no: string;
@@ -81,22 +83,28 @@ export function Verticals() {
   return (
     <section className="py-32 bg-muted/60 relative">
       <div className="container-x">
-        <div className="max-w-3xl mb-16">
+        <Reveal className="max-w-3xl mb-16">
           <span className="eyebrow">Business Ecosystem</span>
-          <h2 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-foreground font-light tracking-tight">
-            Eight specialised verticals.
-            <br />
-            <span className="italic text-gradient-gold">One integrated platform.</span>
-          </h2>
-        </div>
+          <SplitReveal
+            as="h2"
+            className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-foreground font-light tracking-tight"
+          >
+            <>
+              Eight specialised verticals.
+              <br />
+              <span className="text-gradient-gold">One integrated platform.</span>
+            </>
+          </SplitReveal>
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/40">
-          {verticals.map((v) => {
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {verticals.map((v, i) => {
             const Icon = v.icon;
             return (
-              <article
+              <Reveal
                 key={v.no}
-                className="group bg-muted/60 p-8 hover:bg-muted/60 transition-all duration-500 relative"
+                delay={(i % 4) * 0.08}
+                className="group bg-muted/60 rounded-2xl border border-border/40 p-8 hover:bg-muted/40 hover:shadow-elegant transition-all duration-500 relative"
               >
                 <div className="flex items-start justify-between mb-8">
                   <span className="font-display text-xs tracking-[0.3em] text-gold/70">{v.no}</span>
@@ -120,7 +128,7 @@ export function Verticals() {
                   ))}
                 </div>
                 <div className="mt-8 h-px bg-gradient-to-r from-gold/40 to-transparent w-0 group-hover:w-full transition-all duration-700" />
-              </article>
+              </Reveal>
             );
           })}
         </div>

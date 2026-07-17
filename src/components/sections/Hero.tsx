@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { SplitReveal } from "@/components/motion/SplitReveal";
 
 export function Hero() {
   return (
@@ -25,12 +26,16 @@ export function Hero() {
             <span className="eyebrow">Corporate Profile · 2025</span>
           </div>
 
-          <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.98] font-light text-foreground tracking-tight">
-            Building the next
-            <br />
-            <span className="italic font-extralight text-gradient-gold">global financial</span>{" "}
-            corridor.
-          </h1>
+          <SplitReveal
+            as="h1"
+            className="font-display text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.98] font-light text-foreground tracking-tight"
+          >
+            <>
+              Building the next
+              <br />
+              <span className="font-extralight text-gradient-gold">global financial</span> corridor.
+            </>
+          </SplitReveal>
 
           <p className="mt-10 max-w-2xl text-lg md:text-xl text-foreground/75 leading-relaxed font-light">
             A professionally managed corporate ecosystem delivering Investment Banking, Treasury,
@@ -40,14 +45,14 @@ export function Hero() {
           <div className="mt-12 flex flex-wrap items-center gap-4">
             <Link
               href="/businesses"
-              className="group inline-flex items-center gap-3 bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
+              className="group inline-flex items-center gap-3 rounded-full bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
             >
               Explore Our Businesses
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 border border-border text-foreground px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:border-gold hover:text-gold transition-all"
+              className="inline-flex items-center gap-3 rounded-full border border-border text-foreground px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:border-gold hover:text-gold transition-all"
             >
               Contact Us
             </Link>

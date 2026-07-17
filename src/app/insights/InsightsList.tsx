@@ -186,7 +186,7 @@ export function InsightsList({ initialArticles }: InsightsListProps) {
             {sortedArticles.map((a) => (
               <article
                 key={a.slug}
-                className="article-card bg-card border border-border/40 p-8 group hover:bg-muted/30 transition-colors flex flex-col justify-between"
+                className="article-card rounded-2xl bg-card border border-border/40 p-8 group hover:bg-muted/30 transition-colors flex flex-col justify-between"
               >
                 <Link href={`/insights/${a.slug}`} className="flex flex-col h-full">
                   <div className="flex items-center justify-between text-[10px] tracking-[0.28em] uppercase">

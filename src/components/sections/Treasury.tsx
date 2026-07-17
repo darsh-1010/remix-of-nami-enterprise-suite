@@ -1,4 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
+import { Reveal } from "@/components/motion/Reveal";
+import { SplitReveal } from "@/components/motion/SplitReveal";
 
 export function Treasury() {
   const left = [
@@ -21,15 +23,20 @@ export function Treasury() {
   return (
     <section className="py-32 bg-muted/60">
       <div className="container-x">
-        <div className="max-w-3xl mb-16">
+        <Reveal className="max-w-3xl mb-16">
           <span className="eyebrow">Treasury & Capital Markets</span>
-          <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
-            Institutional fixed-income, <span className="italic text-gradient-gold">at scale.</span>
-          </h2>
-        </div>
+          <SplitReveal
+            as="h2"
+            className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
+          >
+            <>
+              Institutional fixed-income, <span className="text-gradient-gold">at scale.</span>
+            </>
+          </SplitReveal>
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-px bg-border/40">
-          <div className="bg-muted/60 p-10">
+        <div className="grid md:grid-cols-2 gap-4">
+          <Reveal className="rounded-2xl border border-border/40 bg-muted/60 p-10">
             <h3 className="text-xs tracking-[0.28em] uppercase text-gold mb-8">Instruments</h3>
             <ul className="space-y-5">
               {left.map((it) => (
@@ -44,8 +51,8 @@ export function Treasury() {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="bg-muted/60 p-10">
+          </Reveal>
+          <Reveal delay={0.1} className="rounded-2xl border border-border/40 bg-muted/60 p-10">
             <h3 className="text-xs tracking-[0.28em] uppercase text-gold mb-8">Advisory</h3>
             <ul className="space-y-5">
               {right.map((it) => (
@@ -58,7 +65,7 @@ export function Treasury() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

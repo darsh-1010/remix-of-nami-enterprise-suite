@@ -12,8 +12,7 @@ export function Marquee() {
   return (
     <section className="border-y border-border/40 bg-muted/40 py-6 overflow-hidden">
       <div
-        className="flex gap-16 animate-[shimmer_40s_linear_infinite] whitespace-nowrap will-change-transform"
-        style={{ animationDuration: "60s" }}
+        className="flex gap-16 animate-[ticker_40s_linear_infinite] whitespace-nowrap will-change-transform hover:[animation-play-state:paused]"
       >
         {[...items, ...items, ...items].map((it, i) => (
           <span

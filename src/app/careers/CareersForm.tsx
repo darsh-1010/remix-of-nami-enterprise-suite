@@ -71,7 +71,7 @@ export function CareersForm() {
       <h3 className="font-display text-2xl text-foreground mb-6">Submit Application</h3>
 
       {success ? (
-        <div className="border border-gold/40 p-6 text-center">
+        <div className="rounded-2xl border border-gold/40 p-6 text-center">
           <h4 className="font-display text-lg text-gold mb-2">Thank you</h4>
           <p className="text-sm text-muted-foreground">
             Your application has been received. Our HR team will review your details and reach out
@@ -143,7 +143,7 @@ export function CareersForm() {
               type="file"
               required
               accept=".pdf,.doc,.docx"
-              className="mt-2 w-full text-sm text-muted-foreground file:mr-4 file:py-2 file:px-4 file:border-0 file:text-xs file:font-semibold file:bg-gold file:text-navy-deep hover:file:bg-gold-bright file:cursor-pointer cursor-pointer border border-border p-2"
+              className="mt-2 w-full text-sm text-muted-foreground file:mr-4 file:py-2 file:px-4 file:border-0 file:rounded-full file:text-xs file:font-semibold file:bg-gold file:text-navy-deep hover:file:bg-gold-bright file:cursor-pointer cursor-pointer rounded-xl border border-border p-2"
               disabled={isLoading}
             />
             {fieldErrors.resume && (

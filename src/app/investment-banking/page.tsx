@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SplitReveal } from "@/components/motion/SplitReveal";
 import {
   ArrowUpRight,
   TrendingUp,
@@ -297,11 +298,16 @@ export default function InvestmentBankingPage() {
         />
         <div className="container-x relative">
           <span className="eyebrow">Investment Banking</span>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl text-foreground font-light tracking-tight leading-[1]">
-            High-impact financial blueprints
-            <br />
-            <span className="italic text-gradient-gold">designed for major capital placements.</span>
-          </h1>
+          <SplitReveal
+            as="h1"
+            className="mt-6 font-display text-5xl md:text-7xl text-foreground font-light tracking-tight leading-[1]"
+          >
+            <>
+              High-impact financial blueprints
+              <br />
+              <span className="text-gradient-gold">designed for major capital placements.</span>
+            </>
+          </SplitReveal>
           <p className="mt-8 max-w-2xl text-muted-foreground text-lg leading-relaxed">
             Blending the comprehensive analytical depth of tier-one banks with the dedicated focus of an elite corporate advisory boutique. We combine strategic counsel with institutional-grade execution models across capital markets, M&A, and structured finance.
           </p>
@@ -365,9 +371,12 @@ export default function InvestmentBankingPage() {
         <div className="container-x">
           <div className="mb-16">
             <span className="eyebrow">Proven Track Record</span>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
-              Eight years of institutional-grade results
-            </h2>
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
+            >
+              <>Eight years of institutional-grade results</>
+            </SplitReveal>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {trackRecordMetrics.map((item, i) => (
@@ -390,11 +399,16 @@ export default function InvestmentBankingPage() {
         <div className="container-x">
           <div className="mb-16">
             <span className="eyebrow">Market Coverage</span>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
-              Sector-agnostic expertise
-              <br />
-              <span className="italic text-gradient-gold">across six key verticals.</span>
-            </h2>
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
+            >
+              <>
+                Sector-agnostic expertise
+                <br />
+                <span className="text-gradient-gold">across six key verticals.</span>
+              </>
+            </SplitReveal>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {sectorCoverage.map((sector, i) => {
@@ -421,9 +435,12 @@ export default function InvestmentBankingPage() {
         <div className="container-x">
           <div className="mb-16">
             <span className="eyebrow">Core Strengths</span>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
-              Five commitments to excellence
-            </h2>
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
+            >
+              <>Five commitments to excellence</>
+            </SplitReveal>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {coreStrengths.map((strength, i) => (
@@ -446,9 +463,12 @@ export default function InvestmentBankingPage() {
         <div className="container-x">
           <div className="mb-16">
             <span className="eyebrow">Global Reach</span>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
-              Institutional channels across key corridors
-            </h2>
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
+            >
+              <>Institutional channels across key corridors</>
+            </SplitReveal>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <article className="border border-border/40 rounded-lg p-8 hover:border-gold/40 transition-colors">
@@ -489,11 +509,16 @@ export default function InvestmentBankingPage() {
         <div className="container-x">
           <div className="mb-16">
             <span className="eyebrow">Leadership Team</span>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
-              Decades of institutional
-              <br />
-              <span className="italic text-gradient-gold">investment banking expertise.</span>
-            </h2>
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
+            >
+              <>
+                Decades of institutional
+                <br />
+                <span className="text-gradient-gold">investment banking expertise.</span>
+              </>
+            </SplitReveal>
           </div>
           <div className="grid sm:grid-cols-2 gap-8">
             {leadership.map((member, i) => (
@@ -535,17 +560,22 @@ export default function InvestmentBankingPage() {
       {/* CTA Section */}
       <section className="py-24 border-t border-border/40 bg-muted/80">
         <div className="container-x text-center">
-          <h2 className="font-display text-3xl md:text-5xl text-foreground font-light tracking-tight">
-            Ready to discuss your
-            <br />
-            <span className="italic text-gradient-gold">institutional mandate?</span>
-          </h2>
+          <SplitReveal
+            as="h2"
+            className="font-display text-3xl md:text-5xl text-foreground font-light tracking-tight"
+          >
+            <>
+              Ready to discuss your
+              <br />
+              <span className="text-gradient-gold">institutional mandate?</span>
+            </>
+          </SplitReveal>
           <p className="mt-6 max-w-2xl mx-auto text-muted-foreground leading-relaxed">
             Contact our investment banking team to explore capital markets, M&A advisory, structured finance, or sustainability-linked solutions for your transaction.
           </p>
           <Link
             href="/contact"
-            className="mt-10 inline-flex items-center gap-3 bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
+            className="mt-10 inline-flex items-center gap-3 rounded-full bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
           >
             Contact Investment Banking <ArrowUpRight className="h-4 w-4" />
           </Link>

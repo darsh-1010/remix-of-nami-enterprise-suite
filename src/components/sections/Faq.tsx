@@ -1,3 +1,6 @@
+import { Reveal } from "@/components/motion/Reveal";
+import { SplitReveal } from "@/components/motion/SplitReveal";
+
 interface Faq {
   q: string;
   a: string;
@@ -28,45 +31,44 @@ export function Faq() {
   ];
 
   return (
-    <section className="py-32 bg-muted/30 border-y border-border/40">
+    <section className="py-32 bg-white border-y border-border/40">
       <div className="container-x max-w-4xl">
-        <div className="text-center mb-16">
-          <span className="eyebrow">FAQ</span>
-          <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
-            Frequently Asked <span className="italic text-gradient-gold">Questions.</span>
-          </h2>
-        </div>
+        <Reveal className="text-center mb-16">
+          <span className="eyebrow text-sky">FAQ</span>
+          <SplitReveal as="h2" className="mt-6 font-display text-4xl md:text-5xl text-navy-deep font-light tracking-tight">
+            <>Frequently Asked Questions.</>
+          </SplitReveal>
+        </Reveal>
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
-            <details
-              key={idx}
-              className="group border border-border/60 bg-card p-6 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden"
-            >
-              <summary className="flex items-center justify-between cursor-pointer focus:outline-none">
-                <span className="font-display text-lg text-foreground font-medium group-hover:text-gold transition-colors">
-                  {faq.q}
-                </span>
-                <span className="ml-1.5 flex-shrink-0 rounded-full border border-border p-1.5 text-muted-foreground group-open:rotate-180 transition-transform duration-300">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </span>
-              </summary>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground border-t border-border/30 pt-4">
-                {faq.a}
-              </p>
-            </details>
+            <Reveal key={idx} delay={idx * 0.06}>
+              <details className="group rounded-2xl border border-border/60 bg-white p-6 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden hover:border-sky/40">
+                <summary className="flex items-center justify-between cursor-pointer focus:outline-none">
+                  <span className="font-display text-lg text-navy-deep font-medium group-hover:text-sky transition-colors">
+                    {faq.q}
+                  </span>
+                  <span className="ml-1.5 flex-shrink-0 rounded-full border border-border p-1.5 text-muted-foreground group-open:rotate-180 transition-transform duration-300">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground border-t border-border/30 pt-4">
+                  {faq.a}
+                </p>
+              </details>
+            </Reveal>
           ))}
         </div>
       </div>

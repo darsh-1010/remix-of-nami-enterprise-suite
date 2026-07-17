@@ -50,54 +50,58 @@
   --color-gold: var(--gold);
   --color-gold-bright: var(--gold-bright);
   --color-platinum: var(--platinum);
-  --font-display: "Playfair Display", "Space Grotesk", ui-serif, Georgia, serif;
-  --font-sans: "Manrope", ui-sans-serif, system-ui;
-  --font-body: "Inter", ui-sans-serif, system-ui;
+  --color-sky: var(--sky);
+  --color-sky-bright: var(--sky-bright);
+  --font-display: "General Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "General Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "General Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.25rem;
+  --radius: 0.5rem;
 
-  /* Brand Constants */
-  --brand-navy-deep: oklch(0.16 0.04 250); /* #071A2F */
-  --brand-navy: oklch(0.2 0.045 250);
-  --brand-navy-elevated: oklch(0.26 0.04 250);
-  --brand-gold: oklch(0.62 0.08 80); /* #A3844C - slightly darker gold for light background */
-  --brand-gold-bright: oklch(0.72 0.1 82);
-  --brand-platinum: oklch(0.92 0.005 250);
+  /* Brand Constants — warm editorial palette (cream / sand / brown) */
+  --brand-navy-deep: #201a15; /* deep warm charcoal-brown, primary text/dark surface */
+  --brand-navy: #362720; /* mid brown, secondary dark surface */
+  --brand-navy-elevated: #4e392e; /* elevated brown, e.g. cards on dark sections */
+  --brand-gold: #c29e77; /* sand accent — CTAs, eyebrows, hover */
+  --brand-gold-bright: #d8bc95; /* lighter sand for hover/bright states */
+  --brand-platinum: #f1e8d9; /* cream */
+  --brand-sky: #7d9cb8; /* cool blue accent for lower-funnel "white" sections */
+  --brand-sky-bright: #5d7f9c; /* darker blue for hover states */
 
   /* Semantic — light by default */
-  --background: oklch(0.98 0.003 250); /* Soft warm off-white #FAF9F6 */
-  --foreground: var(--brand-navy-deep); /* Deep navy for text */
-  --card: oklch(1 0 0); /* Pure white for cards */
+  --background: #f6f1e7; /* warm cream background */
+  --foreground: var(--brand-navy-deep);
+  --card: #fbf8f2; /* soft warm white for cards */
   --card-foreground: var(--brand-navy-deep);
-  --popover: oklch(1 0 0);
+  --popover: #fbf8f2;
   --popover-foreground: var(--brand-navy-deep);
   --primary: var(--brand-gold);
-  --primary-foreground: oklch(0.98 0.003 250);
-  --secondary: oklch(0.95 0.005 250); /* Very light gray/slate background */
+  --primary-foreground: var(--brand-navy-deep);
+  --secondary: #ece1cd; /* deeper cream */
   --secondary-foreground: var(--brand-navy-deep);
-  --muted: oklch(0.96 0.004 250); /* Light warm gray for section backgrounds */
-  --muted-foreground: oklch(0.45 0.01 250); /* Medium slate gray for subtext */
+  --muted: #ede3d2; /* warm beige for section backgrounds */
+  --muted-foreground: #6b5d4f; /* warm brown-grey for subtext */
   --accent: var(--brand-gold);
-  --accent-foreground: oklch(0.98 0.003 250);
+  --accent-foreground: var(--brand-navy-deep);
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.16 0.04 250 / 0.08); /* Subtle navy/gray borders */
-  --input: oklch(0.16 0.04 250 / 0.12);
+  --border: rgba(32, 26, 21, 0.1); /* warm charcoal border */
+  --input: rgba(32, 26, 21, 0.14);
   --ring: var(--brand-gold);
   --chart-1: var(--brand-gold);
-  --chart-2: oklch(0.2 0.045 250);
-  --chart-3: oklch(0.45 0.01 250);
-  --chart-4: oklch(0.72 0.1 82);
-  --chart-5: oklch(0.3 0.02 250);
-  --sidebar: oklch(0.98 0.003 250);
+  --chart-2: var(--brand-navy);
+  --chart-3: #6b5d4f;
+  --chart-4: var(--brand-gold-bright);
+  --chart-5: var(--brand-navy-elevated);
+  --sidebar: #f6f1e7;
   --sidebar-foreground: var(--brand-navy-deep);
   --sidebar-primary: var(--brand-gold);
-  --sidebar-primary-foreground: oklch(0.98 0.003 250);
-  --sidebar-accent: oklch(0.95 0.005 250);
+  --sidebar-primary-foreground: var(--brand-navy-deep);
+  --sidebar-accent: #ece1cd;
   --sidebar-accent-foreground: var(--brand-navy-deep);
-  --sidebar-border: oklch(0.16 0.04 250 / 0.08);
+  --sidebar-border: rgba(32, 26, 21, 0.1);
   --sidebar-ring: var(--brand-gold);
 
   /* Backward Compatibility Mappings */
@@ -107,16 +111,14 @@
   --gold: var(--brand-gold);
   --gold-bright: var(--brand-gold-bright);
   --platinum: var(--brand-platinum);
+  --sky: var(--brand-sky);
+  --sky-bright: var(--brand-sky-bright);
 
-  --gradient-gold: linear-gradient(135deg, oklch(0.72 0.1 82), oklch(0.6 0.08 78));
-  --gradient-navy: linear-gradient(180deg, oklch(0.22 0.04 250), oklch(0.14 0.03 250));
-  --gradient-radial-gold: radial-gradient(
-    ellipse at top,
-    oklch(0.62 0.08 80 / 0.06),
-    transparent 60%
-  );
-  --shadow-elegant: 0 30px 80px -30px oklch(0.16 0.04 250 / 0.1);
-  --shadow-gold: 0 20px 60px -20px oklch(0.62 0.08 80 / 0.15);
+  --gradient-gold: linear-gradient(135deg, #d8bc95, #b98a5c);
+  --gradient-navy: linear-gradient(180deg, #362720, #1a1310);
+  --gradient-radial-gold: radial-gradient(ellipse at top, rgba(194, 158, 119, 0.1), transparent 60%);
+  --shadow-elegant: 0 30px 80px -30px rgba(32, 26, 21, 0.14);
+  --shadow-gold: 0 20px 60px -20px rgba(194, 158, 119, 0.25);
 }
 
 @layer base {
@@ -182,23 +184,23 @@
 }
 
 @utility glass {
-  background: oklch(1 0 0 / 0.7);
+  background: rgba(251, 248, 242, 0.7);
   backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid oklch(0.16 0.04 250 / 0.08);
+  border: 1px solid rgba(32, 26, 21, 0.08);
 }
 
 @utility glass-strong {
-  background: oklch(1 0 0 / 0.85);
+  background: rgba(251, 248, 242, 0.88);
   backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid oklch(0.16 0.04 250 / 0.12);
+  border: 1px solid rgba(32, 26, 21, 0.12);
 }
 
-@keyframes shimmer {
+@keyframes ticker {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(-33.3333%);
   }
 }
 
@@ -240,6 +242,7 @@
   width: 100%;
   background-color: transparent;
   border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
   padding: 0.75rem 1rem;
   color: var(--color-foreground);
   font-size: 0.875rem;
@@ -265,6 +268,7 @@
   background-color: var(--gold);
   color: var(--navy-deep);
   padding: 1rem 2rem;
+  border-radius: 9999px;
   font-size: 0.875rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -279,9 +283,10 @@
 }
 
 @utility card-glass {
-  background: oklch(1 0 0 / 0.7);
+  background: rgba(251, 248, 242, 0.7);
   backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid oklch(0.16 0.04 250 / 0.08);
+  border: 1px solid rgba(32, 26, 21, 0.08);
+  border-radius: 1.25rem;
   padding: 2rem;
 
   @media (min-width: 768px) {

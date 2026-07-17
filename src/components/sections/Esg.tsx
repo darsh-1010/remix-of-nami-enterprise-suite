@@ -1,3 +1,6 @@
+import { Reveal } from "@/components/motion/Reveal";
+import { SplitReveal } from "@/components/motion/SplitReveal";
+
 interface EsgItem {
   t: string;
   d: string;
@@ -13,23 +16,27 @@ export function Esg() {
     { t: "Global Standards", d: "Aligned with international institutional benchmarks." },
   ];
   return (
-    <section className="py-32 bg-muted/60 border-y border-border/40">
+    <section className="py-32 bg-white border-y border-border/40">
       <div className="container-x">
-        <div className="max-w-3xl mb-16">
-          <span className="eyebrow">ESG & Governance</span>
-          <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
-            Governance as a <span className="italic text-gradient-gold">first principle.</span>
-          </h2>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border/40">
+        <Reveal className="max-w-3xl mb-16">
+          <span className="eyebrow text-sky">ESG & Governance</span>
+          <SplitReveal as="h2" className="mt-6 font-display text-4xl md:text-5xl text-navy-deep font-light tracking-tight">
+            <>Governance as a first principle.</>
+          </SplitReveal>
+        </Reveal>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {items.map((it, i) => (
-            <div key={it.t} className="bg-muted/60 p-8">
-              <span className="font-display text-xs text-gold tabular-nums tracking-[0.28em]">
+            <Reveal
+              key={it.t}
+              delay={(i % 3) * 0.08}
+              className="rounded-2xl border border-border/40 bg-white hover:border-sky/50 transition-colors duration-300 p-8"
+            >
+              <span className="font-display text-xs text-sky tabular-nums tracking-[0.28em]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-4 font-display text-xl text-foreground">{it.t}</h3>
+              <h3 className="mt-4 font-display text-xl text-navy-deep">{it.t}</h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{it.d}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

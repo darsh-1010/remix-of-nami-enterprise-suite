@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { SplitReveal } from "@/components/motion/SplitReveal";
 import {
   ArrowUpRight,
   Award,
@@ -171,10 +172,15 @@ export default function AboutPage() {
         />
         <div className="container-x relative">
           <span className="eyebrow">About</span>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl lg:text-8xl text-foreground font-light tracking-tight leading-[0.98] max-w-5xl">
-            A professionally managed{" "}
-            <span className="italic text-gradient-gold">corporate ecosystem.</span>
-          </h1>
+          <SplitReveal
+            as="h1"
+            className="mt-6 font-display text-5xl md:text-7xl lg:text-8xl text-foreground font-light tracking-tight leading-[0.98] max-w-5xl"
+          >
+            <>
+              A professionally managed{" "}
+              <span className="text-gradient-gold">corporate ecosystem.</span>
+            </>
+          </SplitReveal>
           <p className="mt-10 max-w-2xl text-lg text-muted-foreground leading-relaxed font-light">
             NAMI Group is dedicated to providing premier Investment Banking, Treasury, cross-border
             capital raising and GIFT City IFSC solutions — directing institutional wealth frameworks
@@ -188,9 +194,14 @@ export default function AboutPage() {
         <div className="container-x grid lg:grid-cols-2 gap-16">
           <div>
             <span className="eyebrow">Vision</span>
-            <h2 className="mt-6 font-display text-3xl md:text-4xl text-foreground font-light leading-tight">
-              To be the most trusted institutional financial corridor connecting India to the world.
-            </h2>
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-3xl md:text-4xl text-foreground font-light leading-tight"
+            >
+              <>
+                To be the most trusted institutional financial corridor connecting India to the world.
+              </>
+            </SplitReveal>
           </div>
           <div>
             <span className="eyebrow">Mission</span>
@@ -221,9 +232,12 @@ export default function AboutPage() {
           <div className="lg:col-span-7">
             <span className="eyebrow">Chairman&apos;s Message</span>
             <div className="flex items-center gap-4 mt-6">
-              <h2 className="font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
-                CA Dipen U. Shah
-              </h2>
+              <SplitReveal
+                as="h2"
+                className="font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
+              >
+                <>CA Dipen U. Shah</>
+              </SplitReveal>
               <a
                 href="https://www.linkedin.com/in/dipen-shah-ca-l-cs-49931033"
                 target="_blank"
@@ -257,10 +271,15 @@ export default function AboutPage() {
         <div className="container-x">
           <div className="mb-16">
             <span className="eyebrow">Target Segments</span>
-            <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
-              Strategic partnership for{" "}
-              <span className="italic text-gradient-gold">global capital.</span>
-            </h2>
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
+            >
+              <>
+                Strategic partnership for{" "}
+                <span className="text-gradient-gold">global capital.</span>
+              </>
+            </SplitReveal>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {segments.map((s, idx) => {
@@ -268,7 +287,7 @@ export default function AboutPage() {
               return (
                 <div
                   key={idx}
-                  className="bg-card border border-border/60 p-8 md:p-12 hover:border-gold/60 transition-all flex flex-col justify-between"
+                  className="rounded-2xl bg-card border border-border/60 p-8 md:p-12 hover:border-gold/60 transition-all flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-8">
@@ -315,10 +334,15 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-12 gap-12 items-start mb-16">
             <div className="lg:col-span-6">
               <span className="eyebrow">Sector Expertise</span>
-              <h2 className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight">
-                Global sector coverage &amp;{" "}
-                <span className="italic text-gradient-gold">market depths.</span>
-              </h2>
+              <SplitReveal
+                as="h2"
+                className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
+              >
+                <>
+                  Global sector coverage &amp;{" "}
+                  <span className="text-gradient-gold">market depths.</span>
+                </>
+              </SplitReveal>
             </div>
             <p className="lg:col-span-6 text-muted-foreground text-base leading-relaxed font-light">
               We leverage deep vertical domain expertise to structure, advise, and execute
@@ -361,7 +385,7 @@ export default function AboutPage() {
             ].map((s) => (
               <div
                 key={s.title}
-                className="bg-card border border-border/40 p-8 hover:border-gold/60 transition-colors"
+                className="rounded-2xl bg-card border border-border/40 p-8 hover:border-gold/60 transition-colors"
               >
                 <span className="text-xs font-semibold uppercase tracking-widest text-gold">
                   {s.depth}
@@ -382,10 +406,15 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5">
               <span className="eyebrow">Connectivity</span>
-              <h2 className="mt-6 font-display text-4xl text-foreground font-light tracking-tight">
-                Global connectivity &amp;{" "}
-                <span className="italic text-gradient-gold">strategic channels.</span>
-              </h2>
+              <SplitReveal
+                as="h2"
+                className="mt-6 font-display text-4xl text-foreground font-light tracking-tight"
+              >
+                <>
+                  Global connectivity &amp;{" "}
+                  <span className="text-gradient-gold">strategic channels.</span>
+                </>
+              </SplitReveal>
               <p className="mt-8 text-sm text-muted-foreground leading-relaxed font-light">
                 NAMI maintains direct links with cross-border institutional bodies and offshore
                 regulatory agencies to accelerate client execution corridors outside mainland India.
@@ -410,7 +439,7 @@ export default function AboutPage() {
                   d: "Direct connections with global banks, sovereign wealth, and private family offices.",
                 },
               ].map((ch) => (
-                <div key={ch.c} className="bg-card border border-border/40 p-6">
+                <div key={ch.c} className="rounded-2xl bg-card border border-border/40 p-6">
                   <h3 className="font-display text-base text-gold mb-2">{ch.c}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed font-light">{ch.d}</p>
                 </div>
@@ -425,9 +454,14 @@ export default function AboutPage() {
         <div className="container-x">
           <div className="border-b border-border/40 pb-6 mb-16">
             <span className="eyebrow">Governance</span>
-            <h2 className="mt-6 font-display text-3xl text-foreground font-light tracking-tight">
-              Executive <span className="italic text-gradient-gold">Board of Directors</span>
-            </h2>
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-3xl text-foreground font-light tracking-tight"
+            >
+              <>
+                Executive <span className="text-gradient-gold">Board of Directors</span>
+              </>
+            </SplitReveal>
           </div>
           <div className="space-y-24">
             {board.map((leader) => (
@@ -496,15 +530,20 @@ export default function AboutPage() {
         <div className="container-x">
           <div className="pb-6 mb-16">
             <span className="eyebrow">Execution Team</span>
-            <h2 className="mt-6 font-display text-3xl text-foreground font-light tracking-tight">
-              Strategic <span className="italic text-gradient-gold">Execution Directors</span>
-            </h2>
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-3xl text-foreground font-light tracking-tight"
+            >
+              <>
+                Strategic <span className="text-gradient-gold">Execution Directors</span>
+              </>
+            </SplitReveal>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {execution.map((leader) => (
               <div
                 key={leader.name}
-                className="bg-card border border-border/60 p-8 flex flex-col justify-between hover:border-gold/60 transition-colors"
+                className="rounded-2xl bg-card border border-border/60 p-8 flex flex-col justify-between hover:border-gold/60 transition-colors"
               >
                 <div>
                   <div className="aspect-[4/3] overflow-hidden relative border border-border/60 mb-6">
@@ -538,9 +577,14 @@ export default function AboutPage() {
         <div className="container-x">
           <div className="pb-6 mb-16">
             <span className="eyebrow">Accreditation</span>
-            <h2 className="mt-6 font-display text-3xl text-foreground font-light tracking-tight">
-              Awards &amp; <span className="italic text-gradient-gold">Recognition</span>
-            </h2>
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-3xl text-foreground font-light tracking-tight"
+            >
+              <>
+                Awards &amp; <span className="text-gradient-gold">Recognition</span>
+              </>
+            </SplitReveal>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {awards.map((award, idx) => {
@@ -548,7 +592,7 @@ export default function AboutPage() {
               return (
                 <div
                   key={idx}
-                  className="bg-card border border-border/60 p-8 hover:border-gold/60 transition-colors flex flex-col justify-between"
+                  className="rounded-2xl bg-card border border-border/60 p-8 hover:border-gold/60 transition-colors flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-8">
@@ -589,14 +633,19 @@ export default function AboutPage() {
         </div>
         <div className="container-x relative text-center max-w-3xl mx-auto">
           <span className="eyebrow">Corporate Philosophy</span>
-          <h2 className="mt-6 font-display text-3xl md:text-5xl text-foreground font-light tracking-tight">
-            Pristine compliance. Strategic footprint.{" "}
-            <span className="italic text-gradient-gold">Institutional discipline.</span>
-          </h2>
+          <SplitReveal
+            as="h2"
+            className="mt-6 font-display text-3xl md:text-5xl text-foreground font-light tracking-tight"
+          >
+            <>
+              Pristine compliance. Strategic footprint.{" "}
+              <span className="text-gradient-gold">Institutional discipline.</span>
+            </>
+          </SplitReveal>
           <div className="mt-12">
             <Link
               href="/#briefing"
-              className="inline-flex items-center gap-3 bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
+              className="inline-flex items-center gap-3 rounded-full bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
             >
               Engage NAMI <ArrowUpRight className="h-4 w-4" />
             </Link>
