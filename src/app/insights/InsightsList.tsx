@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Search, Filter, Clock } from "lucide-react";
 import { type Article } from "@/lib/articles";
@@ -39,6 +39,7 @@ export function InsightsList({ initialArticles }: InsightsListProps) {
   const [selectedCat, setSelectedCat] = useState(searchParams.get("category") || "All");
   const [sortBy, setSortBy] = useState(searchParams.get("sort") || "newest");
   const [showFilters, setShowFilters] = useState(false);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Update URL when filters change
   const updateURL = useCallback(
@@ -49,15 +50,26 @@ export function InsightsList({ initialArticles }: InsightsListProps) {
       if (sort !== "newest") params.set("sort", sort);
 
       const newUrl = params.toString() ? `${pathname}?${params.toString()}` : pathname;
-      router.push(newUrl);
+      router.replace(newUrl);
     },
     [router, pathname],
   );
 
+  // Clear any pending debounce timer on unmount
+  useEffect(() => {
+    return () => {
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+    };
+  }, []);
+
   const handleSearchChange = useCallback(
     (query: string) => {
       setSearchQuery(query);
-      updateURL(query, selectedCat, sortBy);
+
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+      debounceRef.current = setTimeout(() => {
+        updateURL(query, selectedCat, sortBy);
+      }, 300);
     },
     [selectedCat, sortBy, updateURL],
   );
@@ -180,6 +192,16 @@ export function InsightsList({ initialArticles }: InsightsListProps) {
             <p className="text-muted-foreground">
               No articles found. Try adjusting your filters or search.
             </p>
+            <button
+              onClick={() => {
+                handleSearchChange("");
+                handleCategoryChange("All");
+                handleSortChange("newest");
+              }}
+              className="mt-6 text-[11px] tracking-[0.25em] uppercase px-3 py-2 border border-gold text-gold bg-gold/5 cursor-pointer transition-all hover:border-gold/60"
+            >
+              Clear filters
+            </button>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border/40">

@@ -9,17 +9,6 @@ export const NAVIGATION = [
   { href: "/insights", label: "Insights" },
 ] as const;
 
-// Marquee Items
-export const MARQUEE_ITEMS = [
-  "INVESTMENT BANKING",
-  "TREASURY & BONDS",
-  "AVIATION LEASING",
-  "MARITIME FINANCE",
-  "TRADE FINANCE",
-  "GIFT IFSC",
-  "HEALTHCARE FINANCE",
-] as const;
-
 // Business Verticals
 export const VERTICALS = [
   {

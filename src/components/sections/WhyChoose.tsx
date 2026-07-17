@@ -1,13 +1,4 @@
-import {
-  Shield,
-  Scale,
-  Network,
-  Globe2,
-  TrendingUp,
-  Building2,
-  LineChart,
-  Cpu,
-} from "lucide-react";
+import { Shield, Scale, Network, Globe2, TrendingUp } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitReveal } from "@/components/motion/SplitReveal";
@@ -45,21 +36,6 @@ export function WhyChoose() {
       t: "Result Orientation",
       d: "Committed to robust advisory execution, corporate targets, and final deal closing.",
     },
-    {
-      i: Building2,
-      t: "135+ Global Lenders",
-      d: "Direct access to Tier-1 banks, sovereign funds, and institutional family offices.",
-    },
-    {
-      i: LineChart,
-      t: "285+ Valuations",
-      d: "Asset and business valuations prepared, assessed, and backed across regulatory bodies.",
-    },
-    {
-      i: Cpu,
-      t: "150+ Blueprints",
-      d: "Rigorous compilation of investment structure files and institutional sanction documents.",
-    },
   ];
   return (
     <section className="py-32 bg-muted/80 border-y border-border/40">
@@ -76,13 +52,13 @@ export function WhyChoose() {
             </>
           </SplitReveal>
         </Reveal>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {reasons.map((r, i) => {
             const Icon = r.i;
             return (
               <Reveal
                 key={r.t}
-                delay={(i % 4) * 0.08}
+                delay={(i % 3) * 0.08}
                 className="rounded-2xl border border-border/40 bg-muted/80 p-8 group hover:bg-muted/50 hover:shadow-elegant transition-all duration-300"
               >
                 <Icon className="h-7 w-7 text-gold mb-6" strokeWidth={1.2} />

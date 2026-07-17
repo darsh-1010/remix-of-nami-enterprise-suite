@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { ZodError } from "zod";
 import { FormField, FormSelect, FormTextarea } from "@/components/forms/FormField";
 import { contactFormSchema, type ContactFormData, type FormResponse } from "@/lib/schemas";
 import { INTEREST_OPTIONS } from "@/lib/constants";
@@ -59,7 +60,14 @@ export function ContactForm() {
       // Clear success message after 5 seconds
       setTimeout(() => setSuccess(false), 5000);
     } catch (err) {
-      if (err instanceof Error) {
+      if (err instanceof ZodError) {
+        const errorMap = err.errors.reduce<Record<string, string>>((acc, fieldErr) => {
+          acc[fieldErr.path.join(".")] = fieldErr.message;
+          return acc;
+        }, {});
+        setFieldErrors(errorMap);
+        setError("Please fix the errors below.");
+      } else if (err instanceof Error) {
         setError(err.message);
       } else {
         setError("An error occurred while submitting the form");

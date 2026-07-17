@@ -35,33 +35,37 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info Section */}
-      <section className="py-12 lg:py-20 bg-muted/40 container-x">
+      <section className="py-12 lg:py-20 bg-background container-x">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-display text-lg font-light text-foreground mb-3">Email</h3>
+            <h3 className="font-display text-lg font-light text-navy-deep mb-3">Email</h3>
             <a
-              href="mailto:contact@namigroup.com"
-              className="text-gold hover:text-gold-bright transition-colors"
+              href="mailto:ib@namigroup.in"
+              className="text-sky hover:text-sky-bright transition-colors"
             >
-              contact@namigroup.com
+              ib@namigroup.in
             </a>
           </div>
           <div>
-            <h3 className="font-display text-lg font-light text-foreground mb-3">Phone</h3>
-            <a
-              href="tel:+12345678900"
-              className="text-gold hover:text-gold-bright transition-colors"
-            >
-              +1 (234) 567-8900
-            </a>
+            <h3 className="font-display text-lg font-light text-navy-deep mb-3">Phone</h3>
+            <div className="flex flex-col gap-1">
+              <a
+                href="tel:+919725053938"
+                className="text-sky hover:text-sky-bright transition-colors"
+              >
+                +91-97250 53938 (India)
+              </a>
+              <a
+                href="tel:+971585743938"
+                className="text-sky hover:text-sky-bright transition-colors"
+              >
+                +971 58 57 4 3938 (UAE)
+              </a>
+            </div>
           </div>
           <div>
-            <h3 className="font-display text-lg font-light text-foreground mb-3">Office</h3>
-            <p className="text-foreground/75 font-light">
-              New York, USA
-              <br />
-              UAE, India, UK
-            </p>
+            <h3 className="font-display text-lg font-light text-navy-deep mb-3">Office</h3>
+            <p className="text-foreground/75 font-light">GIFT IFSC, Gandhinagar, India</p>
           </div>
         </div>
       </section>

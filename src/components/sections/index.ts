@@ -1,5 +1,4 @@
 export { Hero } from "./Hero";
-export { Marquee } from "./Marquee";
 export { About } from "./About";
 export { Stats } from "./Stats";
 export { GlobalPresence } from "./GlobalPresence";

@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -12,6 +13,7 @@ const nav = [
   { to: "/investment-banking", label: "Investment Banking" },
   { to: "/careers", label: "Careers" },
   { to: "/insights", label: "Insights" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function Header() {
@@ -20,6 +22,7 @@ export function Header() {
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -34,6 +37,23 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Lock background scroll, close on Escape, and return focus to the trigger when the
+  // mobile menu closes.
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+      menuButtonRef.current?.focus();
+    };
+  }, [open]);
 
   const headerClass =
     mounted && scrolled
@@ -71,6 +91,7 @@ export function Header() {
               <Link
                 key={n.to}
                 href={n.to}
+                aria-current={isActive ? "page" : undefined}
                 className={`rounded-full px-4 py-2 text-[12px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
                   isActive
                     ? "bg-background text-navy-deep font-semibold"
@@ -83,24 +104,38 @@ export function Header() {
           })}
         </nav>
 
-        <Link
-          href="/#briefing"
-          className="hidden lg:inline-flex items-center gap-2 rounded-full bg-navy-deep px-5 py-2.5 text-[11px] tracking-[0.2em] uppercase text-background hover:bg-navy transition-all"
-        >
-          Schedule Briefing
-        </Link>
+        <div className="hidden lg:flex items-center gap-3">
+          <ThemeToggle />
+          <Link
+            href="/#briefing"
+            className="inline-flex items-center gap-2 rounded-full bg-navy-deep px-5 py-2.5 text-[11px] tracking-[0.2em] uppercase text-background hover:bg-navy transition-all"
+          >
+            Schedule Briefing
+          </Link>
+        </div>
 
-        <button
-          onClick={() => setOpen(true)}
-          className="lg:hidden rounded-full bg-gold/90 text-navy-deep p-2.5"
-          aria-label="Open menu"
-        >
-          <Menu className="h-5 w-5" />
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            ref={menuButtonRef}
+            onClick={() => setOpen(true)}
+            className="rounded-full bg-gold/90 text-navy-deep p-2.5"
+            aria-label="Open menu"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+        </div>
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-50 bg-background lg:hidden flex flex-col">
+        <div
+          id="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 bg-background lg:hidden flex flex-col"
+        >
           <div className="container-x flex items-center justify-between h-20 border-b border-border/40">
             <span className="font-display tracking-[0.2em] text-foreground">NAMI GROUP</span>
             <button
@@ -112,17 +147,36 @@ export function Header() {
             </button>
           </div>
           <nav className="container-x flex flex-col gap-6 pt-10">
-            {nav.map((n) => (
-              <Link
-                key={n.to}
-                href={n.to}
-                onClick={() => setOpen(false)}
-                className="text-2xl font-display tracking-tight text-foreground hover:text-gold"
-              >
-                {n.label}
-              </Link>
-            ))}
+            {nav.map((n) => {
+              const isActive = pathname
+                ? n.to === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(n.to)
+                : false;
+              return (
+                <Link
+                  key={n.to}
+                  href={n.to}
+                  onClick={() => setOpen(false)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`text-2xl font-display tracking-tight hover:text-gold ${
+                    isActive ? "text-gold" : "text-foreground"
+                  }`}
+                >
+                  {n.label}
+                </Link>
+              );
+            })}
           </nav>
+          <div className="container-x mt-auto pb-10">
+            <Link
+              href="/#briefing"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center justify-center w-full rounded-full bg-navy-deep px-5 py-3.5 text-sm tracking-[0.2em] uppercase text-background"
+            >
+              Schedule Briefing
+            </Link>
+          </div>
         </div>
       )}
     </header>

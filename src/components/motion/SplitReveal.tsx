@@ -38,22 +38,23 @@ export function SplitReveal({
     let split: SplitText | undefined;
     let tween: gsap.core.Tween | undefined;
 
-    // Wait for the webfont to finish loading first — splitting/masking text before the real
-    // font metrics are known bakes in the fallback font's line height, which clips descenders
-    // (g, y, p, q, j) once the real font swaps in.
+    // Wait for the webfont to finish loading first, so line splitting measures the real
+    // font metrics rather than the fallback font's.
     document.fonts.ready.then(() => {
       if (cancelled) return;
 
-      split = new SplitText(el, {
-        type: by,
-        mask: by,
-      });
+      // Deliberately NOT using SplitText's `mask` option: it wraps each line in an
+      // overflow-hidden box sized to the line's CSS line-height, which clips descenders
+      // (g, y, p, q, j) whenever a heading uses a tight leading (e.g. leading-[0.98]) for
+      // a big display headline. Animating the split lines directly (no clipping wrapper)
+      // avoids that entirely, at the cost of the hard-edge "wipe" look.
+      split = new SplitText(el, { type: by });
 
       const targets = by === "lines" ? split.lines : split.words;
-      gsap.set(targets, { yPercent: 110, opacity: 0 });
+      gsap.set(targets, { y: 32, opacity: 0 });
 
       tween = gsap.to(targets, {
-        yPercent: 0,
+        y: 0,
         opacity: 1,
         duration: 1,
         ease: "power4.out",

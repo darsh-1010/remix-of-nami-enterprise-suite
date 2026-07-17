@@ -31,7 +31,7 @@ export function Faq() {
   ];
 
   return (
-    <section className="py-32 bg-white border-y border-border/40">
+    <section className="py-32 bg-background border-y border-border/40">
       <div className="container-x max-w-4xl">
         <Reveal className="text-center mb-16">
           <span className="eyebrow text-sky">FAQ</span>
@@ -42,8 +42,8 @@ export function Faq() {
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
             <Reveal key={idx} delay={idx * 0.06}>
-              <details className="group rounded-2xl border border-border/60 bg-white p-6 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden hover:border-sky/40">
-                <summary className="flex items-center justify-between cursor-pointer focus:outline-none">
+              <details className="group rounded-2xl border border-border/60 bg-card p-6 transition-all duration-300 [&_summary::-webkit-details-marker]:hidden hover:border-sky/40">
+                <summary className="flex items-center justify-between cursor-pointer rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-sky">
                   <span className="font-display text-lg text-navy-deep font-medium group-hover:text-sky transition-colors">
                     {faq.q}
                   </span>

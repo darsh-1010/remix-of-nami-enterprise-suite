@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { animate, useInView } from "framer-motion";
 
 interface AnimatedCounterProps {
@@ -21,7 +21,14 @@ export function AnimatedCounter({ value, duration = 1.6, className }: AnimatedCo
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { prefix, target, decimals, suffix } = parseValue(value);
-  const [display, setDisplay] = useState(0);
+  // Start at the final value so the number is correct if JS never loads/hydrates;
+  // once the browser is running, reset to 0 (before paint, so there's no visible flash)
+  // and count up when it scrolls into view.
+  const [display, setDisplay] = useState(target);
+
+  useLayoutEffect(() => {
+    setDisplay(0);
+  }, []);
 
   useEffect(() => {
     if (!isInView) return;

@@ -81,18 +81,18 @@ const verticals: Vertical[] = [
 
 export function Verticals() {
   return (
-    <section className="py-32 bg-muted/60 relative">
+    <section id="verticals" className="py-32 bg-background relative">
       <div className="container-x">
         <Reveal className="max-w-3xl mb-16">
-          <span className="eyebrow">Business Ecosystem</span>
+          <span className="eyebrow text-sky">Business Ecosystem</span>
           <SplitReveal
             as="h2"
-            className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-foreground font-light tracking-tight"
+            className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-navy-deep font-light tracking-tight"
           >
             <>
               Eight specialised verticals.
               <br />
-              <span className="text-gradient-gold">One integrated platform.</span>
+              One integrated platform.
             </>
           </SplitReveal>
         </Reveal>
@@ -104,30 +104,30 @@ export function Verticals() {
               <Reveal
                 key={v.no}
                 delay={(i % 4) * 0.08}
-                className="group bg-muted/60 rounded-2xl border border-border/40 p-8 hover:bg-muted/40 hover:shadow-elegant transition-all duration-500 relative"
+                className="group bg-sky rounded-2xl p-8 hover:bg-sky-bright transition-all duration-500 relative"
               >
                 <div className="flex items-start justify-between mb-8">
-                  <span className="font-display text-xs tracking-[0.3em] text-gold/70">{v.no}</span>
+                  <span className="font-display text-xs tracking-[0.3em] text-white/80">{v.no}</span>
                   <Icon
-                    className="h-6 w-6 text-gold/70 group-hover:text-gold transition-colors"
+                    className="h-6 w-6 text-white/80 group-hover:text-white transition-colors"
                     strokeWidth={1.2}
                   />
                 </div>
-                <h3 className="font-display text-xl text-foreground leading-tight mb-3 min-h-[3rem]">
+                <h3 className="font-display text-xl text-white leading-tight mb-3 min-h-[3rem]">
                   {v.name}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
+                <p className="text-sm text-white/85 leading-relaxed">{v.desc}</p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {v.tags.map((t) => (
                     <span
                       key={t}
-                      className="text-[10px] tracking-[0.2em] uppercase border border-border/60 px-2 py-1 text-muted-foreground"
+                      className="text-[10px] tracking-[0.2em] uppercase border border-white/30 px-2 py-1 text-white/80"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <div className="mt-8 h-px bg-gradient-to-r from-gold/40 to-transparent w-0 group-hover:w-full transition-all duration-700" />
+                <div className="mt-8 h-px bg-gradient-to-r from-white/40 to-transparent w-0 group-hover:w-full transition-all duration-700" />
               </Reveal>
             );
           })}

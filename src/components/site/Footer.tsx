@@ -32,27 +32,27 @@ export function Footer() {
           <h4 className="text-xs tracking-[0.28em] uppercase text-gold mb-5">Verticals</h4>
           <ul className="space-y-3 text-sm text-foreground/80">
             <li>
-              <Link href="/businesses" className="hover:text-gold transition-colors">
+              <Link href="/businesses#investment-banking" className="hover:text-gold transition-colors">
                 Investment Banking
               </Link>
             </li>
             <li>
-              <Link href="/businesses" className="hover:text-gold transition-colors">
+              <Link href="/businesses#treasury" className="hover:text-gold transition-colors">
                 Bond &amp; Treasury
               </Link>
             </li>
             <li>
-              <Link href="/businesses" className="hover:text-gold transition-colors">
+              <Link href="/businesses#aviation" className="hover:text-gold transition-colors">
                 Aviation Leasing
               </Link>
             </li>
             <li>
-              <Link href="/businesses" className="hover:text-gold transition-colors">
+              <Link href="/businesses#ship" className="hover:text-gold transition-colors">
                 Maritime Finance
               </Link>
             </li>
             <li>
-              <Link href="/businesses" className="hover:text-gold transition-colors">
+              <Link href="/businesses#ifactor" className="hover:text-gold transition-colors">
                 Trade Finance
               </Link>
             </li>
@@ -75,6 +75,11 @@ export function Footer() {
             <li>
               <Link href="/insights" className="hover:text-gold transition-colors">
                 Insights
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:text-gold transition-colors">
+                Contact
               </Link>
             </li>
           </ul>
@@ -133,7 +138,15 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="container-x py-6 flex flex-col md:flex-row gap-3 justify-between text-xs text-muted-foreground">
           <span>© {new Date().getFullYear()} NAMI Group. All rights reserved.</span>
-          <span className="tracking-[0.2em] uppercase">Corporate Profile · 2025</span>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <Link href="/privacy-policy" className="hover:text-gold transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-use" className="hover:text-gold transition-colors">
+              Terms of Use
+            </Link>
+            <span className="tracking-[0.2em] uppercase">Corporate Profile · 2025</span>
+          </div>
         </div>
       </div>
     </footer>

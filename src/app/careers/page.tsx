@@ -103,13 +103,13 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <section className="py-32">
+      <section className="py-32 bg-background">
         <div className="container-x grid lg:grid-cols-12 gap-16">
           {/* Jobs List */}
           <div className="lg:col-span-7">
             <SplitReveal
               as="h2"
-              className="font-display text-3xl text-foreground font-light mb-8"
+              className="font-display text-3xl text-navy-deep font-light mb-8"
             >
               <>Open Opportunities</>
             </SplitReveal>
@@ -117,13 +117,13 @@ export default function CareersPage() {
               {jobs.map((job, idx) => (
                 <div
                   key={idx}
-                  className="rounded-2xl border border-border/60 bg-card p-8 hover:border-gold/60 transition-colors"
+                  className="rounded-2xl border border-border/60 bg-card p-8 hover:border-sky/50 transition-colors"
                 >
-                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs tracking-wider uppercase text-gold">
+                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs tracking-wider uppercase text-sky">
                     <span>{job.dept}</span>
                     <span className="text-muted-foreground">{job.loc}</span>
                   </div>
-                  <h3 className="mt-4 font-display text-2xl text-foreground font-light">
+                  <h3 className="mt-4 font-display text-2xl text-navy-deep font-light">
                     {job.title}
                   </h3>
                   <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{job.desc}</p>

@@ -52,9 +52,6 @@ export function CareersForm() {
 
       setSuccess(true);
       (e.currentTarget as HTMLFormElement).reset();
-
-      // Clear success message after 5 seconds
-      setTimeout(() => setSuccess(false), 5000);
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message);
@@ -77,6 +74,13 @@ export function CareersForm() {
             Your application has been received. Our HR team will review your details and reach out
             shortly.
           </p>
+          <button
+            type="button"
+            onClick={() => setSuccess(false)}
+            className="mt-6 text-xs tracking-[0.2em] uppercase text-gold hover:text-gold-bright transition-colors cursor-pointer"
+          >
+            Submit another application
+          </button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">

@@ -52,7 +52,7 @@
   --color-platinum: var(--platinum);
   --color-sky: var(--sky);
   --color-sky-bright: var(--sky-bright);
-  --font-display: "General Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Source Serif 4", ui-serif, Georgia, serif;
   --font-sans: "General Sans", ui-sans-serif, system-ui, sans-serif;
   --font-body: "General Sans", ui-sans-serif, system-ui, sans-serif;
 }
@@ -60,48 +60,50 @@
 :root {
   --radius: 0.5rem;
 
-  /* Brand Constants — warm editorial palette (cream / sand / brown) */
-  --brand-navy-deep: #201a15; /* deep warm charcoal-brown, primary text/dark surface */
-  --brand-navy: #362720; /* mid brown, secondary dark surface */
-  --brand-navy-elevated: #4e392e; /* elevated brown, e.g. cards on dark sections */
-  --brand-gold: #c29e77; /* sand accent — CTAs, eyebrows, hover */
-  --brand-gold-bright: #d8bc95; /* lighter sand for hover/bright states */
-  --brand-platinum: #f1e8d9; /* cream */
-  --brand-sky: #7d9cb8; /* cool blue accent for lower-funnel "white" sections */
-  --brand-sky-bright: #5d7f9c; /* darker blue for hover states */
+  /* Brand Constants — elegant institutional palette: deep ink navy + muted brass, modeled on
+     Rothschild & Co / Evercore / Moelis (deep near-black navy as the dominant color, a single
+     muted secondary accent used sparingly, warm off-white rather than stark white). */
+  --brand-navy-deep: #13253f; /* deep ink navy — primary text, dark surfaces, dominant brand color */
+  --brand-navy: #1c3654; /* mid navy — secondary dark surface / hover */
+  --brand-navy-elevated: #24405f; /* elevated navy — cards on dark sections, hover on sky */
+  --brand-gold: #b8935a; /* muted brass/gold — CTAs, eyebrows, hover, used sparingly as the accent */
+  --brand-gold-bright: #c9a876; /* lighter brass for hover/bright states */
+  --brand-platinum: #f6f3ef; /* warm off-white */
+  --brand-sky: #1c3654; /* solid card fills — same navy family, keeps the palette to two hues */
+  --brand-sky-bright: #24405f; /* hover on sky cards */
 
   /* Semantic — light by default */
-  --background: #f6f1e7; /* warm cream background */
+  --background: #f6f3ef; /* warm off-white background, not stark white */
   --foreground: var(--brand-navy-deep);
-  --card: #fbf8f2; /* soft warm white for cards */
+  --card: #fbf9f6; /* soft warm white for cards, subtly lighter than the page background */
   --card-foreground: var(--brand-navy-deep);
-  --popover: #fbf8f2;
+  --popover: #fbf9f6;
   --popover-foreground: var(--brand-navy-deep);
   --primary: var(--brand-gold);
-  --primary-foreground: var(--brand-navy-deep);
-  --secondary: #ece1cd; /* deeper cream */
+  --primary-foreground: #fbf9f6;
+  --secondary: #efe9e1; /* deeper warm greige */
   --secondary-foreground: var(--brand-navy-deep);
-  --muted: #ede3d2; /* warm beige for section backgrounds */
-  --muted-foreground: #6b5d4f; /* warm brown-grey for subtext */
+  --muted: #efe9e1; /* warm greige for section backgrounds */
+  --muted-foreground: #5c574f; /* warm dark grey for subtext, not cool grey */
   --accent: var(--brand-gold);
-  --accent-foreground: var(--brand-navy-deep);
+  --accent-foreground: #fbf9f6;
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: rgba(32, 26, 21, 0.1); /* warm charcoal border */
-  --input: rgba(32, 26, 21, 0.14);
+  --border: rgba(19, 37, 63, 0.12); /* navy-tinted border */
+  --input: rgba(19, 37, 63, 0.16);
   --ring: var(--brand-gold);
   --chart-1: var(--brand-gold);
   --chart-2: var(--brand-navy);
-  --chart-3: #6b5d4f;
+  --chart-3: #5c574f;
   --chart-4: var(--brand-gold-bright);
   --chart-5: var(--brand-navy-elevated);
-  --sidebar: #f6f1e7;
+  --sidebar: #f6f3ef;
   --sidebar-foreground: var(--brand-navy-deep);
   --sidebar-primary: var(--brand-gold);
-  --sidebar-primary-foreground: var(--brand-navy-deep);
-  --sidebar-accent: #ece1cd;
+  --sidebar-primary-foreground: #fbf9f6;
+  --sidebar-accent: #efe9e1;
   --sidebar-accent-foreground: var(--brand-navy-deep);
-  --sidebar-border: rgba(32, 26, 21, 0.1);
+  --sidebar-border: rgba(19, 37, 63, 0.12);
   --sidebar-ring: var(--brand-gold);
 
   /* Backward Compatibility Mappings */
@@ -114,11 +116,46 @@
   --sky: var(--brand-sky);
   --sky-bright: var(--brand-sky-bright);
 
-  --gradient-gold: linear-gradient(135deg, #d8bc95, #b98a5c);
-  --gradient-navy: linear-gradient(180deg, #362720, #1a1310);
-  --gradient-radial-gold: radial-gradient(ellipse at top, rgba(194, 158, 119, 0.1), transparent 60%);
-  --shadow-elegant: 0 30px 80px -30px rgba(32, 26, 21, 0.14);
-  --shadow-gold: 0 20px 60px -20px rgba(194, 158, 119, 0.25);
+  --gradient-gold: linear-gradient(135deg, #c9a876, #a67c42);
+  --gradient-navy: linear-gradient(180deg, #1c3654, #0a1420);
+  --gradient-radial-gold: radial-gradient(ellipse at top, rgba(184, 147, 90, 0.12), transparent 60%);
+  --shadow-elegant: 0 30px 80px -30px rgba(19, 37, 63, 0.14);
+  --shadow-gold: 0 20px 60px -20px rgba(184, 147, 90, 0.25);
+}
+
+.dark {
+  /* Brand Constants inverted for dark viewing — the same tokens, so every component that
+     already uses text-navy-deep/bg-gold/bg-sky/etc. adapts automatically with no per-file changes. */
+  --brand-navy-deep: #f2ede5; /* now warm-light — used as foreground text AND as high-contrast button/pill surfaces */
+  --brand-navy: #d8cfc0;
+  --brand-navy-elevated: #c3b8a6;
+  --brand-gold: #cda36c; /* brighter brass accent for visibility against dark backgrounds */
+  --brand-gold-bright: #ddb984;
+  --brand-platinum: #182634;
+  --brand-sky: #24405f; /* solid card fill — kept mid-tone, light text on top still passes AA */
+  --brand-sky-bright: #2e4d70;
+
+  --background: #0e1a28; /* deep ink-navy page background */
+  --card: #142334; /* slightly elevated dark navy surface */
+  --popover: #142334;
+  --primary-foreground: #0e1a28;
+  --secondary: #182a3d;
+  --muted: #182a3d;
+  --muted-foreground: #93a3b3;
+  --accent-foreground: #0e1a28;
+  --border: rgba(242, 237, 229, 0.12);
+  --input: rgba(242, 237, 229, 0.16);
+  --chart-3: #93a3b3;
+  --sidebar: #0e1a28;
+  --sidebar-primary-foreground: #0e1a28;
+  --sidebar-accent: #182a3d;
+  --sidebar-border: rgba(242, 237, 229, 0.12);
+
+  --gradient-gold: linear-gradient(135deg, #ddb984, #cda36c);
+  --gradient-navy: linear-gradient(180deg, #182a3d, #050b12);
+  --gradient-radial-gold: radial-gradient(ellipse at top, rgba(205, 163, 108, 0.16), transparent 60%);
+  --shadow-elegant: 0 30px 80px -30px rgba(0, 0, 0, 0.6);
+  --shadow-gold: 0 20px 60px -20px rgba(205, 163, 108, 0.3);
 }
 
 @layer base {

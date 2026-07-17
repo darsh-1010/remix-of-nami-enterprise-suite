@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { SplitReveal } from "@/components/motion/SplitReveal";
+import { SectionNav } from "@/components/site/SectionNav";
 import {
   ArrowUpRight,
   Award,
@@ -165,7 +166,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-44 pb-24 overflow-hidden">
+      <section id="hero" className="relative pt-44 pb-24 overflow-hidden">
         <div
           className="absolute inset-0 opacity-30 pointer-events-none"
           style={{ background: "var(--gradient-radial-gold)" }}
@@ -189,8 +190,22 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <SectionNav
+        sections={[
+          { id: "vision-mission", label: "Vision & Mission" },
+          { id: "chairman", label: "Chairman" },
+          { id: "segments", label: "Target Segments" },
+          { id: "sectors", label: "Sector Expertise" },
+          { id: "channels", label: "Connectivity" },
+          { id: "board", label: "Board" },
+          { id: "execution", label: "Execution Team" },
+          { id: "accreditation", label: "Accreditation" },
+          { id: "philosophy", label: "Philosophy" },
+        ]}
+      />
+
       {/* Vision & Mission */}
-      <section className="py-24 border-y border-border/40 bg-muted/10">
+      <section id="vision-mission" className="py-24 border-y border-border/40 bg-muted/10">
         <div className="container-x grid lg:grid-cols-2 gap-16">
           <div>
             <span className="eyebrow">Vision</span>
@@ -215,7 +230,7 @@ export default function AboutPage() {
       </section>
 
       {/* Chairman's Message */}
-      <section className="py-32">
+      <section id="chairman" className="py-32">
         <div className="container-x grid lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-5">
             <div className="aspect-[4/5] overflow-hidden ring-1 ring-gold/20 relative">
@@ -267,7 +282,7 @@ export default function AboutPage() {
       </section>
 
       {/* Target Segments (Whom We Serve) */}
-      <section className="py-24 border-t border-border/40 bg-muted/10">
+      <section id="segments" className="py-24 border-t border-border/40 bg-muted/10">
         <div className="container-x">
           <div className="mb-16">
             <span className="eyebrow">Target Segments</span>
@@ -276,8 +291,7 @@ export default function AboutPage() {
               className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
             >
               <>
-                Strategic partnership for{" "}
-                <span className="text-gradient-gold">global capital.</span>
+                Strategic partnership for <span className="text-gradient-gold">global capital.</span>
               </>
             </SplitReveal>
           </div>
@@ -287,7 +301,7 @@ export default function AboutPage() {
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl bg-card border border-border/60 p-8 md:p-12 hover:border-gold/60 transition-all flex flex-col justify-between"
+                  className="rounded-2xl bg-card border border-border/60 p-8 md:p-12 hover:border-gold/60 transition-colors flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-8">
@@ -329,7 +343,7 @@ export default function AboutPage() {
       </section>
 
       {/* Sector Expertise */}
-      <section className="py-24 border-t border-border/40">
+      <section id="sectors" className="py-24 border-t border-border/40">
         <div className="container-x">
           <div className="grid lg:grid-cols-12 gap-12 items-start mb-16">
             <div className="lg:col-span-6">
@@ -401,7 +415,7 @@ export default function AboutPage() {
       </section>
 
       {/* Strategic Channels */}
-      <section className="py-24 border-t border-border/40 bg-muted/10">
+      <section id="channels" className="py-24 border-t border-border/40 bg-muted/10">
         <div className="container-x">
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5">
@@ -450,7 +464,7 @@ export default function AboutPage() {
       </section>
 
       {/* Executive Board */}
-      <section className="py-24 border-t border-border/40">
+      <section id="board" className="py-24 border-t border-border/40">
         <div className="container-x">
           <div className="border-b border-border/40 pb-6 mb-16">
             <span className="eyebrow">Governance</span>
@@ -526,7 +540,7 @@ export default function AboutPage() {
       </section>
 
       {/* Strategic Execution */}
-      <section className="py-24 border-t border-border/40 bg-muted/10">
+      <section id="execution" className="py-24 border-t border-border/40 bg-muted/10">
         <div className="container-x">
           <div className="pb-6 mb-16">
             <span className="eyebrow">Execution Team</span>
@@ -573,17 +587,15 @@ export default function AboutPage() {
       </section>
 
       {/* Accreditation & Credentials */}
-      <section className="py-24 border-t border-border/40">
+      <section id="accreditation" className="py-24 border-t border-border/40 bg-background">
         <div className="container-x">
           <div className="pb-6 mb-16">
-            <span className="eyebrow">Accreditation</span>
+            <span className="eyebrow text-sky">Accreditation</span>
             <SplitReveal
               as="h2"
-              className="mt-6 font-display text-3xl text-foreground font-light tracking-tight"
+              className="mt-6 font-display text-3xl text-navy-deep font-light tracking-tight"
             >
-              <>
-                Awards &amp; <span className="text-gradient-gold">Recognition</span>
-              </>
+              <>Awards &amp; Recognition</>
             </SplitReveal>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -592,19 +604,19 @@ export default function AboutPage() {
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl bg-card border border-border/60 p-8 hover:border-gold/60 transition-colors flex flex-col justify-between"
+                  className="rounded-2xl bg-card border border-border/60 p-8 hover:border-sky/50 transition-colors duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-8">
-                      <Icon className="h-8 w-8 text-gold" strokeWidth={1.2} />
+                      <Icon className="h-8 w-8 text-sky" strokeWidth={1.2} />
                       <span className="text-[10px] tracking-widest uppercase text-muted-foreground">
                         Credential {idx + 1}
                       </span>
                     </div>
-                    <h3 className="font-display text-xl text-foreground font-light mb-1">
+                    <h3 className="font-display text-xl text-navy-deep font-light mb-1">
                       {award.title}
                     </h3>
-                    <div className="text-[10px] text-gold font-medium uppercase tracking-wider mb-6">
+                    <div className="text-[10px] text-sky font-medium uppercase tracking-wider mb-6">
                       {award.org}
                     </div>
                     <p className="text-xs text-muted-foreground leading-relaxed font-light">
@@ -619,7 +631,7 @@ export default function AboutPage() {
       </section>
 
       {/* Footer Philosophy & CTA */}
-      <section className="relative py-32 overflow-hidden border-t border-border/40 bg-muted/10">
+      <section id="philosophy" className="relative py-32 overflow-hidden border-t border-border/40 bg-muted/10">
         <div className="absolute inset-0">
           <Image
             src="/assets/boardroom.jpg"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SplitReveal } from "@/components/motion/SplitReveal";
+import { SectionNav } from "@/components/site/SectionNav";
 import {
   ArrowUpRight,
   TrendingUp,
@@ -291,7 +292,7 @@ export default function InvestmentBankingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-44 pb-24 relative overflow-hidden">
+      <section id="hero" className="pt-44 pb-24 relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-30"
           style={{ background: "var(--gradient-radial-gold)" }}
@@ -314,8 +315,20 @@ export default function InvestmentBankingPage() {
         </div>
       </section>
 
+      <SectionNav
+        sections={[
+          { id: "pillars", label: "Service Pillars" },
+          { id: "track-record", label: "Track Record" },
+          { id: "sectors", label: "Sector Coverage" },
+          { id: "strengths", label: "Core Strengths" },
+          { id: "connectivity", label: "Connectivity" },
+          { id: "leadership", label: "Leadership" },
+          { id: "cta", label: "Contact" },
+        ]}
+      />
+
       {/* Service Pillars */}
-      <section className="pb-32">
+      <section id="pillars" className="pb-32">
         <div className="container-x">
           {servicePillars.map((pillar, i) => {
             const Icon = pillar.icon;
@@ -367,7 +380,7 @@ export default function InvestmentBankingPage() {
       </section>
 
       {/* Track Record Metrics */}
-      <section className="py-32 border-t border-border/40">
+      <section id="track-record" className="py-32 border-t border-border/40">
         <div className="container-x">
           <div className="mb-16">
             <span className="eyebrow">Proven Track Record</span>
@@ -395,7 +408,7 @@ export default function InvestmentBankingPage() {
       </section>
 
       {/* Sector Coverage */}
-      <section className="py-32 border-t border-border/40 bg-muted/40">
+      <section id="sectors" className="py-32 border-t border-border/40 bg-muted/40">
         <div className="container-x">
           <div className="mb-16">
             <span className="eyebrow">Market Coverage</span>
@@ -431,7 +444,7 @@ export default function InvestmentBankingPage() {
       </section>
 
       {/* Core Strengths */}
-      <section className="py-32 border-t border-border/40">
+      <section id="strengths" className="py-32 border-t border-border/40">
         <div className="container-x">
           <div className="mb-16">
             <span className="eyebrow">Core Strengths</span>
@@ -459,36 +472,36 @@ export default function InvestmentBankingPage() {
       </section>
 
       {/* Global Connectivity */}
-      <section className="py-32 border-t border-border/40 bg-muted/40">
+      <section id="connectivity" className="py-32 border-t border-border/40 bg-background">
         <div className="container-x">
           <div className="mb-16">
-            <span className="eyebrow">Global Reach</span>
+            <span className="eyebrow text-sky">Global Reach</span>
             <SplitReveal
               as="h2"
-              className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
+              className="mt-6 font-display text-4xl md:text-5xl text-navy-deep font-light tracking-tight"
             >
               <>Institutional channels across key corridors</>
             </SplitReveal>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <article className="border border-border/40 rounded-lg p-8 hover:border-gold/40 transition-colors">
-              <h3 className="font-display text-lg text-foreground font-light tracking-tight mb-3">
+            <article className="bg-card border border-border/60 rounded-lg p-8 hover:border-sky/50 transition-colors duration-300">
+              <h3 className="font-display text-lg text-navy-deep font-light tracking-tight mb-3">
                 BRICS Chamber
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Official chamber alignment to accelerate capital flow pathways across emerging markets.
               </p>
             </article>
-            <article className="border border-border/40 rounded-lg p-8 hover:border-gold/40 transition-colors">
-              <h3 className="font-display text-lg text-foreground font-light tracking-tight mb-3">
+            <article className="bg-card border border-border/60 rounded-lg p-8 hover:border-sky/50 transition-colors duration-300">
+              <h3 className="font-display text-lg text-navy-deep font-light tracking-tight mb-3">
                 UK Department of Trade
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Active corridor support with deputy high commissions for trans-Atlantic transaction pathways.
               </p>
             </article>
-            <article className="border border-border/40 rounded-lg p-8 hover:border-gold/40 transition-colors">
-              <h3 className="font-display text-lg text-foreground font-light tracking-tight mb-3">
+            <article className="bg-card border border-border/60 rounded-lg p-8 hover:border-sky/50 transition-colors duration-300">
+              <h3 className="font-display text-lg text-navy-deep font-light tracking-tight mb-3">
                 Embassy Networks
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
@@ -505,7 +518,7 @@ export default function InvestmentBankingPage() {
       </section>
 
       {/* Leadership */}
-      <section className="py-32 border-t border-border/40">
+      <section id="leadership" className="py-32 border-t border-border/40">
         <div className="container-x">
           <div className="mb-16">
             <span className="eyebrow">Leadership Team</span>
@@ -558,7 +571,7 @@ export default function InvestmentBankingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 border-t border-border/40 bg-muted/80">
+      <section id="cta" className="py-24 border-t border-border/40 bg-muted/80">
         <div className="container-x text-center">
           <SplitReveal
             as="h2"

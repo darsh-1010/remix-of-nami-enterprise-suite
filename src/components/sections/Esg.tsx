@@ -16,7 +16,7 @@ export function Esg() {
     { t: "Global Standards", d: "Aligned with international institutional benchmarks." },
   ];
   return (
-    <section className="py-32 bg-white border-y border-border/40">
+    <section id="esg" className="py-32 bg-background border-y border-border/40">
       <div className="container-x">
         <Reveal className="max-w-3xl mb-16">
           <span className="eyebrow text-sky">ESG & Governance</span>
@@ -29,7 +29,7 @@ export function Esg() {
             <Reveal
               key={it.t}
               delay={(i % 3) * 0.08}
-              className="rounded-2xl border border-border/40 bg-white hover:border-sky/50 transition-colors duration-300 p-8"
+              className="rounded-2xl border border-border/40 bg-card hover:border-sky/50 transition-colors duration-300 p-8"
             >
               <span className="font-display text-xs text-sky tabular-nums tracking-[0.28em]">
                 {String(i + 1).padStart(2, "0")}

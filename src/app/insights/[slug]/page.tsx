@@ -211,9 +211,9 @@ export default async function ArticlePage({ params }: PageProps) {
               </div>
 
               {/* Action Callout */}
-              <div className="rounded-2xl bg-muted/40 border border-border/60 p-8 text-center">
-                <Landmark className="h-8 w-8 text-gold mx-auto mb-4" strokeWidth={1.2} />
-                <h4 className="font-display text-lg text-foreground font-light mb-3">
+              <div className="rounded-2xl bg-card border border-border/60 p-8 text-center">
+                <Landmark className="h-8 w-8 text-sky mx-auto mb-4" strokeWidth={1.2} />
+                <h4 className="font-display text-lg text-navy-deep font-light mb-3">
                   Have a specific mandate?
                 </h4>
                 <p className="text-xs text-muted-foreground leading-relaxed mb-6">

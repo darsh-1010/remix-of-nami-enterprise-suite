@@ -20,6 +20,7 @@ export function FormField({ label, name, error, helperText, required, ...props }
         id={id}
         name={name}
         className="input-base"
+        required={required}
         aria-required={required}
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : helperText ? `${id}-helper` : undefined}
@@ -68,6 +69,7 @@ export function FormSelect({
         id={id}
         name={name}
         className="input-base bg-background cursor-pointer"
+        required={required}
         aria-required={required}
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : undefined}
@@ -117,6 +119,7 @@ export function FormTextarea({
         name={name}
         rows={rows}
         className="input-base input-textarea"
+        required={required}
         aria-required={required}
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : undefined}

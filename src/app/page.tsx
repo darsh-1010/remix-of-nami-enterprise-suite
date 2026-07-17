@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import {
   Hero,
-  Marquee,
   About,
   Stats,
   GlobalPresence,
@@ -53,17 +52,16 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Marquee />
-      <About />
-      <Stats />
-      <GlobalPresence />
       <Verticals />
-      <Industries />
-      <WhyChoose />
       <Gift />
       <Treasury />
       <AviationMaritime />
       <Technology />
+      <About />
+      <Stats />
+      <GlobalPresence />
+      <Industries />
+      <WhyChoose />
       <Leadership />
       <Esg />
       <Faq />

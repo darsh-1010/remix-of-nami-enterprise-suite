@@ -212,6 +212,14 @@ export default function BusinessesPage() {
                       </li>
                     ))}
                   </ul>
+                  {v.id === "investment-banking" && (
+                    <Link
+                      href="/investment-banking"
+                      className="mt-4 inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-gold hover:text-gold-bright"
+                    >
+                      Full advisory overview →
+                    </Link>
+                  )}
                 </div>
                 {i === verticals.length - 1 && (
                   <div className="lg:col-span-12 border-b border-border/60 mt-8" />
@@ -222,16 +230,13 @@ export default function BusinessesPage() {
         </div>
       </section>
 
-      <section className="py-24 border-t border-border/40 bg-muted/80">
+      <section className="py-24 border-t border-border/40 bg-background">
         <div className="container-x text-center">
           <SplitReveal
             as="h2"
-            className="font-display text-3xl md:text-5xl text-foreground font-light tracking-tight"
+            className="font-display text-3xl md:text-5xl text-navy-deep font-light tracking-tight"
           >
-            <>
-              Discuss a mandate with the relevant{" "}
-              <span className="text-gradient-gold">institutional desk.</span>
-            </>
+            <>Discuss a mandate with the relevant institutional desk.</>
           </SplitReveal>
           <Link
             href="/contact"
