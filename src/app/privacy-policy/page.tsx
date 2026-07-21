@@ -51,9 +51,9 @@ export default function PrivacyPolicyPage() {
                   <p>We collect information you choose to provide directly to us, including:</p>
                   <ul className="list-disc pl-6 space-y-2 marker:text-gold">
                     <li>
-                      <span className="font-medium text-foreground">Contact form submissions</span> —
-                      your name, email address, organization, phone number, and the content of your
-                      message.
+                      <span className="font-medium text-foreground">Contact form submissions</span>{" "}
+                      — your name, email address, organization, phone number, and the content of
+                      your message.
                     </li>
                     <li>
                       <span className="font-medium text-foreground">Job applications</span> — your
@@ -151,8 +151,8 @@ export default function PrivacyPolicyPage() {
                 <p className="mt-5 text-foreground/85 leading-relaxed font-light">
                   This website is not directed at, and is not intended for use by, children under
                   the age of 16. We do not knowingly collect personal information from children. If
-                  you believe a child has provided us with personal information, please contact us so
-                  we can take appropriate action.
+                  you believe a child has provided us with personal information, please contact us
+                  so we can take appropriate action.
                 </p>
               </div>
 

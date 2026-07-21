@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { SectionNav } from "@/components/site/SectionNav";
 import {
@@ -54,11 +55,7 @@ const servicePillars = [
       "Private Equity Placements: Direct institutional investor networks",
       "Structured Debt Syndication: Multi-lender coordination frameworks",
     ],
-    metrics: [
-      "USD 120M+ Equity Placed",
-      "USD 157M+ Debt Mobilized",
-      "135+ Global Lenders Network",
-    ],
+    metrics: ["USD 120M+ Equity Placed", "USD 157M+ Debt Mobilized", "135+ Global Lenders Network"],
   },
   {
     id: "mergers-acquisitions",
@@ -187,22 +184,26 @@ const coreStrengths = [
   {
     no: "01",
     title: "Senior-Led Focus",
-    description: "Direct operational management from highly experienced directors on every transaction",
+    description:
+      "Direct operational management from highly experienced directors on every transaction",
   },
   {
     no: "02",
     title: "Institutional Grade",
-    description: "Impeccable quality controls and structured finance models designed to clear regulatory audits",
+    description:
+      "Impeccable quality controls and structured finance models designed to clear regulatory audits",
   },
   {
     no: "03",
     title: "Domain Expertise",
-    description: "Decades of combined corporate transaction experience with global capital corridors",
+    description:
+      "Decades of combined corporate transaction experience with global capital corridors",
   },
   {
     no: "04",
     title: "Global Placement",
-    description: "Vast network linking strategic partners across major offshore investment corridors",
+    description:
+      "Vast network linking strategic partners across major offshore investment corridors",
   },
   {
     no: "05",
@@ -219,6 +220,7 @@ const leadership = [
     experience: "18+ Years",
     background: "ING, Kotak Mahindra Bank & senior structures",
     expertise: "Capital markets, offshore setups, fund mobilisation",
+    image: "/images/team/dipen-shah.png",
   },
   {
     name: "Shail Shah",
@@ -227,6 +229,7 @@ const leadership = [
     experience: "15+ Years",
     background: "Regulatory leadership, corporate taxation schemes",
     expertise: "Advanced M&A valuation, global corporate frameworks",
+    image: "/images/team/shail-shah.png",
   },
   {
     name: "Dhiren Panchal",
@@ -235,13 +238,34 @@ const leadership = [
     experience: "20+ Years",
     background: "ICICI Bank, ABN Amro, HSBC, Yes Bank, DBS Bank",
     expertise: "Global banking networks, structures, FEMA guidelines",
+    image: "/images/team/dhiren-panchal.png",
   },
   {
     name: "Piyush Akhaja",
     title: "Director - Equity Advisory",
+    credentials: "Equity Placement Lead",
     experience: "15+ Years",
     background: "Investment Banking, corporate structuring",
     expertise: "Detailed operational models, DCF valuation, exits",
+    image: "/images/team/piyush-akhaja.png",
+  },
+  {
+    name: "CA Mahit Puri",
+    title: "Director - Valuation",
+    credentials: "CA",
+    experience: "14+ Years",
+    background: "Debt Syndication, capital placement operations",
+    expertise: "Structured finance structures, cross-border deal flow",
+    image: "/images/team/mahit-puri.png",
+  },
+  {
+    name: "Arpi Akhaja",
+    title: "Head - Modeling & MIS",
+    credentials: "Financial Modeling Lead",
+    experience: "12+ Years",
+    background: "Corporate financial planning & portfolio analysis",
+    expertise: "Structural modeling, validation, databases",
+    image: "/images/team/arpi-akhaja.png",
   },
 ];
 
@@ -310,7 +334,10 @@ export default function InvestmentBankingPage() {
             </>
           </SplitReveal>
           <p className="mt-8 max-w-2xl text-muted-foreground text-lg leading-relaxed">
-            Blending the comprehensive analytical depth of tier-one banks with the dedicated focus of an elite corporate advisory boutique. We combine strategic counsel with institutional-grade execution models across capital markets, M&A, and structured finance.
+            Blending the comprehensive analytical depth of tier-one banks with the dedicated focus
+            of an elite corporate advisory boutique. We combine strategic counsel with
+            institutional-grade execution models across capital markets, M&A, and structured
+            finance.
           </p>
         </div>
       </section>
@@ -348,7 +375,9 @@ export default function InvestmentBankingPage() {
                   <h2 className="font-display text-3xl md:text-4xl text-foreground font-light tracking-tight">
                     {pillar.title}
                   </h2>
-                  <p className="mt-4 text-muted-foreground leading-relaxed max-w-xl">{pillar.description}</p>
+                  <p className="mt-4 text-muted-foreground leading-relaxed max-w-xl">
+                    {pillar.description}
+                  </p>
                 </div>
                 <div className="lg:col-span-5">
                   <div className="text-xs tracking-[0.28em] uppercase text-gold mb-5">Services</div>
@@ -393,7 +422,10 @@ export default function InvestmentBankingPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {trackRecordMetrics.map((item, i) => (
-              <div key={i} className="border border-border/40 rounded-lg p-6 hover:border-gold/40 transition-colors">
+              <div
+                key={i}
+                className="border border-border/40 rounded-lg p-6 hover:border-gold/40 transition-colors"
+              >
                 <div className="font-display text-3xl md:text-4xl text-gold font-light tracking-tight">
                   {item.metric}
                 </div>
@@ -427,15 +459,22 @@ export default function InvestmentBankingPage() {
             {sectorCoverage.map((sector, i) => {
               const Icon = sector.icon;
               return (
-                <article key={i} className="border border-border/40 rounded-lg p-8 hover:border-gold/40 transition-colors">
+                <article
+                  key={i}
+                  className="border border-border/40 rounded-lg p-8 hover:border-gold/40 transition-colors"
+                >
                   <div className="flex items-start justify-between mb-4">
                     <Icon className="h-6 w-6 text-gold" strokeWidth={1.2} />
-                    <span className="font-display text-lg text-gold font-light">{sector.depth}</span>
+                    <span className="font-display text-lg text-gold font-light">
+                      {sector.depth}
+                    </span>
                   </div>
                   <h3 className="font-display text-lg md:text-xl text-foreground font-light tracking-tight mb-3">
                     {sector.sector}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{sector.description}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {sector.description}
+                  </p>
                 </article>
               );
             })}
@@ -457,14 +496,19 @@ export default function InvestmentBankingPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {coreStrengths.map((strength, i) => (
-              <article key={i} className="border border-border/40 rounded-lg p-8 hover:border-gold/40 transition-colors">
+              <article
+                key={i}
+                className="border border-border/40 rounded-lg p-8 hover:border-gold/40 transition-colors"
+              >
                 <span className="inline-block font-display text-xs tracking-[0.3em] text-gold mb-4">
                   {strength.no}
                 </span>
                 <h3 className="font-display text-lg md:text-xl text-foreground font-light tracking-tight mb-3">
                   {strength.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{strength.description}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {strength.description}
+                </p>
               </article>
             ))}
           </div>
@@ -489,7 +533,8 @@ export default function InvestmentBankingPage() {
                 BRICS Chamber
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Official chamber alignment to accelerate capital flow pathways across emerging markets.
+                Official chamber alignment to accelerate capital flow pathways across emerging
+                markets.
               </p>
             </article>
             <article className="bg-card border border-border/60 rounded-lg p-8 hover:border-sky/50 transition-colors duration-300">
@@ -497,7 +542,8 @@ export default function InvestmentBankingPage() {
                 UK Department of Trade
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Active corridor support with deputy high commissions for trans-Atlantic transaction pathways.
+                Active corridor support with deputy high commissions for trans-Atlantic transaction
+                pathways.
               </p>
             </article>
             <article className="bg-card border border-border/60 rounded-lg p-8 hover:border-sky/50 transition-colors duration-300">
@@ -505,13 +551,15 @@ export default function InvestmentBankingPage() {
                 Embassy Networks
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Structural transaction pathways across key sovereign business hubs and offshore jurisdictions.
+                Structural transaction pathways across key sovereign business hubs and offshore
+                jurisdictions.
               </p>
             </article>
           </div>
           <div className="mt-8 p-8 border border-border/40 rounded-lg">
             <p className="text-sm text-muted-foreground mb-4">
-              <span className="font-medium text-foreground">Key Markets:</span> USA, UAE, UK, France, Switzerland, Saudi Arabia
+              <span className="font-medium text-foreground">Key Markets:</span> USA, UAE, UK,
+              France, Switzerland, Saudi Arabia
             </p>
           </div>
         </div>
@@ -533,35 +581,58 @@ export default function InvestmentBankingPage() {
               </>
             </SplitReveal>
           </div>
-          <div className="grid sm:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {leadership.map((member, i) => (
-              <article key={i} className="border border-border/40 rounded-lg p-8 hover:border-gold/40 transition-colors">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="font-display text-lg md:text-xl text-foreground font-light tracking-tight">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm text-gold mt-1 font-medium tracking-[0.1em] uppercase">
-                      {member.title}
-                    </p>
+              <article
+                key={i}
+                className="border border-border/40 rounded-lg p-6 hover:border-gold/40 transition-colors flex flex-col justify-between"
+              >
+                <div>
+                  {member.image && (
+                    <div className="aspect-[4/5] overflow-hidden relative rounded-lg mb-6 bg-muted/30">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="font-display text-lg md:text-xl text-foreground font-light tracking-tight">
+                        {member.name}
+                      </h3>
+                      <p className="text-xs text-gold mt-1 font-medium tracking-[0.1em] uppercase">
+                        {member.title}
+                      </p>
+                    </div>
+                    <span className="text-xs text-muted-foreground text-right shrink-0">
+                      {member.experience}
+                    </span>
                   </div>
-                  <span className="text-xs text-muted-foreground text-right">{member.experience}</span>
-                </div>
-                {member.credentials && (
-                  <p className="text-xs text-muted-foreground mb-3">{member.credentials}</p>
-                )}
-                <div className="space-y-3">
-                  <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-[0.1em] font-medium mb-1">
-                      Background
-                    </p>
-                    <p className="text-sm text-foreground/85">{member.background}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-[0.1em] font-medium mb-1">
-                      Expertise
-                    </p>
-                    <p className="text-sm text-foreground/85">{member.expertise}</p>
+                  {member.credentials && (
+                    <p className="text-xs text-muted-foreground mb-4">{member.credentials}</p>
+                  )}
+                  <div className="space-y-3 pt-3 border-t border-border/30">
+                    <div>
+                      <p className="text-[10px] text-muted-foreground uppercase tracking-[0.1em] font-medium mb-1">
+                        Background
+                      </p>
+                      <p className="text-xs text-foreground/85 leading-relaxed">
+                        {member.background}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-muted-foreground uppercase tracking-[0.1em] font-medium mb-1">
+                        Expertise
+                      </p>
+                      <p className="text-xs text-foreground/85 leading-relaxed">
+                        {member.expertise}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -584,11 +655,12 @@ export default function InvestmentBankingPage() {
             </>
           </SplitReveal>
           <p className="mt-6 max-w-2xl mx-auto text-muted-foreground leading-relaxed">
-            Contact our investment banking team to explore capital markets, M&A advisory, structured finance, or sustainability-linked solutions for your transaction.
+            Contact our investment banking team to explore capital markets, M&A advisory, structured
+            finance, or sustainability-linked solutions for your transaction.
           </p>
           <Link
             href="/contact"
-            className="mt-10 inline-flex items-center gap-3 rounded-full bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
+            className="mt-10 inline-flex items-center gap-3 rounded-full bg-gold text-ink px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
           >
             Contact Investment Banking <ArrowUpRight className="h-4 w-4" />
           </Link>

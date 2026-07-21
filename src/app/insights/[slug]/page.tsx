@@ -222,7 +222,7 @@ export default async function ArticlePage({ params }: PageProps) {
                 </p>
                 <Link
                   href="/contact"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gold text-navy-deep py-3 text-xs tracking-wider uppercase font-medium hover:bg-gold-bright transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gold text-ink py-3 text-xs tracking-wider uppercase font-medium hover:bg-gold-bright transition-all"
                 >
                   Contact the Desk
                   <ArrowUpRight className="h-3.5 w-3.5" />

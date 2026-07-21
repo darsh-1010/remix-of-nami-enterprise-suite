@@ -95,7 +95,7 @@ export function Header() {
                 className={`rounded-full px-4 py-2 text-[12px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
                   isActive
                     ? "bg-background text-navy-deep font-semibold"
-                    : "text-background/90 hover:bg-background hover:text-navy-deep"
+                    : "text-ink/70 hover:bg-background hover:text-navy-deep"
                 }`}
               >
                 {n.label}
@@ -108,7 +108,7 @@ export function Header() {
           <ThemeToggle />
           <Link
             href="/#briefing"
-            className="inline-flex items-center gap-2 rounded-full bg-navy-deep px-5 py-2.5 text-[11px] tracking-[0.2em] uppercase text-background hover:bg-navy transition-all"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-[11px] tracking-[0.2em] uppercase text-ink hover:bg-gold-bright transition-all"
           >
             Schedule Briefing
           </Link>
@@ -119,7 +119,7 @@ export function Header() {
           <button
             ref={menuButtonRef}
             onClick={() => setOpen(true)}
-            className="rounded-full bg-gold/90 text-navy-deep p-2.5"
+            className="rounded-full bg-gold/90 text-ink p-2.5"
             aria-label="Open menu"
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -140,7 +140,7 @@ export function Header() {
             <span className="font-display tracking-[0.2em] text-foreground">NAMI GROUP</span>
             <button
               onClick={() => setOpen(false)}
-              className="rounded-full bg-gold/90 text-navy-deep p-2.5"
+              className="rounded-full bg-gold/90 text-ink p-2.5"
               aria-label="Close menu"
             >
               <X className="h-5 w-5" />
@@ -172,7 +172,7 @@ export function Header() {
             <Link
               href="/#briefing"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center w-full rounded-full bg-navy-deep px-5 py-3.5 text-sm tracking-[0.2em] uppercase text-background"
+              className="inline-flex items-center justify-center w-full rounded-full bg-gold px-5 py-3.5 text-sm tracking-[0.2em] uppercase text-ink"
             >
               Schedule Briefing
             </Link>

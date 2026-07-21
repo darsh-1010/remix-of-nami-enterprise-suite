@@ -32,7 +32,10 @@ export function Footer() {
           <h4 className="text-xs tracking-[0.28em] uppercase text-gold mb-5">Verticals</h4>
           <ul className="space-y-3 text-sm text-foreground/80">
             <li>
-              <Link href="/businesses#investment-banking" className="hover:text-gold transition-colors">
+              <Link
+                href="/businesses#investment-banking"
+                className="hover:text-gold transition-colors"
+              >
                 Investment Banking
               </Link>
             </li>

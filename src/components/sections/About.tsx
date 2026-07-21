@@ -22,7 +22,10 @@ export function About() {
 
         <div className="lg:col-span-7">
           <span className="eyebrow">About NAMI Group</span>
-          <SplitReveal as="h2" className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-foreground font-light tracking-tight">
+          <SplitReveal
+            as="h2"
+            className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-foreground font-light tracking-tight"
+          >
             <>
               An integrated financial ecosystem —{" "}
               <span className="text-gradient-gold">engineered for institutions.</span>

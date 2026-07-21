@@ -35,7 +35,7 @@ export function AviationMaritime() {
     },
   ];
   return (
-    <section className="py-0">
+    <section id="aviation-maritime" className="py-0">
       <div className="grid md:grid-cols-2">
         {cards.map((c) => (
           <article key={c.title} className="relative group overflow-hidden">
@@ -48,19 +48,19 @@ export function AviationMaritime() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-background/40 to-background/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
             </div>
             <Reveal className="absolute inset-0 flex flex-col justify-end p-10 lg:p-16">
               <span className="eyebrow">{c.eyebrow}</span>
               <SplitReveal
                 as="h3"
-                className="mt-4 font-display text-3xl md:text-4xl text-foreground font-light max-w-md leading-tight"
+                className="mt-4 font-display text-3xl md:text-4xl text-white font-light max-w-md leading-tight"
               >
                 <>{c.title}</>
               </SplitReveal>
               <ul className="mt-8 grid grid-cols-2 gap-y-3 gap-x-6 max-w-md">
                 {c.items.map((it) => (
-                  <li key={it} className="text-sm text-foreground/75 flex items-center gap-2">
+                  <li key={it} className="text-sm text-white/80 flex items-center gap-2">
                     <span className="h-1 w-1 bg-gold" />
                     {it}
                   </li>

@@ -35,7 +35,10 @@ export function Faq() {
       <div className="container-x max-w-4xl">
         <Reveal className="text-center mb-16">
           <span className="eyebrow text-sky">FAQ</span>
-          <SplitReveal as="h2" className="mt-6 font-display text-4xl md:text-5xl text-navy-deep font-light tracking-tight">
+          <SplitReveal
+            as="h2"
+            className="mt-6 font-display text-4xl md:text-5xl text-navy-deep font-light tracking-tight"
+          >
             <>Frequently Asked Questions.</>
           </SplitReveal>
         </Reveal>

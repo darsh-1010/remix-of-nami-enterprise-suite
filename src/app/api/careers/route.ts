@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { careersFormSchema } from "@/lib/schemas";
+import { sendMail } from "@/lib/mailer";
 import { ZodError } from "zod";
 
 // Rate limiter
@@ -40,27 +41,35 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
     const resume = formData.get("resume");
 
-    // Convert FormData to object for validation
     const body = {
       fullName: formData.get("fullName"),
       email: formData.get("email"),
-      phone: formData.get("phone"),
-      position: formData.get("position"),
-      experience: formData.get("experience"),
-      coverLetter: formData.get("coverLetter"),
+      jobTitle: formData.get("jobTitle"),
       resume: resume instanceof File ? resume : null,
     };
 
     // Validate
     const validatedData = careersFormSchema.parse(body);
 
-    // TODO: Handle file upload and send email
-    // For now, just log the submission
-    console.log("[Careers Form] New application:", {
-      fullName: validatedData.fullName,
-      email: validatedData.email,
-      position: validatedData.position,
-      experience: validatedData.experience,
+    const resumeBuffer = Buffer.from(await validatedData.resume.arrayBuffer());
+
+    await sendMail({
+      to: process.env.CAREERS_EMAIL_TO || "ib@namigroup.in",
+      replyTo: validatedData.email,
+      subject: `Job Application: ${validatedData.jobTitle} — ${validatedData.fullName}`,
+      html: `
+        <h2>New Job Application</h2>
+        <p><strong>Name:</strong> ${validatedData.fullName}</p>
+        <p><strong>Email:</strong> ${validatedData.email}</p>
+        <p><strong>Job Title Applied For:</strong> ${validatedData.jobTitle}</p>
+      `,
+      attachments: [
+        {
+          filename: validatedData.resume.name,
+          content: resumeBuffer,
+          contentType: validatedData.resume.type,
+        },
+      ],
     });
 
     return NextResponse.json({

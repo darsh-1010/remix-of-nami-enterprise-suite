@@ -14,7 +14,7 @@ export function Technology() {
     "Secure Data Room",
   ];
   return (
-    <section className="py-32 bg-muted/80 border-y border-border/40">
+    <section id="technology" className="py-32 bg-muted/80 border-y border-border/40">
       <div className="container-x grid lg:grid-cols-12 gap-16 items-center">
         <Reveal className="lg:col-span-5">
           <span className="eyebrow">Technology</span>
@@ -37,10 +37,15 @@ export function Technology() {
             <Reveal
               key={it}
               delay={(i % 4) * 0.06}
-              className="rounded-xl bg-muted/80 aspect-square p-5 flex flex-col justify-between hover:bg-navy-deep hover:shadow-elegant transition-all duration-300"
+              className="group rounded-xl bg-muted/80 aspect-square p-5 flex flex-col justify-between hover:bg-ink hover:shadow-elegant transition-all duration-300"
             >
-              <Cpu className="h-5 w-5 text-gold/70" strokeWidth={1.2} />
-              <span className="text-sm text-foreground/90 leading-tight">{it}</span>
+              <Cpu
+                className="h-5 w-5 text-gold/70 group-hover:text-gold-bright transition-colors"
+                strokeWidth={1.2}
+              />
+              <span className="text-sm text-foreground/90 group-hover:text-white leading-tight transition-colors">
+                {it}
+              </span>
             </Reveal>
           ))}
         </div>

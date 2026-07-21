@@ -20,7 +20,10 @@ export function Esg() {
       <div className="container-x">
         <Reveal className="max-w-3xl mb-16">
           <span className="eyebrow text-sky">ESG & Governance</span>
-          <SplitReveal as="h2" className="mt-6 font-display text-4xl md:text-5xl text-navy-deep font-light tracking-tight">
+          <SplitReveal
+            as="h2"
+            className="mt-6 font-display text-4xl md:text-5xl text-navy-deep font-light tracking-tight"
+          >
             <>Governance as a first principle.</>
           </SplitReveal>
         </Reveal>

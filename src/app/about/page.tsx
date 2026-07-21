@@ -81,7 +81,7 @@ const board = [
       { v: "Kotak / ING", l: "Senior Banking" },
       { v: "CapDesks", l: "Specialization" },
     ],
-    image: "/assets/chairman.jpg",
+    image: "/images/team/dipen-shah.png",
   },
   {
     name: "CA Shail Shah",
@@ -94,7 +94,7 @@ const board = [
       { v: "Tax Structuring", l: "Focus Area" },
       { v: "M&A Valuations", l: "Specialization" },
     ],
-    image: "/assets/boardroom.jpg",
+    image: "/images/team/shail-shah.png",
   },
   {
     name: "Dhiren Panchal",
@@ -107,7 +107,7 @@ const board = [
       { v: "HSBC / DBS", l: "Global Track" },
       { v: "FEMA Limits", l: "Specialization" },
     ],
-    image: "/assets/hero-financial.jpg",
+    image: "/images/team/dhiren-panchal.png",
   },
 ];
 
@@ -117,21 +117,21 @@ const execution = [
     role: "Director — Equity Advisory",
     qualifications: "Equity Placement Lead",
     bio: "Over 15 years of investment banking experience. Piyush leads NAMI's structural modeling, detailed cash-flow projection, DCF valuations, and exit preparations.",
-    image: "/assets/boardroom.jpg",
+    image: "/images/team/piyush-akhaja.png",
   },
   {
     name: "CA Mahit Puri",
     role: "Director — Valuation",
     qualifications: "Chartered Accountant (CA)",
     bio: "A Chartered Accountant with 14+ years of institutional experience. Mahit oversees NAMI's debt syndication, capital placement operations, and structured finance corridors.",
-    image: "/assets/hero-financial.jpg",
+    image: "/images/team/mahit-puri.png",
   },
   {
     name: "Arpi Akhaja",
     role: "Head — Modeling & MIS",
     qualifications: "Financial Modeling Lead",
     bio: "Over 12 years of corporate financial planning and portfolio analysis experience. Arpi leads NAMI's structural modeling, database validation, and transactional support desks.",
-    image: "/assets/chairman.jpg",
+    image: "/images/team/arpi-akhaja.png",
   },
 ];
 
@@ -214,7 +214,8 @@ export default function AboutPage() {
               className="mt-6 font-display text-3xl md:text-4xl text-foreground font-light leading-tight"
             >
               <>
-                To be the most trusted institutional financial corridor connecting India to the world.
+                To be the most trusted institutional financial corridor connecting India to the
+                world.
               </>
             </SplitReveal>
           </div>
@@ -291,7 +292,8 @@ export default function AboutPage() {
               className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
             >
               <>
-                Strategic partnership for <span className="text-gradient-gold">global capital.</span>
+                Strategic partnership for{" "}
+                <span className="text-gradient-gold">global capital.</span>
               </>
             </SplitReveal>
           </div>
@@ -631,7 +633,10 @@ export default function AboutPage() {
       </section>
 
       {/* Footer Philosophy & CTA */}
-      <section id="philosophy" className="relative py-32 overflow-hidden border-t border-border/40 bg-muted/10">
+      <section
+        id="philosophy"
+        className="relative py-32 overflow-hidden border-t border-border/40 bg-muted/10"
+      >
         <div className="absolute inset-0">
           <Image
             src="/assets/boardroom.jpg"
@@ -657,7 +662,7 @@ export default function AboutPage() {
           <div className="mt-12">
             <Link
               href="/#briefing"
-              className="inline-flex items-center gap-3 rounded-full bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
+              className="inline-flex items-center gap-3 rounded-full bg-gold text-ink px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
             >
               Engage NAMI <ArrowUpRight className="h-4 w-4" />
             </Link>

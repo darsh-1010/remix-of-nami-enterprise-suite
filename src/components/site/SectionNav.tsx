@@ -31,7 +31,7 @@ export function SectionNav({ sections }: { sections: SectionLink[] }) {
       {
         rootMargin: "-96px 0px -70% 0px",
         threshold: 0,
-      }
+      },
     );
 
     elements.forEach((el) => observer.observe(el));

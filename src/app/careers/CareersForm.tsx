@@ -2,18 +2,8 @@
 
 import { useState, FormEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { FormField, FormSelect, FormTextarea } from "@/components/forms/FormField";
+import { FormField } from "@/components/forms/FormField";
 import { type FormResponse } from "@/lib/schemas";
-
-const POSITIONS = [
-  "Investment Banking",
-  "Treasury & Bonds",
-  "Aviation & Maritime Leasing",
-  "GIFT IFSC Compliance",
-  "FinTech & Outsourcing",
-];
-
-const EXPERIENCE_LEVELS = ["0-2 years", "2-5 years", "5-10 years", "10+ years"];
 
 export function CareersForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -30,7 +20,6 @@ export function CareersForm() {
     try {
       const formData = new FormData(e.currentTarget);
 
-      // Submit directly as FormData (file handling)
       const response = await fetch("/api/careers", {
         method: "POST",
         body: formData,
@@ -64,8 +53,8 @@ export function CareersForm() {
   }
 
   return (
-    <div className="card-glass">
-      <h3 className="font-display text-2xl text-foreground mb-6">Submit Application</h3>
+    <div className="card-glass max-w-xl mx-auto">
+      <h3 className="font-display text-2xl text-foreground mb-6">Apply Now</h3>
 
       {success ? (
         <div className="rounded-2xl border border-gold/40 p-6 text-center">
@@ -109,31 +98,12 @@ export function CareersForm() {
           />
 
           <FormField
-            label="Phone Number"
-            name="phone"
-            type="tel"
+            label="Job Title"
+            name="jobTitle"
+            type="text"
             required
-            error={fieldErrors.phone}
-            disabled={isLoading}
-          />
-
-          <FormSelect
-            label="Position"
-            name="position"
-            options={POSITIONS}
-            required
-            placeholder="Select a position..."
-            error={fieldErrors.position}
-            disabled={isLoading}
-          />
-
-          <FormSelect
-            label="Experience Level"
-            name="experience"
-            options={EXPERIENCE_LEVELS}
-            required
-            placeholder="Select your experience..."
-            error={fieldErrors.experience}
+            placeholder="e.g. Associate — Investment Banking"
+            error={fieldErrors.jobTitle}
             disabled={isLoading}
           />
 
@@ -147,21 +117,13 @@ export function CareersForm() {
               type="file"
               required
               accept=".pdf,.doc,.docx"
-              className="mt-2 w-full text-sm text-muted-foreground file:mr-4 file:py-2 file:px-4 file:border-0 file:rounded-full file:text-xs file:font-semibold file:bg-gold file:text-navy-deep hover:file:bg-gold-bright file:cursor-pointer cursor-pointer rounded-xl border border-border p-2"
+              className="mt-2 w-full text-sm text-muted-foreground file:mr-4 file:py-2 file:px-4 file:border-0 file:rounded-full file:text-xs file:font-semibold file:bg-gold file:text-ink hover:file:bg-gold-bright file:cursor-pointer cursor-pointer rounded-xl border border-border p-2"
               disabled={isLoading}
             />
             {fieldErrors.resume && (
               <span className="text-xs text-red-500">{fieldErrors.resume}</span>
             )}
           </div>
-
-          <FormTextarea
-            label="Cover Letter"
-            name="coverLetter"
-            rows={4}
-            error={fieldErrors.coverLetter}
-            disabled={isLoading}
-          />
 
           <button
             type="submit"

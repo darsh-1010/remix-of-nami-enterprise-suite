@@ -107,7 +107,9 @@ export function Verticals() {
                 className="group bg-sky rounded-2xl p-8 hover:bg-sky-bright transition-all duration-500 relative"
               >
                 <div className="flex items-start justify-between mb-8">
-                  <span className="font-display text-xs tracking-[0.3em] text-white/80">{v.no}</span>
+                  <span className="font-display text-xs tracking-[0.3em] text-white/80">
+                    {v.no}
+                  </span>
                   <Icon
                     className="h-6 w-6 text-white/80 group-hover:text-white transition-colors"
                     strokeWidth={1.2}

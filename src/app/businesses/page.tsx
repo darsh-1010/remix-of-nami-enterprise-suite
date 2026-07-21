@@ -240,7 +240,7 @@ export default function BusinessesPage() {
           </SplitReveal>
           <Link
             href="/contact"
-            className="mt-10 inline-flex items-center gap-3 rounded-full bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
+            className="mt-10 inline-flex items-center gap-3 rounded-full bg-gold text-ink px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
           >
             Contact the Desk <ArrowUpRight className="h-4 w-4" />
           </Link>

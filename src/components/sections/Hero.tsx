@@ -15,7 +15,7 @@ export function Hero() {
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background dark:from-black/55 dark:via-black/75 dark:to-black/95" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-radial-gold)" }} />
       </div>
 
@@ -45,7 +45,7 @@ export function Hero() {
           <div className="mt-12 flex flex-wrap items-center gap-4">
             <Link
               href="/businesses"
-              className="group inline-flex items-center gap-3 rounded-full bg-gold text-navy-deep px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
+              className="group inline-flex items-center gap-3 rounded-full bg-gold text-ink px-8 py-4 text-sm tracking-[0.2em] uppercase font-medium hover:bg-gold-bright transition-all"
             >
               Explore Our Businesses
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

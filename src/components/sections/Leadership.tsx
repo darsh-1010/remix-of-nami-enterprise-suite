@@ -10,7 +10,7 @@ export function Leadership() {
           <Reveal className="lg:col-span-5 relative">
             <div className="aspect-[4/5] overflow-hidden relative rounded-2xl">
               <Image
-                src="/assets/chairman.jpg"
+                src="/images/team/dipen-shah.png"
                 alt="Dipen U Shah, Chairman"
                 fill
                 className="object-cover"
@@ -28,7 +28,10 @@ export function Leadership() {
           </Reveal>
           <Reveal delay={0.1} className="lg:col-span-7">
             <span className="eyebrow text-sky">Leadership</span>
-            <SplitReveal as="h2" className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-navy-deep font-light tracking-tight">
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-navy-deep font-light tracking-tight"
+            >
               <>Dipen U Shah</>
             </SplitReveal>
             <div className="mt-3 text-sm tracking-[0.32em] uppercase text-sky">

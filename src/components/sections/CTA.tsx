@@ -16,7 +16,10 @@ export function CTA() {
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           <Reveal className="lg:col-span-5">
             <span className="eyebrow">Engage NAMI</span>
-            <SplitReveal as="h2" className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-foreground font-light tracking-tight leading-[1.1]">
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-foreground font-light tracking-tight leading-[1.1]"
+            >
               <>
                 Let&apos;s build the next{" "}
                 <span className="text-gradient-gold">capital corridor</span> — together.
@@ -63,7 +66,10 @@ export function CTA() {
               </div>
             </div>
           </Reveal>
-          <Reveal delay={0.1} className="lg:col-span-7 rounded-2xl bg-card border border-border/60 p-8 md:p-12">
+          <Reveal
+            delay={0.1}
+            className="lg:col-span-7 rounded-2xl bg-card border border-border/60 p-8 md:p-12"
+          >
             <ContactForm />
           </Reveal>
         </div>

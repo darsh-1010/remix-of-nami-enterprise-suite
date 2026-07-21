@@ -3,8 +3,7 @@ import { AlertTriangle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Terms of Use | NAMI Group",
-  description:
-    "The terms and conditions governing use of the NAMI Group website.",
+  description: "The terms and conditions governing use of the NAMI Group website.",
 };
 
 export default function TermsOfUsePage() {
@@ -37,8 +36,8 @@ export default function TermsOfUsePage() {
                   1. Acceptance of Terms
                 </h2>
                 <p className="mt-5 text-foreground/85 leading-relaxed font-light">
-                  By accessing or using this website (the &quot;Site&quot;), you agree to be bound by
-                  these Terms of Use. If you do not agree to these terms, please do not use the
+                  By accessing or using this website (the &quot;Site&quot;), you agree to be bound
+                  by these Terms of Use. If you do not agree to these terms, please do not use the
                   Site.
                 </p>
               </div>
@@ -122,9 +121,10 @@ export default function TermsOfUsePage() {
                     making any decision based on information found on this Site.
                   </p>
                   <p>
-                    To the fullest extent permitted by applicable law, NAMI Group shall not be liable
-                    for any direct, indirect, incidental, consequential, or special damages arising
-                    out of or in connection with your use of, or inability to use, this Site.
+                    To the fullest extent permitted by applicable law, NAMI Group shall not be
+                    liable for any direct, indirect, incidental, consequential, or special damages
+                    arising out of or in connection with your use of, or inability to use, this
+                    Site.
                   </p>
                 </div>
               </div>

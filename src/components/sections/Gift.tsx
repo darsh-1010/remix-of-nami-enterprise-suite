@@ -15,7 +15,7 @@ export function Gift() {
     "International Banking",
   ];
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section id="gift" className="py-32 relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-20 pointer-events-none"
         style={{ background: "var(--gradient-radial-gold)" }}

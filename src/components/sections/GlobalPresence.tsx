@@ -11,7 +11,7 @@ export function GlobalPresence() {
     { name: "Europe (FR & CH)", desc: "Offshore wealth and banking access" },
   ];
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section id="global-presence" className="py-32 relative overflow-hidden">
       <div className="container-x">
         <Reveal className="grid lg:grid-cols-12 gap-12 items-end mb-16">
           <div className="lg:col-span-7">
@@ -21,8 +21,7 @@ export function GlobalPresence() {
               className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-foreground font-light tracking-tight"
             >
               <>
-                Capital corridors spanning{" "}
-                <span className="text-gradient-gold">four regions.</span>
+                Capital corridors spanning <span className="text-gradient-gold">four regions.</span>
               </>
             </SplitReveal>
           </div>
@@ -42,7 +41,7 @@ export function GlobalPresence() {
               sizes="100vw"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
           </div>
 
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">

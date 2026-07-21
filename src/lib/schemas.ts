@@ -17,9 +17,7 @@ export type ContactFormData = z.infer<typeof contactFormSchema>;
 export const careersFormSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  position: z.string().min(1, "Please select a position"),
-  experience: z.string().min(1, "Please select your experience level"),
+  jobTitle: z.string().min(2, "Please enter the job title you're applying for"),
   resume: z
     .instanceof(File)
     .refine((file) => file.size <= 5 * 1024 * 1024, "Resume must be under 5MB")
@@ -32,7 +30,6 @@ export const careersFormSchema = z.object({
         ].includes(file.type),
       "Resume must be PDF or DOC",
     ),
-  coverLetter: z.string().optional().or(z.literal("")),
 });
 
 export type CareersFormData = z.infer<typeof careersFormSchema>;
