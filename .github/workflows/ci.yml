@@ -36,21 +36,5 @@ jobs:
       - name: Verify build compilation
         run: npm run build
 
-  deploy:
-    name: Production Deployment Gateway
-    needs: validate
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-version: latest
-          vercel-args: "--prod --yes"
+# Deployment is handled by Vercel's native GitHub integration (auto-deploys
+# on push to main), not by this workflow. See project settings on vercel.com.
