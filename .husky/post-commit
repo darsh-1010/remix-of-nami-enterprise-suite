@@ -1,0 +1,16 @@
+# git resolves and caches the commit author before pre-commit runs, so a
+# pre-commit hook changing user.name/user.email can't affect the commit it's
+# guarding — it only takes effect starting with the *next* commit. Fixing it
+# here instead, after the commit object already exists, by amending it.
+#
+# Every commit in this repo must resolve to the darshshah-ai GitHub identity:
+# Vercel's native Git integration only auto-deploys commits whose resolved
+# GitHub author has contributing access to the project (Hobby plan
+# restriction) — any other identity gets silently blocked. This keeps every
+# commit deployable no matter which machine/global git config it's made from.
+CORRECT_AUTHOR="darshshah-ai <300842337+darshshah-ai@users.noreply.github.com>"
+CURRENT_AUTHOR=$(git log -1 --format="%an <%ae>")
+
+if [ "$CURRENT_AUTHOR" != "$CORRECT_AUTHOR" ]; then
+  git commit --amend --author="$CORRECT_AUTHOR" --no-edit --no-verify >/dev/null 2>&1
+fi
