@@ -61,55 +61,52 @@
 :root {
   --radius: 0.5rem;
 
-  /* Brand Constants — Siwa Capital palette: warm sand accent + cream backgrounds + black text,
-     with brown as the secondary dark surface and a muted blue used sparingly for one section. */
-  --brand-navy-deep: #000000; /* black — primary text, dominant dark surface */
-  --brand-navy: #4e392e; /* brown — secondary dark surface / hover */
-  --brand-navy-elevated: #3f2c22; /* hover-brown — elevated dark surface, hover on sky */
-  --brand-gold: #c29e77; /* sand — CTAs, eyebrows, nav pill, used as the primary accent */
-  --brand-gold-bright: #9a764f; /* hover-sand — hover/active state on the accent */
-  --brand-platinum: #f1e8d9; /* cream — warm off-white */
-  --brand-sky: #97a8bb; /* muted blue — secondary accent used sparingly */
-  --brand-sky-bright: #b3c0cd; /* lighter blue for hover */
+  /* Brand Constants — Refined Premium Investment Banking Palette: Midnight Navy, Pearl Platinum, and Champagne Gold.
+     Conveys trust, precision, stability, and institutional excellence. */
+  --brand-navy-deep: #090e1a; /* Midnight navy — primary text, dominant deep surface */
+  --brand-navy: #0f172a; /* Deep slate/navy — secondary dark surface / hover */
+  --brand-navy-elevated: #1e293b; /* Slate-800 — elevated dark surface, hover/active state */
+  --brand-gold: #b38e5d; /* Champagne Gold — CTAs, eyebrows, accents, premium focus */
+  --brand-gold-bright: #c5a374; /* Radiant Gold — hover/active state on gold */
+  --brand-platinum: #f8fafc; /* Ice White / Pearl Platinum — primary clean background */
+  --brand-sky: #475569; /* Muted Slate Blue — secondary text, subtle accent */
+  --brand-sky-bright: #64748b; /* Slate Grey for hover */
 
-  /* Text sitting on a gold/sand fill (buttons, nav pill). White here because light-mode's gold
-     is a fairly saturated, mid-depth sand. Dark mode DOES override this (see .dark) — dark
-     mode's gold is deliberately lightened to read against a dark surface, and white-on-light-gold
-     would fail contrast, so dark mode needs dark ink instead. */
+  /* Text sitting on a gold/sand fill */
   --ink: #ffffff;
 
   /* Semantic — light by default */
-  --background: #f1e8d9; /* Siwa cream background */
+  --background: #f8fafc; /* Pristine Pearl background */
   --foreground: var(--brand-navy-deep);
-  --card: #f9f4ea; /* soft warm white for cards, subtly lighter than the page background */
+  --card: #ffffff; /* pure white for cards, subtle elevated look */
   --card-foreground: var(--brand-navy-deep);
-  --popover: #f9f4ea;
+  --popover: #ffffff;
   --popover-foreground: var(--brand-navy-deep);
-  --primary: var(--brand-gold);
+  --primary: var(--brand-navy-deep);
   --primary-foreground: #ffffff;
-  --secondary: #e6d9c2; /* deeper sand-tinted greige */
+  --secondary: #f1f5f9; /* sleek grey */
   --secondary-foreground: var(--brand-navy-deep);
-  --muted: #e6d9c2; /* deeper cream for section backgrounds */
-  --muted-foreground: #787878; /* Siwa grey for subtext */
+  --muted: #f1f5f9; /* section background */
+  --muted-foreground: #475569; /* Slate-600 */
   --accent: var(--brand-gold);
   --accent-foreground: #ffffff;
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: rgba(0, 0, 0, 0.12); /* black-tinted border */
-  --input: rgba(0, 0, 0, 0.16);
+  --border: rgba(15, 23, 42, 0.08); /* fine clean border */
+  --input: rgba(15, 23, 42, 0.12);
   --ring: var(--brand-gold);
   --chart-1: var(--brand-gold);
   --chart-2: var(--brand-navy);
-  --chart-3: #5c574f;
+  --chart-3: #475569;
   --chart-4: var(--brand-gold-bright);
   --chart-5: var(--brand-navy-elevated);
-  --sidebar: #f6f3ef;
+  --sidebar: #fafbfd;
   --sidebar-foreground: var(--brand-navy-deep);
-  --sidebar-primary: var(--brand-gold);
-  --sidebar-primary-foreground: #fbf9f6;
-  --sidebar-accent: #efe9e1;
+  --sidebar-primary: var(--brand-navy-deep);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f5f9;
   --sidebar-accent-foreground: var(--brand-navy-deep);
-  --sidebar-border: rgba(19, 37, 63, 0.12);
+  --sidebar-border: rgba(15, 23, 42, 0.08);
   --sidebar-ring: var(--brand-gold);
 
   /* Backward Compatibility Mappings */
@@ -122,62 +119,55 @@
   --sky: var(--brand-sky);
   --sky-bright: var(--brand-sky-bright);
 
-  --gradient-gold: linear-gradient(135deg, #d4b48c, #9a764f);
-  --gradient-navy: linear-gradient(180deg, #4e392e, #1f160f);
+  --gradient-gold: linear-gradient(135deg, #dfba73, #a3803b);
+  --gradient-navy: linear-gradient(180deg, #0f172a, #090e1a);
   --gradient-radial-gold: radial-gradient(
     ellipse at top,
-    rgba(194, 158, 119, 0.14),
+    rgba(223, 186, 115, 0.08),
     transparent 60%
   );
-  --shadow-elegant: 0 30px 80px -30px rgba(0, 0, 0, 0.16);
-  --shadow-gold: 0 20px 60px -20px rgba(194, 158, 119, 0.28);
+  --shadow-elegant: 0 20px 50px -12px rgba(15, 23, 42, 0.06);
+  --shadow-gold: 0 15px 40px -15px rgba(179, 142, 93, 0.15);
 }
 
 .dark {
-  /* Dark mode gets its own tuned palette rather than a mechanical inversion of light mode.
-     Two research-backed corrections vs. a naive invert:
-     1. Neutral warm CHARCOAL, not a saturated brown — a background tinted as strongly as
-        light-mode's brown reads muddy at low luminance; luxury dark UIs desaturate the base
-        surface and let the accent carry the warmth instead.
-     2. The gold accent is lightened to stay legible on a dark surface, which means text sitting
-        ON the accent (buttons, nav pill) must flip to dark ink here — white-on-brightened-gold
-        fails contrast even though white-on-mid-tone-sand (light mode) does not. */
-  --brand-navy-deep: #f1e8d9; /* warm cream — foreground text */
-  --brand-navy: #3a352c; /* warm charcoal — secondary dark surface / hover */
-  --brand-navy-elevated: #4a4438; /* elevated warm charcoal — hover on sky */
-  --brand-gold: #d4a574; /* lightened, slightly desaturated gold for legibility on dark surfaces */
-  --brand-gold-bright: #e2ba90;
-  --brand-platinum: #2a251e;
-  --brand-sky: #7d8fa0; /* desaturated so it doesn't vibrate against the dark surface */
-  --brand-sky-bright: #93a3b2;
+  /* Premium Dark Mode: deep obsidian navy background, pristine silver highlights, and champagne details */
+  --brand-navy-deep: #f8fafc; /* Pearl Platinum / White — foreground text */
+  --brand-navy: #1e293b; /* Deep slate — hover/secondary */
+  --brand-navy-elevated: #334155; /* soft slate-grey */
+  --brand-gold: #dfba73; /* brightened champagne gold for dark contrast */
+  --brand-gold-bright: #e9cb8e;
+  --brand-platinum: #0b0f19; /* Obsidian Black-Navy — main background */
+  --brand-sky: #94a3b8; /* desaturated silver-grey */
+  --brand-sky-bright: #cbd5e1;
 
-  --ink: #1c1917; /* dark text on the lightened gold — see comment above */
+  --ink: #090e1a; /* dark text on the lightened gold */
 
-  --background: #1c1917; /* warm charcoal, not brown — #121212-family darkness with a hint of warmth */
-  --card: #24211c; /* one subtle step up in elevation, not a sharp jump */
-  --popover: #24211c;
-  --primary-foreground: #1c1917;
-  --secondary: #211e19;
-  --muted: #211e19;
-  --muted-foreground: #a89c8c;
-  --accent-foreground: #1c1917;
-  --border: rgba(241, 232, 217, 0.1);
-  --input: rgba(241, 232, 217, 0.14);
-  --chart-3: #a89c8c;
-  --sidebar: #1c1917;
-  --sidebar-primary-foreground: #1c1917;
-  --sidebar-accent: #211e19;
-  --sidebar-border: rgba(241, 232, 217, 0.1);
+  --background: #090e1a; /* Obsidian Black-Navy background */
+  --card: #0f172a; /* elevated card */
+  --popover: #0f172a;
+  --primary-foreground: #090e1a;
+  --secondary: #0f172a;
+  --muted: #111827;
+  --muted-foreground: #94a3b8;
+  --accent-foreground: #090e1a;
+  --border: rgba(248, 250, 252, 0.08);
+  --input: rgba(248, 250, 252, 0.12);
+  --chart-3: #94a3b8;
+  --sidebar: #090e1a;
+  --sidebar-primary-foreground: #090e1a;
+  --sidebar-accent: #0f172a;
+  --sidebar-border: rgba(248, 250, 252, 0.08);
 
-  --gradient-gold: linear-gradient(135deg, #e2ba90, #d4a574);
-  --gradient-navy: linear-gradient(180deg, #211e19, #0e0c0a);
+  --gradient-gold: linear-gradient(135deg, #e9cb8e, #dfba73);
+  --gradient-navy: linear-gradient(180deg, #0f172a, #090e1a);
   --gradient-radial-gold: radial-gradient(
     ellipse at top,
-    rgba(212, 165, 116, 0.16),
+    rgba(223, 186, 115, 0.12),
     transparent 60%
   );
   --shadow-elegant: 0 30px 80px -30px rgba(0, 0, 0, 0.6);
-  --shadow-gold: 0 20px 60px -20px rgba(212, 165, 116, 0.28);
+  --shadow-gold: 0 20px 60px -20px rgba(223, 186, 115, 0.18);
 }
 
 @layer base {
