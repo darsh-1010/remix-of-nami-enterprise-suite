@@ -172,8 +172,8 @@ export default function BusinessesPage() {
           </SplitReveal>
           <p className="mt-8 max-w-2xl text-muted-foreground text-lg leading-relaxed">
             Each vertical operates as a focused, regulated business — connected by shared
-            infrastructure, governance and capital relationships across India, UAE, USA, Canada and
-            GIFT IFSC.
+            infrastructure, governance and capital relationships across India, UAE, USA, UK and GIFT
+            IFSC.
           </p>
         </div>
       </section>

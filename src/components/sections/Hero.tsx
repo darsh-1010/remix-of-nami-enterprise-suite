@@ -66,7 +66,7 @@ export function Hero() {
             <span>·</span>
             <span>USA</span>
             <span>·</span>
-            <span>Canada</span>
+            <span>UK</span>
             <span>·</span>
             <span>GIFT IFSC</span>
           </div>

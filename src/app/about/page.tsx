@@ -236,7 +236,7 @@ export default function AboutPage() {
           <div className="lg:col-span-5">
             <div className="aspect-[4/5] overflow-hidden ring-1 ring-gold/20 relative">
               <Image
-                src="/assets/chairman.jpg"
+                src="/images/team/dipen-shah.png"
                 alt="CA Dipen U. Shah, Founder Director"
                 fill
                 className="object-cover"

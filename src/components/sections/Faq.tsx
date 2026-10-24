@@ -10,7 +10,7 @@ export function Faq() {
   const faqs: Faq[] = [
     {
       q: "What is NAMI Group's global footprint?",
-      a: "NAMI Group operates active execution desks and partner offices across India, UAE (Dubai), USA (New York), Canada (Toronto), and GIFT IFSC (Gandhinagar).",
+      a: "NAMI Group operates active execution desks and partner offices across India, UAE (Dubai), USA (New York), UK, and GIFT IFSC (Gandhinagar).",
     },
     {
       q: "What services does ICASPER Capfin Advisors deliver?",

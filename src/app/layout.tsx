@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s | NAMI Group",
   },
   description:
-    "NAMI Group is a professionally managed corporate ecosystem delivering Investment Banking, Treasury, Aviation & Maritime Leasing, GIFT IFSC advisory, Trade Finance and Healthcare Financing across India, UAE, USA, Canada and GIFT IFSC.",
+    "NAMI Group is a professionally managed corporate ecosystem delivering Investment Banking, Treasury, Aviation & Maritime Leasing, GIFT IFSC advisory, Trade Finance and Healthcare Financing across India, UAE, USA and UK.",
   authors: [{ name: "NAMI Group" }],
   openGraph: {
     title: "NAMI Group — Building the Next Global Financial Corridor",

@@ -10,7 +10,6 @@ const nav = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/businesses", label: "Businesses" },
-  { to: "/investment-banking", label: "Investment Banking" },
   { to: "/careers", label: "Careers" },
   { to: "/insights", label: "Insights" },
   { to: "/contact", label: "Contact" },
@@ -80,7 +79,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1 rounded-full bg-gold/90 px-2 py-1.5">
+        <nav className="hidden lg:flex items-center gap-1 rounded-full border border-gold/30 bg-foreground/5 backdrop-blur-md px-2 py-1.5">
           {nav.map((n) => {
             const isActive = pathname
               ? n.to === "/"
@@ -93,9 +92,7 @@ export function Header() {
                 href={n.to}
                 aria-current={isActive ? "page" : undefined}
                 className={`rounded-full px-4 py-2 text-[12px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
-                  isActive
-                    ? "bg-background text-navy-deep font-semibold"
-                    : "text-ink/70 hover:bg-background hover:text-navy-deep"
+                  isActive ? "bg-gold text-ink font-semibold" : "text-foreground/70 hover:text-gold"
                 }`}
               >
                 {n.label}

@@ -49,7 +49,7 @@ export function About() {
               },
               {
                 t: "Global Partnerships",
-                d: "Distribution and execution rails across India, UAE, USA, Canada and IFSC.",
+                d: "Distribution and execution rails across India, UAE, USA, UK and IFSC.",
               },
               {
                 t: "Technology Driven",
