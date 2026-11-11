@@ -36,10 +36,10 @@ export function CTA() {
                 </span>
                 <div className="flex flex-col gap-1.5">
                   <a
-                    href="mailto:ib@namigroup.in"
+                    href="mailto:info@namigroup.in"
                     className="text-gold font-medium hover:underline"
                   >
-                    ib@namigroup.in
+                    info@namigroup.in
                   </a>
                   <a
                     href="https://www.linkedin.com/company/nami-investment-banking/"

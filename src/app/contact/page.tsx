@@ -40,10 +40,10 @@ export default function ContactPage() {
           <div>
             <h3 className="font-display text-lg font-light text-navy-deep mb-3">Email</h3>
             <a
-              href="mailto:ib@namigroup.in"
+              href="mailto:info@namigroup.in"
               className="text-sky hover:text-sky-bright transition-colors"
             >
-              ib@namigroup.in
+              info@namigroup.in
             </a>
           </div>
           <div>

@@ -171,10 +171,10 @@ export default function TermsOfUsePage() {
                 <p className="mt-5 text-foreground/85 leading-relaxed font-light">
                   If you have questions about these Terms of Use, please contact us at{" "}
                   <a
-                    href="mailto:ib@namigroup.in"
+                    href="mailto:info@namigroup.in"
                     className="text-sky hover:text-sky-bright transition-colors"
                   >
-                    ib@namigroup.in
+                    info@namigroup.in
                   </a>
                   .
                 </p>

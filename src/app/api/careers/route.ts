@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
     const resumeBuffer = Buffer.from(await validatedData.resume.arrayBuffer());
 
     await sendMail({
-      to: process.env.CAREERS_EMAIL_TO || "ib@namigroup.in",
+      to: process.env.CAREERS_EMAIL_TO || "info@namigroup.in",
       replyTo: validatedData.email,
       subject: `Job Application: ${validatedData.jobTitle} — ${validatedData.fullName}`,
       html: `

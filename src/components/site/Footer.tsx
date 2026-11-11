@@ -25,6 +25,8 @@ export function Footer() {
             <span>USA</span>
             <span className="text-gold">·</span>
             <span>UK</span>
+            <span className="text-gold">·</span>
+            <span>China</span>
           </div>
         </div>
 
@@ -97,8 +99,8 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Mail className="h-4 w-4 text-gold mt-0.5 shrink-0" />
-              <a href="mailto:ib@namigroup.in" className="hover:text-gold transition-colors">
-                ib@namigroup.in
+              <a href="mailto:info@namigroup.in" className="hover:text-gold transition-colors">
+                info@namigroup.in
               </a>
             </li>
             <li className="flex gap-3">

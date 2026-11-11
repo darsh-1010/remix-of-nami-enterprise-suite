@@ -123,10 +123,10 @@ export default function PrivacyPolicyPage() {
                   request deletion of the personal information we hold about you. To exercise any of
                   these rights, please contact us at{" "}
                   <a
-                    href="mailto:ib@namigroup.in"
+                    href="mailto:info@namigroup.in"
                     className="text-sky hover:text-sky-bright transition-colors"
                   >
-                    ib@namigroup.in
+                    info@namigroup.in
                   </a>
                   , and we will respond within a reasonable timeframe.
                 </p>
@@ -175,10 +175,10 @@ export default function PrivacyPolicyPage() {
                   If you have questions about this Privacy Policy or how we handle your information,
                   please contact us at{" "}
                   <a
-                    href="mailto:ib@namigroup.in"
+                    href="mailto:info@namigroup.in"
                     className="text-sky hover:text-sky-bright transition-colors"
                   >
-                    ib@namigroup.in
+                    info@namigroup.in
                   </a>
                   .
                 </p>
