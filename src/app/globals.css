@@ -384,3 +384,20 @@
 input[placeholder*="Search"]:focus {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 15%, transparent);
 }
+
+@keyframes globe-spin {
+  from {
+    transform: rotateX(-18deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-18deg) rotateY(360deg);
+  }
+}
+.globe-spin {
+  animation: globe-spin 28s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .globe-spin {
+    animation: none;
+  }
+}

@@ -26,7 +26,7 @@ export function AviationMaritime() {
     <section id="aviation-maritime" className="py-20">
       <div className="container-x">
         <span className="eyebrow">Categories</span>
-        <Reveal className="mt-8 flex flex-col md:flex-row gap-3 md:h-[28rem]">
+        <Reveal className="mt-8 flex flex-col md:flex-row md:h-[30rem] bg-[#05080f] rounded-2xl overflow-hidden">
           {categories.map((c, i) => {
             const on = active === i;
             return (
@@ -38,39 +38,38 @@ export function AviationMaritime() {
                 onMouseEnter={() => setActive(i)}
                 onFocus={() => setActive(i)}
                 onClick={() => setActive(i)}
-                className={`group relative overflow-hidden rounded-2xl bg-[#090e1a] border border-border/40 cursor-pointer outline-none transition-[flex-grow,height] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                  on ? "h-64 md:h-auto md:flex-[6]" : "h-20 md:h-auto md:flex-1"
-                } min-w-0`}
+                className={`group relative overflow-hidden min-w-0 cursor-pointer outline-none border-r border-white/5 transition-[flex-grow,height,box-shadow] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  on
+                    ? "z-10 h-64 md:h-auto md:flex-[4] shadow-[0_0_60px_rgba(0,0,0,0.8)]"
+                    : "h-20 md:h-auto md:flex-1"
+                }`}
               >
                 <Image
                   src={c.img}
                   alt=""
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 40vw"
                   style={{ objectPosition: c.pos }}
                   className={`object-cover transition-all duration-700 ${
-                    on ? "opacity-90 scale-100" : "opacity-40 grayscale scale-110"
+                    on ? "scale-100 brightness-100" : "scale-110 grayscale brightness-[0.35]"
                   }`}
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#090e1a] via-[#090e1a]/50 to-[#090e1a]/10" />
-                <span className="absolute top-4 left-4 font-display text-xs tracking-[0.3em] text-gold">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                {/* collapsed: vertical label on desktop */}
+                <div
+                  className={`absolute inset-0 transition-opacity duration-700 ${
+                    on
+                      ? "opacity-100 bg-gradient-to-b from-black/70 via-transparent to-[#090e1a]/60"
+                      : "opacity-100 bg-[#090e1a]/60"
+                  }`}
+                />
                 <h3
-                  className={`absolute font-display text-sm text-white/80 transition-opacity duration-300 md:[writing-mode:vertical-rl] md:rotate-180 md:bottom-5 md:left-1/2 md:-translate-x-1/2 bottom-3 left-4 right-4 ${
-                    on ? "opacity-0 pointer-events-none" : "opacity-100"
+                  className={`absolute top-4 left-3 right-2 font-display leading-snug break-words transition-all duration-500 ${
+                    on ? "text-xl text-white md:left-6 md:top-6" : "text-[11px] text-white/70"
                   }`}
                 >
-                  {c.name}
-                </h3>
-                {/* expanded: horizontal title */}
-                <h3
-                  className={`absolute bottom-6 left-6 right-6 font-display text-2xl leading-snug text-white transition-all duration-500 ${
-                    on ? "opacity-100 translate-y-0 delay-200" : "opacity-0 translate-y-3"
-                  }`}
-                >
+                  <span className="block text-[10px] tracking-[0.3em] text-gold mb-1">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   {c.name}
                 </h3>
               </div>

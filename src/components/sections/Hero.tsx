@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { SplitReveal } from "@/components/motion/SplitReveal";
+import { Globe } from "@/components/motion/Globe";
 
 export function Hero() {
   return (
@@ -18,6 +19,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background dark:from-black/55 dark:via-black/75 dark:to-black/95" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-radial-gold)" }} />
       </div>
+
+      <Globe className="pointer-events-none absolute right-[7%] top-1/2 z-[5] hidden -translate-y-1/2 lg:block" />
 
       <div className="container-x relative z-10 pb-24 lg:pb-32 pt-12 w-full">
         <div className="max-w-4xl animate-fade-up">
