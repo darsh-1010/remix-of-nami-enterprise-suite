@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import {
   Hero,
   About,
-  Stats,
   GlobalPresence,
   Verticals,
   Industries,
@@ -10,7 +9,6 @@ import {
   Gift,
   Treasury,
   AviationMaritime,
-  Technology,
   Leadership,
   Esg,
   Faq,
@@ -56,9 +54,7 @@ export default function HomePage() {
       <Gift />
       <Treasury />
       <AviationMaritime />
-      <Technology />
       <About />
-      <Stats />
       <GlobalPresence />
       <Industries />
       <WhyChoose />

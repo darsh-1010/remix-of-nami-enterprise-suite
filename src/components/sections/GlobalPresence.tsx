@@ -4,11 +4,11 @@ import { SplitReveal } from "@/components/motion/SplitReveal";
 
 export function GlobalPresence() {
   const markets = [
-    { name: "India & GIFT IFSC", desc: "Foundational regulatory gateway & HQs" },
-    { name: "United States", desc: "North America sovereign capital corridors" },
-    { name: "United Kingdom", desc: "UK Dept of Trade & London connectivity" },
-    { name: "United Arab Emirates", desc: "Middle East capital structuring hubs" },
-    { name: "Europe (FR & CH)", desc: "Offshore wealth and banking access" },
+    { name: "India & GIFT IFSC" },
+    { name: "United States" },
+    { name: "United Kingdom" },
+    { name: "United Arab Emirates" },
+    { name: "China" },
   ];
   return (
     <section id="global-presence" className="py-32 relative overflow-hidden">
@@ -51,12 +51,7 @@ export function GlobalPresence() {
                 delay={i * 0.08}
                 className="rounded-2xl bg-card border border-border/40 p-6 hover:bg-muted/20 hover:shadow-elegant transition-all duration-300"
               >
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-                  <span className="text-[10px] tracking-[0.28em] uppercase text-gold">Active</span>
-                </div>
-                <div className="font-display text-foreground text-lg">{m.name}</div>
-                <div className="mt-1 text-sm text-muted-foreground">{m.desc}</div>
+                <div className="font-display text-foreground text-2xl">{m.name}</div>
               </Reveal>
             ))}
           </div>
