@@ -125,7 +125,7 @@ const verticals = [
     id: "ifactor",
     icon: TrendingUp,
     no: "07",
-    name: "iFactor Global",
+    name: "1Factor Global",
     lead: "Trade finance, international factoring, invoice discounting, and cross-border currency hedging.",
     services: [
       "International Factoring",

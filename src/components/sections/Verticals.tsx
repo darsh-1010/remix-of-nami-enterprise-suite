@@ -7,6 +7,7 @@ import {
   Network,
   TrendingUp,
   HeartPulse,
+  Globe2,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Image from "next/image";
@@ -21,6 +22,7 @@ interface Vertical {
   tags: string[];
   img: string;
   pos: string;
+  href?: string;
 }
 
 const verticals: Vertical[] = [
@@ -37,10 +39,11 @@ const verticals: Vertical[] = [
     no: "02",
     name: "ICASPER Capfin Advisors",
     icon: Briefcase,
-    desc: "Loan syndication, project finance, working capital and structured debt.",
-    tags: ["Syndication", "Project Finance"],
+    desc: "Offshore / Cross border Debt Syndication, Structure Debt, Investment Raising / Channelization for Global AIF / Fund",
+    tags: ["Syndication", "Structured Debt", "AIF / Fund"],
     img: "/assets/boardroom.jpg",
     pos: "20% 40%",
+    href: "https://www.icasper.in",
   },
   {
     no: "03",
@@ -50,6 +53,7 @@ const verticals: Vertical[] = [
     tags: ["Fixed Income", "Treasury"],
     img: "/assets/world-map.jpg",
     pos: "center",
+    href: "https://www.anmolfinsec.com",
   },
   {
     no: "04",
@@ -59,6 +63,7 @@ const verticals: Vertical[] = [
     tags: ["Leasing", "Aviation"],
     img: "/assets/aviation.jpg",
     pos: "center",
+    href: "https://www.namiaviation.com",
   },
   {
     no: "05",
@@ -68,6 +73,7 @@ const verticals: Vertical[] = [
     tags: ["Maritime", "Vessel Finance"],
     img: "/assets/maritime.jpg",
     pos: "center",
+    href: "https://www.namiship.in",
   },
   {
     no: "06",
@@ -80,7 +86,7 @@ const verticals: Vertical[] = [
   },
   {
     no: "07",
-    name: "iFactor Global",
+    name: "1Factor Global",
     icon: TrendingUp,
     desc: "Factoring, invoice discounting, supply chain finance and FX hedging.",
     tags: ["Trade Finance", "FX"],
@@ -96,6 +102,20 @@ const verticals: Vertical[] = [
     img: "/assets/hero-financial.jpg",
     pos: "80% 50%",
   },
+  {
+    no: "09",
+    name: "1BFI.WORLD",
+    icon: Globe2,
+    desc: "Global Advisory & Consulting",
+    tags: [
+      "GIFT IFSC Desk",
+      "NBFC Advisory Desk",
+      "CFO Advisory Desk",
+      "Banking, Finance & Investment Consulting",
+    ],
+    img: "/assets/world-map.jpg",
+    pos: "center",
+  },
 ];
 
 export function Verticals() {
@@ -103,38 +123,47 @@ export function Verticals() {
     <section id="verticals" className="py-32 bg-background relative">
       <div className="container-x">
         <Reveal className="max-w-3xl mb-16">
-          <span className="eyebrow text-sky">Business Ecosystem</span>
+          <span className="eyebrow text-sky">NAMI FINORBIT</span>
           <SplitReveal
             as="h2"
             className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-navy-deep font-light tracking-tight"
           >
             <>
-              Eight specialised verticals.
+              Nine specialised verticals.
               <br />
               One integrated platform.
             </>
           </SplitReveal>
         </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
           {verticals.map((v, i) => {
             const Icon = v.icon;
             return (
               <Reveal
                 key={v.no}
-                delay={(i % 4) * 0.08}
+                delay={(i % 3) * 0.08}
                 className="group relative overflow-hidden bg-[#090e1a] min-h-[24rem]"
               >
                 <Image
                   src={v.img}
                   alt=""
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   style={{ objectPosition: v.pos }}
                   className="object-cover opacity-80 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-100"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#090e1a] via-[#090e1a]/60 to-[#090e1a]/10" />
+                {v.href && (
+                  <a
+                    href={v.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${v.name}`}
+                    className="absolute inset-0 z-10"
+                  />
+                )}
                 <div className="relative flex h-full flex-col items-center justify-end p-8 text-center">
                   <span className="absolute top-6 left-6 font-display text-xs tracking-[0.3em] text-gold">
                     {v.no}
