@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { contactFormSchema } from "@/lib/schemas";
+import { sendMail } from "@/lib/mailer";
 import { ZodError } from "zod";
 
 // Rate limiter in-memory (for production, use Redis)
@@ -40,25 +41,23 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const validatedData = contactFormSchema.parse(body);
 
-    // TODO: Send email using your email service (Resend, SendGrid, etc.)
-    // const response = await sendEmail({
-    //   to: "contact@namigroup.com",
-    //   from: validatedData.email,
-    //   subject: `New inquiry from ${validatedData.name}`,
-    //   html: `
-    //     <h2>New Contact Form Submission</h2>
-    //     <p><strong>Name:</strong> ${validatedData.name}</p>
-    //     <p><strong>Email:</strong> ${validatedData.email}</p>
-    //     <p><strong>Organization:</strong> ${validatedData.org || "Not provided"}</p>
-    //     <p><strong>Phone:</strong> ${validatedData.phone || "Not provided"}</p>
-    //     <p><strong>Interest:</strong> ${validatedData.interest}</p>
-    //     <p><strong>Message:</strong></p>
-    //     <p>${validatedData.message}</p>
-    //   `,
-    // });
-
-    // For now, just log the submission
-    console.log("[Contact Form] New submission:", validatedData);
+    const esc = (v: string) => v.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+    const d = validatedData;
+    await sendMail({
+      to: "info@namigroup.in",
+      replyTo: d.email,
+      subject: `New inquiry from ${d.name.replace(/[\r\n]/g, " ")}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${esc(d.name)}</p>
+        <p><strong>Email:</strong> ${esc(d.email)}</p>
+        <p><strong>Organization:</strong> ${esc(d.org || "Not provided")}</p>
+        <p><strong>Phone:</strong> ${esc(d.phone || "Not provided")}</p>
+        <p><strong>Interest:</strong> ${esc(d.interest)}</p>
+        <p><strong>Message:</strong></p>
+        <p>${esc(d.message).replace(/\n/g, "<br>")}</p>
+      `,
+    });
 
     return NextResponse.json({
       success: true,
