@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Mail, MapPin, Phone, Instagram } from "lucide-react";
 
@@ -6,13 +7,13 @@ export function Footer() {
     <footer className="relative border-t border-border bg-muted/50">
       <div className="container-x py-20 grid gap-12 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
-          <div className="flex items-center gap-3">
-            <span className="relative flex h-9 w-9 items-center justify-center">
-              <span className="absolute inset-0 rounded-sm border border-gold/60 rotate-45" />
-              <span className="font-display text-gold text-sm font-semibold">N</span>
-            </span>
-            <span className="font-display tracking-[0.18em] text-foreground">NAMI GROUP</span>
-          </div>
+          <Image
+            src="/logo.png"
+            alt="NAMI Group"
+            width={737}
+            height={408}
+            className="h-14 w-auto rounded-md bg-white px-2 py-1"
+          />
           <p className="mt-6 text-sm text-muted-foreground max-w-sm leading-relaxed">
             A professionally managed corporate ecosystem delivering institutional Investment
             Banking, Treasury, cross-border capital and GIFT IFSC solutions across global markets.

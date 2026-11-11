@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -67,16 +68,14 @@ export function Header() {
     >
       <div className="container-x flex items-center justify-between h-20">
         <Link href="/" className="flex items-center gap-3 group">
-          <span className="relative flex h-9 w-9 items-center justify-center">
-            <span className="absolute inset-0 rounded-sm border border-gold/60 rotate-45" />
-            <span className="font-display text-gold text-sm font-semibold tracking-widest">N</span>
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-base font-semibold tracking-[0.18em] text-foreground">
-              NAMI
-            </span>
-            <span className="text-[10px] tracking-[0.32em] text-muted-foreground mt-1">GROUP</span>
-          </span>
+          <Image
+            src="/logo.png"
+            alt="NAMI Group"
+            width={737}
+            height={408}
+            priority
+            className="h-11 w-auto rounded-md bg-white px-2 py-1"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1 rounded-full border border-gold/30 bg-foreground/5 backdrop-blur-md px-2 py-1.5">
@@ -134,7 +133,13 @@ export function Header() {
           className="fixed inset-0 z-50 bg-background lg:hidden flex flex-col"
         >
           <div className="container-x flex items-center justify-between h-20 border-b border-border/40">
-            <span className="font-display tracking-[0.2em] text-foreground">NAMI GROUP</span>
+            <Image
+              src="/logo.png"
+              alt="NAMI Group"
+              width={737}
+              height={408}
+              className="h-10 w-auto rounded-md bg-white px-2 py-1"
+            />
             <button
               onClick={() => setOpen(false)}
               className="rounded-full bg-gold/90 text-ink p-2.5"
