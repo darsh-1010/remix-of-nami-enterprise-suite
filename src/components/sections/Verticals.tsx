@@ -39,7 +39,7 @@ const verticals: Vertical[] = [
     no: "02",
     name: "ICASPER Capfin Advisors",
     icon: Briefcase,
-    desc: "Offshore / Cross border Debt Syndication, Structure Debt, Investment Raising / Channelization for Global AIF / Fund",
+    desc: "Cross-border debt syndication, structured debt and fund raising for global AIFs.",
     tags: ["Syndication", "Structured Debt", "AIF / Fund"],
     img: "/assets/boardroom.jpg",
     pos: "20% 40%",
@@ -59,7 +59,7 @@ const verticals: Vertical[] = [
     no: "04",
     name: "NAMI Aviation",
     icon: Plane,
-    desc: "Aircraft leasing, operating lease, sale & leaseback and fleet finance.",
+    desc: "Aircraft finance and lease management, structured lease and aviation advisory.",
     tags: ["Leasing", "Aviation"],
     img: "/assets/aviation.jpg",
     pos: "center",
@@ -69,7 +69,7 @@ const verticals: Vertical[] = [
     no: "05",
     name: "NAMI Ship",
     icon: Ship,
-    desc: "Maritime leasing, vessel finance and cross-border shipping capital.",
+    desc: "Ship leasing, vessel finance and global shipping advisory.",
     tags: ["Maritime", "Vessel Finance"],
     img: "/assets/maritime.jpg",
     pos: "center",
@@ -79,7 +79,7 @@ const verticals: Vertical[] = [
     no: "06",
     name: "KPO & BPO Desk",
     icon: Network,
-    desc: "Accounting, audit support, compliance and process automation outsourcing.",
+    desc: "KPO/BPO market entry, credit operations outsourcing and process automation.",
     tags: ["KPO", "Compliance"],
     img: "/assets/boardroom.jpg",
     pos: "90% 30%",
@@ -106,7 +106,7 @@ const verticals: Vertical[] = [
     no: "09",
     name: "1BFI.WORLD",
     icon: Globe2,
-    desc: "Global Advisory & Consulting",
+    desc: "Global advisory and consulting for GIFT IFSC and NBFC mandates.",
     tags: ["GIFT IFSC Desk", "NBFC Advisory Desk"],
     img: "/assets/world-map.jpg",
     pos: "center",
@@ -165,7 +165,7 @@ export function Verticals() {
                   </span>
                   <Icon className="h-10 w-10 text-gold mb-5" strokeWidth={1.1} />
                   <h3 className="font-display text-xl text-white leading-tight mb-3">{v.name}</h3>
-                  <p className="text-sm text-white/80 leading-relaxed">{v.desc}</p>
+                  <p className="text-sm text-white/80 leading-relaxed min-h-[4.5rem]">{v.desc}</p>
                   <div className="mt-5 flex flex-wrap justify-center gap-2">
                     {v.tags.map((t) => (
                       <span
