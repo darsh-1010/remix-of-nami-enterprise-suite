@@ -107,12 +107,7 @@ const verticals: Vertical[] = [
     name: "1BFI.WORLD",
     icon: Globe2,
     desc: "Global Advisory & Consulting",
-    tags: [
-      "GIFT IFSC Desk",
-      "NBFC Advisory Desk",
-      "CFO Advisory Desk",
-      "Banking, Finance & Investment Consulting",
-    ],
+    tags: ["GIFT IFSC Desk", "NBFC Advisory Desk"],
     img: "/assets/world-map.jpg",
     pos: "center",
   },

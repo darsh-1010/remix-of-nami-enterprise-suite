@@ -39,27 +39,47 @@ export function Footer() {
                 href="/businesses#investment-banking"
                 className="hover:text-gold transition-colors"
               >
-                Investment Banking
+                NAMI Investment Banking
+              </Link>
+            </li>
+            <li>
+              <Link href="/businesses#capfin" className="hover:text-gold transition-colors">
+                ICASPER Capfin Advisors
               </Link>
             </li>
             <li>
               <Link href="/businesses#treasury" className="hover:text-gold transition-colors">
-                Bond &amp; Treasury
+                NAMI Bond &amp; Treasury
               </Link>
             </li>
             <li>
               <Link href="/businesses#aviation" className="hover:text-gold transition-colors">
-                Aviation Leasing
+                NAMI Aviation
               </Link>
             </li>
             <li>
               <Link href="/businesses#ship" className="hover:text-gold transition-colors">
-                Maritime Finance
+                NAMI Ship
+              </Link>
+            </li>
+            <li>
+              <Link href="/businesses#kpo" className="hover:text-gold transition-colors">
+                KPO &amp; BPO Desk
               </Link>
             </li>
             <li>
               <Link href="/businesses#ifactor" className="hover:text-gold transition-colors">
-                Trade Finance
+                1Factor Global
+              </Link>
+            </li>
+            <li>
+              <Link href="/businesses#emark" className="hover:text-gold transition-colors">
+                eMark HealthTech
+              </Link>
+            </li>
+            <li>
+              <Link href="/#verticals" className="hover:text-gold transition-colors">
+                1BFI.WORLD
               </Link>
             </li>
           </ul>
