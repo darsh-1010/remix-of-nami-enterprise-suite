@@ -11,7 +11,6 @@ import {
   AviationMaritime,
   Leadership,
   Esg,
-  Faq,
   CTA,
 } from "@/components/sections";
 
@@ -60,7 +59,6 @@ export default function HomePage() {
       <WhyChoose />
       <Leadership />
       <Esg />
-      <Faq />
       <CTA />
     </>
   );
