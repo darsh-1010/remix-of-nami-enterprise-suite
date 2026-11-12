@@ -13,3 +13,4 @@ export { Leadership } from "./Leadership";
 export { Esg } from "./Esg";
 export { Faq } from "./Faq";
 export { CTA } from "./CTA";
+export { AskAI } from "./AskAI";
