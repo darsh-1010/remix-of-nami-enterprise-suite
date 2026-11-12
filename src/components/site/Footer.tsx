@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AskAI } from "./AskAI";
 import Link from "next/link";
 import { Linkedin, Mail, MapPin, Phone, Instagram } from "lucide-react";
 
@@ -29,6 +30,7 @@ export function Footer() {
             <span className="text-gold">·</span>
             <span>China</span>
           </div>
+          <AskAI />
         </div>
 
         <div>
