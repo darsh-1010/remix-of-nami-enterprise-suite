@@ -10,6 +10,5 @@ export { Treasury } from "./Treasury";
 export { AviationMaritime } from "./AviationMaritime";
 export { Technology } from "./Technology";
 export { Leadership } from "./Leadership";
-export { Esg } from "./Esg";
 export { Faq } from "./Faq";
 export { CTA } from "./CTA";
