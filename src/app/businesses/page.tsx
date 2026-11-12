@@ -38,6 +38,7 @@ export const metadata: Metadata = {
 const verticals = [
   {
     id: "investment-banking",
+    bg: "/assets/boardroom.jpg",
     icon: Landmark,
     no: "01",
     name: "NAMI Investment Banking",
@@ -53,6 +54,7 @@ const verticals = [
   },
   {
     id: "capfin",
+    bg: "/assets/hero-financial.jpg",
     icon: Briefcase,
     no: "02",
     name: "ICASPER Capfin Advisors",
@@ -68,6 +70,7 @@ const verticals = [
   },
   {
     id: "treasury",
+    bg: "/assets/hero-financial.jpg",
     icon: LineChart,
     no: "03",
     name: "NAMI Bond & Treasury",
@@ -83,6 +86,7 @@ const verticals = [
   },
   {
     id: "aviation",
+    bg: "/assets/aviation.jpg",
     icon: Plane,
     no: "04",
     name: "NAMI Aviation",
@@ -97,6 +101,7 @@ const verticals = [
   },
   {
     id: "ship",
+    bg: "/assets/maritime.jpg",
     icon: Ship,
     no: "05",
     name: "NAMI Ship",
@@ -110,6 +115,7 @@ const verticals = [
   },
   {
     id: "kpo",
+    bg: "/assets/boardroom.jpg",
     icon: Network,
     no: "06",
     name: "KPO & BPO Desk",
@@ -125,6 +131,7 @@ const verticals = [
   },
   {
     id: "ifactor",
+    bg: "/assets/world-map.jpg",
     icon: TrendingUp,
     no: "07",
     name: "1Factor Global",
@@ -139,6 +146,7 @@ const verticals = [
   },
   {
     id: "emark",
+    bg: "/assets/hero-financial.jpg",
     icon: HeartPulse,
     no: "08",
     name: "eMark HealthTech",
@@ -152,6 +160,7 @@ const verticals = [
   },
   {
     id: "1bfi",
+    bg: "/assets/world-map.jpg",
     icon: Globe2,
     no: "09",
     name: "1BFI.WORLD",
@@ -196,21 +205,23 @@ export default function BusinessesPage() {
               <article
                 key={v.id}
                 id={v.id}
-                className="border-t border-border/60 py-16 grid lg:grid-cols-12 gap-10 group"
+                className="relative overflow-hidden border-t border-border/60 py-16 px-6 lg:px-10 grid lg:grid-cols-12 gap-10 group bg-cover bg-center"
+                style={{ backgroundImage: `url(${v.bg})` }}
               >
-                <div className="lg:col-span-2 flex items-start gap-4">
+                <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
+                <div className="relative lg:col-span-2 flex items-start gap-4">
                   <span className="font-display text-xs tracking-[0.3em] text-gold tabular-nums">
                     {v.no}
                   </span>
                 </div>
-                <div className="lg:col-span-5">
+                <div className="relative lg:col-span-5">
                   <Icon className="h-8 w-8 text-gold mb-6" strokeWidth={1.2} />
                   <h2 className="font-display text-3xl md:text-4xl text-foreground font-light tracking-tight">
                     {v.name}
                   </h2>
                   <p className="mt-4 text-muted-foreground leading-relaxed max-w-xl">{v.lead}</p>
                 </div>
-                <div className="lg:col-span-5">
+                <div className="relative lg:col-span-5">
                   <div className="text-xs tracking-[0.28em] uppercase text-gold mb-5">
                     Capability
                   </div>
