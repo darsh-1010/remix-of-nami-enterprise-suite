@@ -10,7 +10,6 @@ import {
   Treasury,
   AviationMaritime,
   Leadership,
-  Esg,
   CTA,
 } from "@/components/sections";
 
@@ -58,7 +57,6 @@ export default function HomePage() {
       <Industries />
       <WhyChoose />
       <Leadership />
-      <Esg />
       <CTA />
     </>
   );

@@ -16,8 +16,8 @@ export function Esg() {
     { t: "Global Standards", d: "Aligned with international institutional benchmarks." },
   ];
   return (
-    <section id="esg" className="py-32 bg-background border-y border-border/40">
-      <div className="container-x">
+    <div id="esg" className="mt-32 pt-24 border-t border-border/40 lg:col-span-12 scroll-mt-20">
+      <div>
         <Reveal className="max-w-3xl mb-16">
           <span className="eyebrow text-sky">ESG & Governance</span>
           <SplitReveal
@@ -43,6 +43,6 @@ export function Esg() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

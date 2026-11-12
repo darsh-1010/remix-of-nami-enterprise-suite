@@ -80,7 +80,7 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/#verticals" className="hover:text-gold transition-colors">
+              <Link href="/businesses#1bfi" className="hover:text-gold transition-colors">
                 1BFI.WORLD
               </Link>
             </li>

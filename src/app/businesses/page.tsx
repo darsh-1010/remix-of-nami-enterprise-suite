@@ -11,12 +11,13 @@ import {
   Network,
   TrendingUp,
   HeartPulse,
+  Globe2,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "NAMI Group Businesses — Specialized Financial & Leasing Desks",
   description:
-    "Explore NAMI Group's eight specialized business verticals: Investment Banking, ICASPER Capfin, Bond & Treasury, Aviation & Maritime Leasing, KPO/BPO, and Trade Finance.",
+    "Explore NAMI Group's nine specialized business verticals: Investment Banking, ICASPER Capfin, Bond & Treasury, Aviation & Maritime Leasing, KPO/BPO, and Trade Finance.",
   keywords: [
     "NAMI Investment Banking",
     "ICASPER Capfin Advisors",
@@ -26,10 +27,11 @@ export const metadata: Metadata = {
     "Financial KPO Support",
     "International Factoring",
     "HealthTech Financing",
+    "1BFI.WORLD",
   ],
   openGraph: {
     title: "NAMI Group Businesses — Specialized Financial & Leasing Desks",
-    description: "Eight specialized verticals. One integrated corporate advisory platform.",
+    description: "Nine specialized verticals. One integrated corporate advisory platform.",
   },
 };
 
@@ -148,6 +150,14 @@ const verticals = [
       "Clinical Network Capital",
     ],
   },
+  {
+    id: "1bfi",
+    icon: Globe2,
+    no: "09",
+    name: "1BFI.WORLD",
+    lead: "Global advisory and consulting for GIFT IFSC and NBFC mandates.",
+    services: ["GIFT IFSC Desk", "NBFC Advisory Desk"],
+  },
 ];
 
 export default function BusinessesPage() {
@@ -165,7 +175,7 @@ export default function BusinessesPage() {
             className="mt-6 font-display text-5xl md:text-7xl text-foreground font-light tracking-tight leading-[1]"
           >
             <>
-              Eight specialised verticals.
+              Nine specialised verticals.
               <br />
               <span className="text-gradient-gold">One integrated platform.</span>
             </>

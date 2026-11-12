@@ -22,7 +22,7 @@ export function CTA() {
             >
               <>
                 Let&apos;s build the next{" "}
-                <span className="text-gradient-gold">capital corridor</span> — together.
+                <span className="text-gradient-gold">global corridor</span> — together.
               </>
             </SplitReveal>
             <p className="mt-8 text-muted-foreground text-base leading-relaxed">

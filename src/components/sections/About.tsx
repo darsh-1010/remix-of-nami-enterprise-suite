@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Esg } from "./Esg";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 
 export function About() {
@@ -63,6 +64,7 @@ export function About() {
             ))}
           </div>
         </div>
+        <Esg />
       </div>
     </section>
   );
