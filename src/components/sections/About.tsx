@@ -3,7 +3,7 @@ import { SplitReveal } from "@/components/motion/SplitReveal";
 
 export function About() {
   return (
-    <section className="py-32 relative">
+    <section className="py-24 relative">
       <div className="container-x grid lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-5 relative">
           <div className="relative aspect-[4/5] overflow-hidden">
@@ -36,38 +36,37 @@ export function About() {
             capital raising and GIFT IFSC solutions — directing institutional wealth frameworks and
             cutting-edge technology deployment pathways across global markets.
           </p>
-
-          <div className="mt-12 grid sm:grid-cols-2 gap-3">
-            {[
-              [
-                "Professional Management",
-                "Seasoned banking and capital-markets leadership across regulated jurisdictions.",
-              ],
-              [
-                "Institutional Advisory",
-                "Mandates structured to the standards of sovereign and institutional capital.",
-              ],
-              [
-                "Global Partnerships",
-                "Distribution and execution rails across India, UAE, USA, UK and IFSC.",
-              ],
-              [
-                "Technology Driven",
-                "Workflow, risk and data infrastructure integrated end-to-end.",
-              ],
-              ["Corporate Governance", "Independent oversight and board-level discipline."],
-              ["Compliance", "Multi-jurisdictional regulatory alignment."],
-              ["Risk Management", "Enterprise risk framework across every mandate."],
-              ["Ethics", "Codified conduct standards for the entire group."],
-              ["Sustainability", "ESG-aware structuring across capital and advisory."],
-              ["Global Standards", "Aligned with international institutional benchmarks."],
-            ].map(([t, d]) => (
-              <div key={t} className="rounded-2xl bg-card border border-border/40 p-6">
-                <h3 className="font-display text-base text-gold mb-2">{t}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{d}</p>
-              </div>
-            ))}
-          </div>
+        </div>
+        <div className="lg:col-span-12 grid lg:grid-cols-2 lg:gap-x-16">
+          {[
+            [
+              "Professional Management",
+              "Seasoned banking and capital-markets leadership across regulated jurisdictions.",
+            ],
+            [
+              "Institutional Advisory",
+              "Mandates structured to the standards of sovereign and institutional capital.",
+            ],
+            [
+              "Global Partnerships",
+              "Distribution and execution rails across India, UAE, USA, UK and IFSC.",
+            ],
+            ["Technology Driven", "Workflow, risk and data infrastructure integrated end-to-end."],
+            ["Corporate Governance", "Independent oversight and board-level discipline."],
+            ["Compliance", "Multi-jurisdictional regulatory alignment."],
+            ["Risk Management", "Enterprise risk framework across every mandate."],
+            ["Ethics", "Codified conduct standards for the entire group."],
+            ["Sustainability", "ESG-aware structuring across capital and advisory."],
+            ["Global Standards", "Aligned with international institutional benchmarks."],
+          ].map(([t, d]) => (
+            <div
+              key={t}
+              className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 border-t border-border/50 py-4"
+            >
+              <h3 className="font-display text-base text-gold sm:w-48 shrink-0">{t}</h3>
+              <p className="text-sm text-muted-foreground leading-snug">{d}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
