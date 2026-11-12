@@ -1,6 +1,8 @@
 import Image from "next/image";
 
-const PROMPT = encodeURIComponent("Summary of NAMI Group");
+const PROMPT = encodeURIComponent(
+  "Summarise NAMI Group (namigroup.in), a financial services group headquartered at GIFT IFSC, Gandhinagar, India, with operations in the UAE, USA, UK and China. It covers investment banking, bond and treasury advisory, aviation and ship leasing, trade finance and GIFT IFSC advisory. Cover what it does, its business verticals and who it serves.",
+);
 
 const TARGETS = [
   { name: "ChatGPT", href: `https://chat.openai.com/?prompt=${PROMPT}`, icon: "openai" },
