@@ -384,3 +384,12 @@
 input[placeholder*="Search"]:focus {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 15%, transparent);
 }
+
+/* Hide Google Translate's injected banner and keep layout from shifting */
+.goog-te-banner-frame,
+iframe.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}

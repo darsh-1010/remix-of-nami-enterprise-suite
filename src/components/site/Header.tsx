@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -101,6 +102,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
+          <LanguageSwitcher />
           <ThemeToggle />
           <Link
             href="/#briefing"
@@ -111,6 +113,7 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
+          <LanguageSwitcher />
           <ThemeToggle />
           <button
             ref={menuButtonRef}
