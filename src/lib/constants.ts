@@ -67,13 +67,15 @@ export const INDUSTRIES = [
 
 // Contact Form Options
 export const INTEREST_OPTIONS = [
-  "Investment Banking",
-  "Treasury & Bonds",
-  "Aviation Leasing",
-  "Maritime Finance",
-  "GIFT IFSC",
-  "Trade Finance",
-  "Healthcare Finance",
+  "NAMI Investment Banking",
+  "ICASPER Capfin Advisors",
+  "NAMI Bond & Treasury",
+  "NAMI Aviation",
+  "NAMI Ship",
+  "KPO & BPO Desk",
+  "1Factor Global",
+  "eMark HealthTech",
+  "1BFI.WORLD",
   "Other",
 ] as const;
 
