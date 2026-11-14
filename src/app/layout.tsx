@@ -8,6 +8,9 @@ import { LenisProvider } from "@/components/LenisProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
+// Re-render daily so the year shown in the Hero/Footer rolls over on its own.
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: {
     default: "NAMI Group — Global Financial, Advisory & Technology Solutions",

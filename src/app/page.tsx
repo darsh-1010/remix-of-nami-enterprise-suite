@@ -7,7 +7,7 @@ import {
   Industries,
   WhyChoose,
   Gift,
-  Treasury,
+  // Treasury, // hidden for now
   AviationMaritime,
   Leadership,
   CTA,
@@ -50,7 +50,7 @@ export default function HomePage() {
       <Hero />
       <Verticals />
       <Gift />
-      <Treasury />
+      {/* <Treasury /> hidden for now */}
       <AviationMaritime />
       <About />
       <GlobalPresence />

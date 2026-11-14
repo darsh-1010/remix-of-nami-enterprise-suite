@@ -23,7 +23,7 @@ export function Hero() {
         <div className="max-w-4xl animate-fade-up">
           <div className="flex items-center gap-4 mb-8">
             <div className="h-px w-12 bg-gold" />
-            <span className="eyebrow">Corporate Profile · 2025</span>
+            <span className="eyebrow">Corporate Profile · {new Date().getFullYear()}</span>
           </div>
 
           <SplitReveal
