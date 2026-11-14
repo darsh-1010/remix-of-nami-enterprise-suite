@@ -30,8 +30,8 @@ const verticals: Vertical[] = [
     no: "01",
     name: "NAMI Investment Banking",
     icon: Landmark,
-    desc: "Equity capital raising, M&A advisory, valuation and structured finance.",
-    tags: ["ECM", "M&A", "Valuation"],
+    desc: "Equity & Debt Capital Market, M&A advisory, Valuations & Structured Finance.",
+    tags: ["ECM", "M&A", "Valuation", "Capital Markets"],
     img: "/assets/hero-financial.jpg",
     pos: "center",
   },
@@ -59,8 +59,8 @@ const verticals: Vertical[] = [
     no: "04",
     name: "NAMI Aviation",
     icon: Plane,
-    desc: "Aircraft finance and lease management, structured lease and aviation advisory.",
-    tags: ["Leasing", "Aviation"],
+    desc: "Aviation Finance & Structured Lease, Aviation Advisory.",
+    tags: ["Leasing", "Aviation", "Finance Leasing", "Advisory"],
     img: "/assets/aviation.jpg",
     pos: "center",
     href: "https://www.namiaviation.com",
@@ -79,8 +79,8 @@ const verticals: Vertical[] = [
     no: "06",
     name: "KPO & BPO Desk",
     icon: Network,
-    desc: "KPO/BPO market entry, credit operations outsourcing and process automation.",
-    tags: ["KPO", "Compliance"],
+    desc: "Market Entry & Distributor Search, Credit Operation Outsourcing, Process Automation.",
+    tags: ["Market Entry", "Credit", "Automation"],
     img: "/assets/boardroom.jpg",
     pos: "90% 30%",
   },
@@ -88,8 +88,8 @@ const verticals: Vertical[] = [
     no: "07",
     name: "1Factor Global",
     icon: TrendingUp,
-    desc: "Factoring, invoice discounting, supply chain finance and FX hedging.",
-    tags: ["Trade Finance", "FX"],
+    desc: "International Trade Finance: Export & Import Finance, Vendor Finance, Invoice Discounting, Global Supply Chain Allied Services.",
+    tags: ["Finance", "Supply Chain Services"],
     img: "/assets/maritime.jpg",
     pos: "10% 80%",
   },
@@ -106,8 +106,8 @@ const verticals: Vertical[] = [
     no: "09",
     name: "1BFI.WORLD",
     icon: Globe2,
-    desc: "Global advisory and consulting for GIFT IFSC and NBFC mandates.",
-    tags: ["GIFT IFSC Desk", "NBFC Advisory Desk"],
+    desc: "Global Banking, Finance & Investments Advisory Desk, GIFT IFSC Desk, Virtual CFO Consulting, NBFC Advisory.",
+    tags: ["BFI Sector", "GIFT IFSC", "Virtual CFO", "NBFC"],
     img: "/assets/world-map.jpg",
     pos: "center",
   },
@@ -118,7 +118,9 @@ export function Verticals() {
     <section id="verticals" className="py-32 bg-background relative">
       <div className="container-x">
         <Reveal className="max-w-3xl mb-16">
-          <span className="eyebrow text-sky">NAMI FINORBIT</span>
+          <span className="eyebrow text-sky block !text-3xl md:!text-4xl lg:!text-5xl !tracking-[0.12em] font-display font-light">
+            NAMI FINORBIT
+          </span>
           <SplitReveal
             as="h2"
             className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-navy-deep font-light tracking-tight"
