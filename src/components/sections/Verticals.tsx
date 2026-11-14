@@ -161,7 +161,7 @@ export function Verticals() {
                     className="absolute inset-0 z-10"
                   />
                 )}
-                <div className="relative flex h-full flex-col items-center justify-end p-8 text-center">
+                <div className="relative flex h-full flex-col items-center justify-start px-8 pb-8 pt-20 text-center">
                   <span className="absolute top-6 left-6 font-display text-xs tracking-[0.3em] text-gold">
                     {v.no}
                   </span>
@@ -169,8 +169,8 @@ export function Verticals() {
                   <h3 className="font-display text-xl text-white leading-tight mb-3 uppercase">
                     {v.name}
                   </h3>
-                  <p className="text-sm text-white/80 leading-relaxed min-h-[4.5rem]">{v.desc}</p>
-                  <div className="mt-5 flex flex-wrap justify-center gap-2">
+                  <p className="text-sm text-white/80 leading-relaxed min-h-[6rem]">{v.desc}</p>
+                  <div className="mt-5 min-h-[4rem] flex flex-wrap content-start justify-center gap-2">
                     {v.tags.map((t) => (
                       <span
                         key={t}
