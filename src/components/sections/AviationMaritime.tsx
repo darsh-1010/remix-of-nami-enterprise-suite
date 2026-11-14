@@ -25,7 +25,7 @@ export function AviationMaritime() {
   return (
     <section id="aviation-maritime" className="py-20">
       <div className="container-x">
-        <span className="eyebrow">Categories</span>
+        <span className="eyebrow">NAMI Business Segments</span>
         <Reveal className="mt-8 flex flex-col md:flex-row md:h-[30rem] bg-[#05080f] rounded-2xl overflow-hidden">
           {categories.map((c, i) => {
             const on = active === i;
