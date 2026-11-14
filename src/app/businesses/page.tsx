@@ -178,7 +178,7 @@ export default function BusinessesPage() {
           style={{ background: "var(--gradient-radial-gold)" }}
         />
         <div className="container-x relative">
-          <span className="eyebrow">Business Ecosystem</span>
+          <span className="eyebrow">NAMI Business Segments</span>
           <SplitReveal
             as="h1"
             className="mt-6 font-display text-5xl md:text-7xl text-foreground font-light tracking-tight leading-[1]"
