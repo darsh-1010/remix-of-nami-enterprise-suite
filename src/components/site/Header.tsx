@@ -75,7 +75,7 @@ export function Header() {
             width={737}
             height={408}
             priority
-            className="h-11 w-auto rounded-md bg-white px-2 py-1"
+            className="h-11 w-auto"
           />
         </Link>
 
@@ -141,7 +141,7 @@ export function Header() {
               alt="NAMI Group"
               width={737}
               height={408}
-              className="h-10 w-auto rounded-md bg-white px-2 py-1"
+              className="h-10 w-auto"
             />
             <button
               onClick={() => setOpen(false)}

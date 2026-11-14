@@ -3,15 +3,15 @@
 import { useState } from "react";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitReveal } from "@/components/motion/SplitReveal";
-import { Globe } from "@/components/motion/Globe";
+import { WorldMap, type MapMarker } from "@/components/motion/WorldMap";
 
-// location = [lat, lng]; the first entry is the hub the arcs radiate from.
-const markets = [
-  { name: "India & GIFT IFSC", location: [23.16, 72.68] as [number, number] },
-  { name: "United States", location: [40.71, -74.0] as [number, number] },
-  { name: "United Kingdom", location: [51.51, -0.13] as [number, number] },
-  { name: "United Arab Emirates", location: [25.2, 55.27] as [number, number] },
-  { name: "China", location: [31.23, 121.47] as [number, number] },
+// pin = position on the WorldMap canvas; labels sit left/right with leader lines to the pin.
+const markets: MapMarker[] = [
+  { name: "India & GIFT IFSC", pin: [863, 334], side: "right", labelY: 490 },
+  { name: "United States", pin: [519, 250], side: "left", labelY: 150 },
+  { name: "United Kingdom", pin: [671, 204], side: "left", labelY: 70 },
+  { name: "United Arab Emirates", pin: [829, 307], side: "right", labelY: 570 },
+  { name: "China", pin: [1030, 292], side: "right", labelY: 70 },
 ];
 
 export function GlobalPresence() {
@@ -38,7 +38,7 @@ export function GlobalPresence() {
         </Reveal>
 
         <div className="relative">
-          <Globe markers={markets} focus={focus} className="mx-auto max-w-[640px]" />
+          <WorldMap markers={markets} focus={focus} onFocus={setFocus} className="mx-auto w-full" />
 
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {markets.map((m, i) => (

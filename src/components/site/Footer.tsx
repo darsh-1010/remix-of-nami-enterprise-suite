@@ -13,7 +13,7 @@ export function Footer() {
             alt="NAMI Group"
             width={737}
             height={408}
-            className="h-14 w-auto rounded-md bg-white px-2 py-1"
+            className="h-14 w-auto"
           />
           <p className="mt-6 text-sm text-muted-foreground max-w-sm leading-relaxed">
             A professionally managed corporate ecosystem delivering institutional Investment
@@ -35,7 +35,7 @@ export function Footer() {
 
         <div>
           <h4 className="text-xs tracking-[0.28em] uppercase text-gold mb-5">Verticals</h4>
-          <ul className="space-y-3 text-sm text-foreground/80">
+          <ul className="space-y-3 text-sm uppercase text-foreground/80">
             <li>
               <Link
                 href="/businesses#investment-banking"
