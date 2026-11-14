@@ -164,7 +164,9 @@ export function Verticals() {
                     {v.no}
                   </span>
                   <Icon className="h-10 w-10 text-gold mb-5" strokeWidth={1.1} />
-                  <h3 className="font-display text-xl text-white leading-tight mb-3">{v.name}</h3>
+                  <h3 className="font-display text-xl text-white leading-tight mb-3 uppercase">
+                    {v.name}
+                  </h3>
                   <p className="text-sm text-white/80 leading-relaxed min-h-[4.5rem]">{v.desc}</p>
                   <div className="mt-5 flex flex-wrap justify-center gap-2">
                     {v.tags.map((t) => (
