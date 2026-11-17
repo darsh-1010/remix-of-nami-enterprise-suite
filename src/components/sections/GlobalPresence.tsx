@@ -47,10 +47,7 @@ export function GlobalPresence() {
                 onMouseEnter={() => setFocus(i)}
                 onMouseLeave={() => setFocus(null)}
               >
-                <Reveal
-                  delay={i * 0.08}
-                  className="rounded-2xl bg-card border border-border/40 p-6 hover:bg-muted/20 hover:shadow-elegant transition-all duration-300"
-                >
+                <Reveal delay={i * 0.08}>
                   <div className="font-display text-foreground text-2xl">{m.name}</div>
                 </Reveal>
               </div>

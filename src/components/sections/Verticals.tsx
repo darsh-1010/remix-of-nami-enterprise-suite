@@ -60,7 +60,7 @@ const verticals: Vertical[] = [
     name: "NAMI Aviation",
     icon: Plane,
     desc: "Aviation Finance & Structured Lease, Aviation Advisory.",
-    tags: ["Leasing", "Aviation", "Finance Leasing", "Advisory"],
+    tags: ["Finance & Leasing", "Advisory"],
     img: "/assets/aviation.jpg",
     pos: "center",
     href: "https://www.namiaviation.com",
