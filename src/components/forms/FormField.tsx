@@ -75,10 +75,10 @@ export function FormSelect({
         aria-describedby={error ? `${id}-error` : undefined}
         {...props}
       >
-        {placeholder && <option value="">{placeholder}</option>}
+        {placeholder && <option value="">{placeholder.toUpperCase()}</option>}
         {options.map((option) => (
           <option key={option} value={option}>
-            {option}
+            {option.toUpperCase()}
           </option>
         ))}
       </select>
