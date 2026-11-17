@@ -27,7 +27,8 @@ export function CTA() {
             </SplitReveal>
             <p className="mt-8 text-muted-foreground text-base leading-relaxed">
               Schedule an institutional briefing with our client relationships desk for Investment
-              Banking, Treasury, Aviation &amp; Maritime Leasing, or GIFT City IFSC advisory.
+              Banking, Treasury, Aviation &amp; Maritime Leasing, GIFT IFSC &amp; BFI Sector
+              Advisory.
             </p>
             <div className="mt-8 space-y-6 text-sm text-foreground/80">
               <div>
