@@ -62,10 +62,10 @@ export function LanguageSwitcher() {
         value={lang}
         onChange={(e) => change(e.target.value)}
         aria-label="Language"
-        className="uppercase bg-transparent text-xs outline-none cursor-pointer max-w-[6.5rem]"
+        className="bg-transparent text-xs outline-none cursor-pointer max-w-[6.5rem]"
       >
         {LANGS.map(([c, n]) => (
-          <option key={c} value={c} className="text-black uppercase">
+          <option key={c} value={c} className="text-black">
             {n}
           </option>
         ))}

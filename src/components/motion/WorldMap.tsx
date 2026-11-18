@@ -67,7 +67,7 @@ export function WorldMap({
               fill="none"
               strokeWidth={active ? 2 : 1.25}
               strokeDasharray="6 5"
-              className="stroke-gold"
+              className="stroke-gold max-md:hidden"
             >
               <animate
                 attributeName="stroke-dashoffset"
@@ -99,7 +99,7 @@ export function WorldMap({
               x={tx}
               y={m.labelY + 8}
               textAnchor={m.side === "left" ? "start" : "end"}
-              className="fill-foreground font-display"
+              className="fill-foreground font-display max-md:hidden"
               fontSize={24}
             >
               {m.name}

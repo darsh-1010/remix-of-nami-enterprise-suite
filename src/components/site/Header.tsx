@@ -62,71 +62,75 @@ export function Header() {
       : "bg-transparent";
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${headerClass} ${
-        hidden && !open ? "-translate-y-full" : "translate-y-0"
-      }`}
-    >
-      <div className="container-x flex items-center justify-between h-20">
-        <Link href="/" className="flex items-center gap-3 group">
-          <Image
-            src="/logo.png"
-            alt="NAMI Group"
-            width={737}
-            height={408}
-            priority
-            className="h-11 w-auto"
-          />
-        </Link>
-
-        <nav className="hidden lg:flex items-center gap-1 rounded-full border border-gold/30 bg-foreground/5 backdrop-blur-md px-2 py-1.5">
-          {nav.map((n) => {
-            const isActive = pathname
-              ? n.to === "/"
-                ? pathname === "/"
-                : pathname.startsWith(n.to)
-              : false;
-            return (
-              <Link
-                key={n.to}
-                href={n.to}
-                aria-current={isActive ? "page" : undefined}
-                className={`rounded-full px-4 py-2 text-[12px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
-                  isActive ? "bg-gold text-ink font-semibold" : "text-foreground/70 hover:text-gold"
-                }`}
-              >
-                {n.label}
-              </Link>
-            );
-          })}
-        </nav>
-
-        <div className="hidden lg:flex items-center gap-3">
-          <LanguageSwitcher />
-          <ThemeToggle />
-          <Link
-            href="/#briefing"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-[11px] tracking-[0.2em] uppercase text-ink hover:bg-gold-bright transition-all"
-          >
-            Schedule Briefing
+    <>
+      <header
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${headerClass} ${
+          hidden && !open ? "-translate-y-full" : "translate-y-0"
+        }`}
+      >
+        <div className="container-x flex items-center justify-between h-20">
+          <Link href="/" className="flex items-center gap-3 group">
+            <Image
+              src="/logo.png"
+              alt="NAMI Group"
+              width={737}
+              height={408}
+              priority
+              className="h-11 w-auto"
+            />
           </Link>
-        </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
-          <LanguageSwitcher />
-          <ThemeToggle />
-          <button
-            ref={menuButtonRef}
-            onClick={() => setOpen(true)}
-            className="rounded-full bg-gold/90 text-ink p-2.5"
-            aria-label="Open menu"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-          >
-            <Menu className="h-5 w-5" />
-          </button>
+          <nav className="hidden lg:flex items-center gap-1 rounded-full border border-gold/30 bg-foreground/5 backdrop-blur-md px-2 py-1.5">
+            {nav.map((n) => {
+              const isActive = pathname
+                ? n.to === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(n.to)
+                : false;
+              return (
+                <Link
+                  key={n.to}
+                  href={n.to}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`rounded-full px-4 py-2 text-[12px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
+                    isActive
+                      ? "bg-gold text-ink font-semibold"
+                      : "text-foreground/70 hover:text-gold"
+                  }`}
+                >
+                  {n.label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          <div className="hidden lg:flex items-center gap-3">
+            <LanguageSwitcher />
+            <ThemeToggle />
+            <Link
+              href="/#briefing"
+              className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-[11px] tracking-[0.2em] uppercase text-ink hover:bg-gold-bright transition-all"
+            >
+              Schedule Briefing
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-2 lg:hidden">
+            <LanguageSwitcher />
+            <ThemeToggle />
+            <button
+              ref={menuButtonRef}
+              onClick={() => setOpen(true)}
+              className="rounded-full bg-gold/90 text-ink p-2.5"
+              aria-label="Open menu"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       {open && (
         <div
@@ -184,6 +188,6 @@ export function Header() {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
