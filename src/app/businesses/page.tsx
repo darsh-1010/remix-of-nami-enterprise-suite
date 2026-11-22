@@ -249,9 +249,9 @@ export default function BusinessesPage() {
                   </div>
                   <ul className="grid sm:grid-cols-2 gap-y-3 gap-x-6">
                     {v.services.map((s) => (
-                      <li key={s} className="text-sm text-foreground/85 flex items-center gap-3">
-                        <span className="h-1 w-1 bg-gold" />
-                        {s}
+                      <li key={s} className="text-sm text-foreground/85 flex items-start gap-3">
+                        <span className="mt-2 h-1 w-1 shrink-0 bg-gold" />
+                        <span className="min-w-0">{s}</span>
                       </li>
                     ))}
                   </ul>
