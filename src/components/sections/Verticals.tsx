@@ -105,7 +105,7 @@ const verticals: Vertical[] = [
   },
   {
     no: "09",
-    name: "1BFI.WORLD",
+    name: "1BFI",
     icon: Globe2,
     desc: "Global Banking, Finance & Investments Advisory Desk, GIFT IFSC Desk, Virtual CFO Consulting, NBFC Advisory.",
     tags: ["BFI Sector", "GIFT IFSC", "Virtual CFO", "NBFC"],

@@ -75,7 +75,7 @@ export const INTEREST_OPTIONS = [
   "KPO & BPO Desk",
   "1Factor Global",
   "eMark HealthTech",
-  "1BFI.WORLD",
+  "1BFI",
   "Other",
 ] as const;
 

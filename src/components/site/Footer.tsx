@@ -92,7 +92,7 @@ export function Footer() {
             </li>
             <li>
               <Link href="/businesses#1bfi" className="hover:text-gold transition-colors">
-                1BFI.WORLD
+                1BFI
               </Link>
             </li>
           </ul>

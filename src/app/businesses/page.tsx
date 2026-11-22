@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "Financial KPO Support",
     "International Factoring",
     "HealthTech Financing",
-    "1BFI.WORLD",
+    "1BFI",
   ],
   openGraph: {
     title: "NAMI Group Businesses — Specialized Financial & Leasing Desks",
@@ -174,7 +174,7 @@ const verticals = [
     bg: "/assets/world-map.jpg",
     icon: Globe2,
     no: "09",
-    name: "1BFI.WORLD",
+    name: "1BFI",
     lead: "Global advisory and consulting for GIFT IFSC and NBFC mandates.",
     services: ["GIFT IFSC Desk", "NBFC Advisory Desk"],
   },
