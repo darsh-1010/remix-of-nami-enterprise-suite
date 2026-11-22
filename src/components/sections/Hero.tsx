@@ -21,11 +21,6 @@ export function Hero() {
 
       <div className="container-x relative z-10 pb-24 lg:pb-32 pt-12 w-full">
         <div className="max-w-4xl animate-fade-up">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="h-px w-12 bg-gold" />
-            <span className="eyebrow">Corporate Profile · {new Date().getFullYear()}</span>
-          </div>
-
           <SplitReveal
             as="h1"
             className="font-display text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.98] font-light text-foreground tracking-tight"

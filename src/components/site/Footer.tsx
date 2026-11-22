@@ -186,9 +186,6 @@ export function Footer() {
             <Link href="/terms-of-use" className="hover:text-gold transition-colors">
               Terms of Use
             </Link>
-            <span className="tracking-[0.2em] uppercase">
-              Corporate Profile · {new Date().getFullYear()}
-            </span>
           </div>
         </div>
       </div>
