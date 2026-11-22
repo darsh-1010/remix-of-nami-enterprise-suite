@@ -76,6 +76,7 @@ export const INTEREST_OPTIONS = [
   "1Factor Global",
   "eMark HealthTech",
   "1BFI.WORLD",
+  "Other",
 ] as const;
 
 // Footer Links
