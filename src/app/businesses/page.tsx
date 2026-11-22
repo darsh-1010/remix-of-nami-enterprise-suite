@@ -39,6 +39,7 @@ export const metadata: Metadata = {
 const verticals = [
   {
     id: "investment-banking",
+    href: "/investment-banking",
     bg: "/assets/boardroom.jpg",
     icon: Landmark,
     no: "01",
@@ -55,6 +56,7 @@ const verticals = [
   },
   {
     id: "capfin",
+    href: "https://www.icasper.in",
     bg: "/assets/hero-financial.jpg",
     icon: Briefcase,
     no: "02",
@@ -71,6 +73,7 @@ const verticals = [
   },
   {
     id: "treasury",
+    href: "https://www.anmolfinsec.com",
     bg: "/assets/treasury-gold.jpg",
     icon: LineChart,
     no: "03",
@@ -87,6 +90,7 @@ const verticals = [
   },
   {
     id: "aviation",
+    href: "https://www.namiaviation.com",
     bg: "/assets/aviation.jpg",
     icon: Plane,
     no: "04",
@@ -102,6 +106,7 @@ const verticals = [
   },
   {
     id: "ship",
+    href: "https://www.namiship.in",
     bg: "/assets/maritime.jpg",
     icon: Ship,
     no: "05",
@@ -116,6 +121,7 @@ const verticals = [
   },
   {
     id: "kpo",
+    href: "/contact",
     bg: "/assets/boardroom.jpg",
     icon: Network,
     no: "06",
@@ -132,6 +138,7 @@ const verticals = [
   },
   {
     id: "ifactor",
+    href: "/contact",
     bg: "/assets/world-map.jpg",
     icon: TrendingUp,
     no: "07",
@@ -147,6 +154,7 @@ const verticals = [
   },
   {
     id: "emark",
+    href: "https://emark.health/",
     bg: "/assets/healthcare-corridor.jpg",
     icon: HeartPulse,
     no: "08",
@@ -161,6 +169,7 @@ const verticals = [
   },
   {
     id: "1bfi",
+    href: "/contact",
     bg: "/assets/world-map.jpg",
     icon: Globe2,
     no: "09",
@@ -243,14 +252,19 @@ export default function BusinessesPage() {
                       </li>
                     ))}
                   </ul>
-                  {v.id === "investment-banking" && (
-                    <Link
-                      href="/investment-banking"
-                      className="mt-4 inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-gold hover:text-gold-bright"
-                    >
-                      Full advisory overview →
-                    </Link>
-                  )}
+                  {(() => {
+                    const external = v.href.startsWith("http");
+                    return (
+                      <Link
+                        href={v.href}
+                        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="group/btn mt-8 inline-flex items-center gap-2 rounded-full border border-gold/50 px-6 py-3 text-xs tracking-[0.2em] uppercase text-gold transition-all duration-300 hover:scale-105 hover:border-gold hover:bg-gold hover:text-ink"
+                      >
+                        Explore more
+                        <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                      </Link>
+                    );
+                  })()}
                 </div>
                 {i === verticals.length - 1 && (
                   <div className="lg:col-span-12 border-b border-border/60 mt-8" />
