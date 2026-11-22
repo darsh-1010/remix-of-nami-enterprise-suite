@@ -71,7 +71,7 @@ const verticals = [
   },
   {
     id: "treasury",
-    bg: "/assets/hero-financial.jpg",
+    bg: "/assets/treasury-gold.jpg",
     icon: LineChart,
     no: "03",
     name: "NAMI Bond & Treasury",
@@ -147,7 +147,7 @@ const verticals = [
   },
   {
     id: "emark",
-    bg: "/assets/hero-financial.jpg",
+    bg: "/assets/healthcare-corridor.jpg",
     icon: HeartPulse,
     no: "08",
     name: "eMark HealthTech",
