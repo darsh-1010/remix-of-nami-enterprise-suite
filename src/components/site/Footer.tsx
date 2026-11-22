@@ -100,7 +100,7 @@ export function Footer() {
 
         <div>
           <h4 className="text-xs tracking-[0.28em] uppercase text-gold mb-5">Company</h4>
-          <ul className="space-y-3 text-sm text-foreground/80">
+          <ul className="space-y-3 text-sm uppercase text-foreground/80">
             <li>
               <Link href="/" className="hover:text-gold transition-colors">
                 Home

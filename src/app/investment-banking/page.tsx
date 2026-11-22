@@ -90,7 +90,7 @@ const servicePillars = [
       "Project Finance: Infrastructure and capital-intensive project funding",
     ],
     metrics: [
-      "45+ LBOs Structured",
+      "45+ LBO & Acquisition Structure",
       "USD 85M+ Project Finance Stack",
       "150+ Investment Blueprints",
     ],

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import {
   ArrowUpRight,
@@ -47,8 +48,8 @@ const verticals = [
       "USD 2.0B+ Advisory Value",
       "USD 120M+ Equity Placed",
       "USD 157M+ Debt Mobilized",
-      "M&A Advisory (245+ Deals)",
-      "45+ LBOs Structured",
+      "245+ M&A Advisory",
+      "45+ LBO & Acquisition Structure",
       "GIFT IFSC Advisory & Exits",
     ],
   },
@@ -214,7 +215,17 @@ export default function BusinessesPage() {
                   </span>
                 </div>
                 <div className="relative lg:col-span-5">
-                  <Icon className="h-8 w-8 text-gold mb-6" strokeWidth={1.2} />
+                  {v.id === "investment-banking" ? (
+                    <Image
+                      src="/logo.png"
+                      alt="NAMI Group"
+                      width={737}
+                      height={408}
+                      className="h-14 w-auto mb-6"
+                    />
+                  ) : (
+                    <Icon className="h-8 w-8 text-gold mb-6" strokeWidth={1.2} />
+                  )}
                   <h2 className="font-display text-3xl md:text-4xl text-foreground font-light tracking-tight">
                     {v.name}
                   </h2>
