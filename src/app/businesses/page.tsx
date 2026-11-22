@@ -164,10 +164,12 @@ const verticals = [
     name: "eMark HealthTech",
     lead: "Specialized healthcare financing solutions, clinical equipment leasing, and digital billing pipelines.",
     services: [
-      "Hospital Equipment Leasing",
-      "Medical Diagnostic Financing",
-      "Digital Cashless Billing Platforms",
-      "Clinical Network Capital",
+      "Cashless Finance",
+      "300+ Hospitals Covered",
+      "Digital Stack Claim Processing",
+      "2200+ Surgeries Financed",
+      "7+ Locations",
+      "In-house Doctors, TPA & NBFC",
     ],
   },
   {
@@ -177,8 +179,8 @@ const verticals = [
     icon: Globe2,
     no: "09",
     name: "1BFI",
-    lead: "Global advisory and consulting for GIFT IFSC and NBFC mandates.",
-    services: ["GIFT IFSC Desk", "NBFC Advisory Desk"],
+    lead: "Focusing Global Banking, Finance & Investments Advisory & Consulting arm.",
+    services: ["GIFT IFSC Advisory Desk", "NBFC Advisory Desk", "VCFO Desk", "BFI Club"],
   },
 ];
 
