@@ -127,7 +127,7 @@ export function Verticals() {
             className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-navy-deep font-light tracking-tight"
           >
             <>
-              <span className="text-gradient-gold">
+              <span className="bg-gradient-to-r from-[#ff8c1a] via-[#ffb21e] to-[#ffd75e] bg-clip-text text-transparent">
                 Nine specialised verticals.
                 <br />
                 One integrated global platform.
