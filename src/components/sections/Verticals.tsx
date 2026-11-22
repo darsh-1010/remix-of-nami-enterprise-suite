@@ -101,6 +101,7 @@ const verticals: Vertical[] = [
     tags: ["Healthcare", "EMI"],
     img: "/assets/hero-financial.jpg",
     pos: "80% 50%",
+    href: "https://emark.health/",
   },
   {
     no: "09",
