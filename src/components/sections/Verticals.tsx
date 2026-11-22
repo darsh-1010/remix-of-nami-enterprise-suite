@@ -39,7 +39,7 @@ const verticals: Vertical[] = [
     no: "02",
     name: "ICASPER Capfin Advisors",
     icon: Briefcase,
-    desc: "Cross-border debt syndication, structured debt and fund raising for global AIFs.",
+    desc: "Cross-border debt syndication, Structured debt and fund raising for global AIFs.",
     tags: ["Syndication", "Structured Debt", "AIF / Fund"],
     img: "/assets/boardroom.jpg",
     pos: "20% 40%",
@@ -49,7 +49,7 @@ const verticals: Vertical[] = [
     no: "03",
     name: "NAMI Bond & Treasury",
     icon: LineChart,
-    desc: "G-Secs, SDLs, corporate bonds, treasury advisory and yield strategy.",
+    desc: "G-Secs, SDLs, Corporate bonds, Treasury advisory and yield strategy.",
     tags: ["Fixed Income", "Treasury"],
     img: "/assets/world-map.jpg",
     pos: "center",
@@ -69,7 +69,7 @@ const verticals: Vertical[] = [
     no: "05",
     name: "NAMI Ship",
     icon: Ship,
-    desc: "Ship leasing, vessel finance and global shipping advisory.",
+    desc: "Ship leasing, Vessel finance and global shipping advisory.",
     tags: ["Maritime", "Vessel Finance"],
     img: "/assets/maritime.jpg",
     pos: "center",
@@ -97,7 +97,7 @@ const verticals: Vertical[] = [
     no: "08",
     name: "eMark HealthTech",
     icon: HeartPulse,
-    desc: "Healthcare finance, cashless treatment, EMI solutions and hospital lending.",
+    desc: "Healthcare finance, Cashless treatment, EMI solutions and hospital lending.",
     tags: ["Healthcare", "EMI"],
     img: "/assets/hero-financial.jpg",
     pos: "80% 50%",
@@ -128,7 +128,7 @@ export function Verticals() {
             <>
               Nine specialised verticals.
               <br />
-              One integrated platform.
+              One integrated global platform.
             </>
           </SplitReveal>
         </Reveal>

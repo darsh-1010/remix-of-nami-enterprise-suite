@@ -186,12 +186,12 @@ export default function BusinessesPage() {
             <>
               Nine specialised verticals.
               <br />
-              <span className="text-gradient-gold">One integrated platform.</span>
+              <span className="text-gradient-gold">One integrated global platform.</span>
             </>
           </SplitReveal>
           <p className="mt-8 max-w-2xl text-muted-foreground text-lg leading-relaxed">
             Each vertical operates as a focused, regulated business — connected by shared
-            infrastructure, governance and capital relationships across India, UAE, USA and UK.
+            infrastructure, governance and capital relationships across INDIA, UAE, USA and UK.
           </p>
         </div>
       </section>
