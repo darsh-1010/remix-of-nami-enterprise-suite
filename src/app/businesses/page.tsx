@@ -114,6 +114,8 @@ const verticals = [
     name: "NAMI Ship",
     lead: "Customized maritime operating leases, ship acquisitions, and cross-border shipping finance.",
     services: [
+      "USD 95+ MN Vessel & Ship Finance",
+      "UAE, GIFT IFSC, USA, SINGAPORE, JAPAN Markets",
       "Vessel Operating Leases",
       "IFSC Ship Leasing Stacks",
       "Cross-Border Debt stacks",
