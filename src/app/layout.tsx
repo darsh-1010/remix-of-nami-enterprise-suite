@@ -36,15 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} dark`} suppressHydrationWarning>
       <head>
-        <script
-          // Runs before paint to avoid a flash of the wrong theme. Reads the saved
-          // preference (falling back to the OS setting) and applies it synchronously.
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');}catch(e){}})();`,
-          }}
-        />
         <noscript>
           <style>{`.reveal-fallback{opacity:1!important;transform:none!important}`}</style>
         </noscript>

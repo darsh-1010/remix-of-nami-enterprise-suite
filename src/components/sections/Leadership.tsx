@@ -42,17 +42,22 @@ export function Leadership() {
               finance with the precision of modern technology — a corridor for global capital,
               advisory and execution.&quot;
             </blockquote>
-            <p className="mt-8 text-muted-foreground leading-relaxed">
-              A Chartered Accountant and Company Secretary by training, Dipen has spent decades
-              structuring capital, advising boards and building regulated financial businesses
-              across India and global markets. He leads NAMI Group&apos;s strategy across investment
-              banking, treasury, leasing and IFSC mandates.
-            </p>
-            <div className="mt-10 grid grid-cols-3 gap-3 max-w-md">
+            <div className="mt-8 inline-block rounded-xl bg-white p-3">
+              <Image
+                src="/images/experience-logos.png"
+                alt="Experience: ING, KC Mehta & Co LLP, Kotak Mahindra Bank"
+                width={438}
+                height={150}
+                className="h-auto w-full max-w-sm"
+              />
+            </div>
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3 max-w-2xl">
               {[
-                { v: "25+", l: "Years" },
-                { v: "100+", l: "Mandates" },
-                { v: "08", l: "Verticals" },
+                { v: "CA", l: "Chartered Accountant" },
+                { v: "CS", l: "Company Secretary" },
+                { v: "20+", l: "Years of Global Experience" },
+                { v: "5+", l: "Jurisdiction BFI & Capital Market Exposure" },
+                { v: "4+", l: "Techno-Intelligent Regulatory Advisory & Consulting" },
               ].map((s, i) => (
                 <Reveal
                   key={s.l}

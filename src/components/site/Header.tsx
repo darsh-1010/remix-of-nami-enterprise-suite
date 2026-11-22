@@ -5,7 +5,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const nav = [
@@ -106,7 +105,6 @@ export function Header() {
 
           <div className="hidden lg:flex items-center gap-3">
             <LanguageSwitcher />
-            <ThemeToggle />
             <Link
               href="/#briefing"
               className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-[11px] tracking-[0.2em] uppercase text-ink hover:bg-gold-bright transition-all"
@@ -117,7 +115,6 @@ export function Header() {
 
           <div className="flex items-center gap-2 lg:hidden">
             <LanguageSwitcher />
-            <ThemeToggle />
             <button
               ref={menuButtonRef}
               onClick={() => setOpen(true)}

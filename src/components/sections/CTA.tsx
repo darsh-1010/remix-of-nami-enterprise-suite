@@ -60,9 +60,6 @@ export function CTA() {
                   <a href="tel:+919725053938" className="hover:text-gold transition-colors">
                     +91-97250 53938 (India)
                   </a>
-                  <a href="tel:+971585743938" className="hover:text-gold transition-colors">
-                    +971 58 57 4 3938 (UAE)
-                  </a>
                 </div>
               </div>
             </div>

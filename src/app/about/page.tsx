@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { Reveal } from "@/components/motion/Reveal";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { SectionNav } from "@/components/site/SectionNav";
 import {
@@ -167,10 +168,18 @@ export default function AboutPage() {
     <>
       {/* Hero Section */}
       <section id="hero" className="relative pt-44 pb-24 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-30 pointer-events-none"
-          style={{ background: "var(--gradient-radial-gold)" }}
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="/assets/boardroom.jpg"
+            alt="Corporate boardroom"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background dark:from-black/55 dark:via-black/75 dark:to-black/95" />
+          <div className="absolute inset-0" style={{ background: "var(--gradient-radial-gold)" }} />
+        </div>
         <div className="container-x relative">
           <span className="eyebrow">About</span>
           <SplitReveal
@@ -214,70 +223,95 @@ export default function AboutPage() {
               className="mt-6 font-display text-3xl md:text-4xl text-foreground font-light leading-tight"
             >
               <>
-                To be the most trusted institutional financial corridor connecting India to the
-                world.
+                To Create a Single Global Financial Corridor for Capital, Finance, Investments &amp;
+                Advisory with Future Technology.
               </>
             </SplitReveal>
           </div>
           <div>
             <span className="eyebrow">Mission</span>
-            <p className="mt-6 text-foreground/75 text-lg leading-relaxed font-light">
-              Deliver institutional-grade Investment Banking, Treasury and Cross-Border Capital
-              solutions through a regulated, technology-driven platform — purpose-built for funds,
-              corporates, banks and sovereign institutions.
-            </p>
+            <SplitReveal
+              as="h2"
+              className="mt-6 font-display text-3xl md:text-4xl text-foreground font-light leading-tight"
+            >
+              <>
+                Deliver institutional-grade Investment Banking, Treasury and Cross-Border Capital
+                solutions through a regulated &amp; technology.
+              </>
+            </SplitReveal>
           </div>
         </div>
       </section>
 
       {/* Chairman's Message */}
-      <section id="chairman" className="py-32">
-        <div className="container-x grid lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-5">
-            <div className="aspect-[4/5] overflow-hidden ring-1 ring-gold/20 relative">
-              <Image
-                src="/images/team/dipen-shah.png"
-                alt="CA Dipen U. Shah, Founder Director"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 42vw"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div className="lg:col-span-7">
-            <span className="eyebrow">Chairman&apos;s Message</span>
-            <div className="flex items-center gap-4 mt-6">
+      <section id="chairman" className="py-32 bg-background">
+        <div className="container-x">
+          <div className="grid lg:grid-cols-12 gap-16 items-center">
+            <Reveal className="lg:col-span-5 relative">
+              <div className="aspect-[4/5] overflow-hidden relative rounded-2xl">
+                <Image
+                  src="/images/team/dipen-shah.png"
+                  alt="Dipen U Shah, Chairman"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-sky/20" />
+              </div>
+              <div className="absolute top-6 -left-6 hidden md:flex flex-col gap-2">
+                <span className="h-12 w-px bg-sky" />
+                <span className="text-[10px] tracking-[0.4em] uppercase text-sky rotate-180 [writing-mode:vertical-rl]">
+                  Chairman
+                </span>
+              </div>
+            </Reveal>
+            <Reveal delay={0.1} className="lg:col-span-7">
+              <span className="eyebrow text-sky">Leadership</span>
               <SplitReveal
                 as="h2"
-                className="font-display text-4xl md:text-5xl text-foreground font-light tracking-tight"
+                className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl text-navy-deep font-light tracking-tight"
               >
-                <>CA Dipen U. Shah</>
+                <>Dipen U Shah</>
               </SplitReveal>
-              <a
-                href="https://www.linkedin.com/in/dipen-shah-ca-l-cs-49931033"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gold hover:text-gold-bright transition-colors"
-                aria-label="LinkedIn Profile"
-              >
-                <Linkedin className="h-6 w-6" />
-              </a>
-            </div>
-            <div className="mt-2 text-sm tracking-[0.32em] uppercase text-gold font-medium">
-              CA · CS · Founder Director
-            </div>
-            <blockquote className="mt-10 text-xl text-foreground/85 font-light italic leading-relaxed border-l border-gold pl-6">
-              &quot;Capital follows trust. Our work at NAMI is to engineer the structures,
-              relationships and technology that make institutional trust portable across
-              jurisdictions.&quot;
-            </blockquote>
-            <p className="mt-8 text-muted-foreground leading-relaxed font-light">
-              Dipen leads NAMI Group&apos;s strategic direction across multiple business verticals.
-              A Chartered Accountant and Company Secretary with deep capital-markets, treasury and
-              regulatory expertise, he has structured and advised on mandates spanning equity, debt,
-              leasing and cross-border capital.
-            </p>
+              <div className="mt-3 text-sm tracking-[0.32em] uppercase text-sky">
+                CA · CS · Chairman
+              </div>
+              <blockquote className="mt-10 text-xl md:text-2xl text-navy-deep/85 font-light italic leading-relaxed border-l border-sky pl-6">
+                &quot;We are building an institutional platform that combines the trust of
+                traditional finance with the precision of modern technology — a corridor for global
+                capital, advisory and execution.&quot;
+              </blockquote>
+              <div className="mt-8 inline-block rounded-xl bg-white p-3">
+                <Image
+                  src="/images/experience-logos.png"
+                  alt="Experience: ING, KC Mehta & Co LLP, Kotak Mahindra Bank"
+                  width={438}
+                  height={150}
+                  className="h-auto w-full max-w-sm"
+                />
+              </div>
+              <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3 max-w-2xl">
+                {[
+                  { v: "CA", l: "Chartered Accountant" },
+                  { v: "CS", l: "Company Secretary" },
+                  { v: "20+", l: "Years of Global Experience" },
+                  { v: "5+", l: "Jurisdiction BFI & Capital Market Exposure" },
+                  { v: "4+", l: "Techno-Intelligent Regulatory Advisory & Consulting" },
+                ].map((s, i) => (
+                  <Reveal
+                    key={s.l}
+                    delay={0.2 + i * 0.08}
+                    className="rounded-xl bg-card border border-border/40 p-5"
+                  >
+                    <div className="font-display text-2xl text-sky">{s.v}</div>
+                    <div className="mt-1 text-[10px] tracking-[0.18em] uppercase text-muted-foreground">
+                      {s.l}
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -439,16 +473,16 @@ export default function AboutPage() {
             <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-border/40">
               {[
                 {
-                  c: "BRICS Chamber",
-                  d: "Official chamber alignments to accelerate capital flow pathways.",
+                  c: "BRICS CCI",
+                  d: "Cross Border Trades & Investment between BRICS Members Nations.",
                 },
                 {
-                  c: "UK Dept of Trade",
-                  d: "Active corridor support with deputy high commissions.",
+                  c: "UK DIT",
+                  d: "Active UK-INDIA Corridor for Business, Trades, Finance, supporting British High Commissions.",
                 },
                 {
-                  c: "Embassy Networks",
-                  d: "Structural transaction pathways across key sovereign business hubs.",
+                  c: "Embassy Network",
+                  d: "Engagement with 9+ Embassies for Cross Border Investments & Funds.",
                 },
                 {
                   c: "135+ Global Lenders",

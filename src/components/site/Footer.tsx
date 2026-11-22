@@ -5,8 +5,19 @@ import { Linkedin, Mail, MapPin, Phone, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border bg-muted/50">
-      <div className="container-x py-20 grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+    <footer className="relative overflow-hidden border-t border-border">
+      <div className="absolute inset-0">
+        <Image
+          src="/assets/hero-financial.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background dark:from-black/75 dark:via-black/85 dark:to-black/95" />
+        <div className="absolute inset-0" style={{ background: "var(--gradient-radial-gold)" }} />
+      </div>
+      <div className="container-x relative z-10 py-20 grid gap-12 md:grid-cols-2 lg:grid-cols-5">
         <div className="lg:col-span-2">
           <Image
             src="/logo.png"
@@ -91,6 +102,11 @@ export function Footer() {
           <h4 className="text-xs tracking-[0.28em] uppercase text-gold mb-5">Company</h4>
           <ul className="space-y-3 text-sm text-foreground/80">
             <li>
+              <Link href="/" className="hover:text-gold transition-colors">
+                Home
+              </Link>
+            </li>
+            <li>
               <Link href="/about" className="hover:text-gold transition-colors">
                 About
               </Link>
@@ -132,9 +148,6 @@ export function Footer() {
                 <a href="tel:+919725053938" className="hover:text-gold transition-colors">
                   +91-97250 53938 (India)
                 </a>
-                <a href="tel:+971585743938" className="hover:text-gold transition-colors">
-                  +971 58 57 4 3938 (UAE)
-                </a>
               </div>
             </li>
             <li className="flex gap-3 items-center">
@@ -163,7 +176,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border">
+      <div className="relative z-10 border-t border-border">
         <div className="container-x py-6 flex flex-col md:flex-row gap-3 justify-between text-xs text-muted-foreground">
           <span>© {new Date().getFullYear()} NAMI Group. All rights reserved.</span>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
