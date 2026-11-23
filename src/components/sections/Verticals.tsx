@@ -77,7 +77,7 @@ const verticals: Vertical[] = [
   },
   {
     no: "06",
-    name: "KPO & BPO Desk",
+    name: "Global Capacity Center",
     icon: Network,
     desc: "Market Entry & Distributor Search, Credit Operation Outsourcing, Process Automation.",
     tags: ["Market Entry", "Credit", "Automation"],

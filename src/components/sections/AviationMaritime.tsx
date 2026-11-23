@@ -15,7 +15,7 @@ const categories = [
   { name: "Global Supply Chain Finance & Services", img: "/assets/maritime.jpg", pos: "10% 80%" },
   { name: "Aviation & Ship", img: "/assets/aviation.jpg", pos: "center" },
   { name: "Global Advisory & Consulting", img: "/assets/boardroom.jpg", pos: "60% 60%" },
-  { name: "KPO BPO", img: "/assets/boardroom.jpg", pos: "90% 30%" },
+  { name: "Global Capacity Center", img: "/assets/boardroom.jpg", pos: "90% 30%" },
   { name: "FinTech & HealthTech", img: "/assets/hero-financial.jpg", pos: "80% 50%" },
   { name: "Trading", img: "/assets/world-map.jpg", pos: "80% 30%" },
 ];

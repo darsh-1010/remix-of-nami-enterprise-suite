@@ -77,7 +77,7 @@ export function Footer() {
             </li>
             <li>
               <Link href="/businesses#kpo" className="hover:text-gold transition-colors">
-                KPO &amp; BPO Desk
+                Global Capacity Center
               </Link>
             </li>
             <li>

@@ -70,7 +70,7 @@ export const INTEREST_OPTIONS = [
   "NAMI Bond & Treasury",
   "NAMI Aviation",
   "NAMI Ship",
-  "KPO & BPO Desk",
+  "Global Capacity Center",
   "1Factor Global",
   "eMark HealthTech",
   "1BFI",

@@ -7,14 +7,14 @@ import { ArrowUpRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "NAMI Group Businesses — Specialized Financial & Leasing Desks",
   description:
-    "Explore NAMI Group's nine specialized business verticals: Investment Banking, ICASPER Capfin, Bond & Treasury, Aviation & Maritime Leasing, KPO/BPO, and Trade Finance.",
+    "Explore NAMI Group's nine specialized business verticals: Investment Banking, ICASPER Capfin, Bond & Treasury, Aviation & Maritime Leasing, Global Capacity Center, and Trade Finance.",
   keywords: [
     "NAMI Investment Banking",
     "ICASPER Capfin Advisors",
     "Bond and Treasury Desk",
     "Aviation Leasing",
     "Ship Leasing",
-    "Financial KPO Support",
+    "Global Capacity Center",
     "International Factoring",
     "HealthTech Financing",
     "1BFI",
@@ -117,7 +117,7 @@ const verticals = [
     href: "/contact",
     bg: "/assets/boardroom.jpg",
     no: "06",
-    name: "KPO & BPO Desk",
+    name: "Global Capacity Center",
     lead: "Institutional-grade financial valuation modeling, validation reports, investor memorandum packs, and diligence rooms.",
     services: [
       "DCF & Comp Valuations (285+ Done)",
