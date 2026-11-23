@@ -78,7 +78,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="card-glass">
+    <form onSubmit={handleSubmit} className="card-glass-light">
       <h2 className="font-display text-2xl text-foreground mb-8">Enquiry</h2>
 
       {error && (

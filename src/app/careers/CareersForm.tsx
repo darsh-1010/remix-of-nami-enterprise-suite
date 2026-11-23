@@ -53,7 +53,7 @@ export function CareersForm() {
   }
 
   return (
-    <div className="card-glass max-w-xl mx-auto">
+    <div className="card-glass-light max-w-xl mx-auto">
       <h3 className="font-display text-2xl text-foreground mb-6">Apply Now</h3>
 
       {success ? (

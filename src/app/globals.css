@@ -339,6 +339,19 @@
   }
 }
 
+/* Lighter, more see-through variant — matches the translucent treatment used on /businesses */
+@utility card-glass-light {
+  background: color-mix(in srgb, var(--card) 35%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid color-mix(in srgb, var(--foreground) 8%, transparent);
+  border-radius: 1.25rem;
+  padding: 2rem;
+
+  @media (min-width: 768px) {
+    padding: 3rem;
+  }
+}
+
 /* Article card fade-in animation */
 @keyframes fadeInUp {
   from {
