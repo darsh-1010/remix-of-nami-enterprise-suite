@@ -130,7 +130,7 @@ const verticals = [
   },
   {
     id: "ifactor",
-    logo: { src: "/logos/1factor.webp", width: 1865, height: 408 },
+    logo: { src: "/logos/1factor.webp", width: 1908, height: 450 },
     href: "/contact",
     bg: "/assets/world-map.jpg",
     no: "07",
