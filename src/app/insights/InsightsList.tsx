@@ -19,6 +19,7 @@ const FILTERS = [
   "Aviation Leasing",
   "Capital Markets",
   "Trade Finance",
+  "RSS Feeds",
 ];
 
 const SORT_OPTIONS = [
