@@ -54,7 +54,7 @@ export function Hero() {
             </Link>
           </div>
 
-          <div className="mt-20 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm md:text-base tracking-[0.32em] uppercase text-muted-foreground">
+          <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm md:text-base tracking-[0.32em] uppercase text-gold">
             <span className="text-gold">●</span>
             <span>India</span>
             <span>·</span>
