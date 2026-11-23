@@ -13,7 +13,7 @@ export default function CareersPage() {
     <section className="pt-44 pb-32 relative overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/assets/hero-financial.jpg"
+          src="/assets/careers-bg.jpg"
           alt=""
           fill
           className="object-cover"

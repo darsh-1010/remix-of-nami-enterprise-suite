@@ -14,7 +14,7 @@ export default function ContactPage() {
     <main className="relative min-h-screen flex flex-col overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/assets/world-map.jpg"
+          src="/assets/contact-bg.jpg"
           alt=""
           fill
           className="object-cover"
