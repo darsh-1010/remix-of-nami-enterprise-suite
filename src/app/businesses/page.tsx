@@ -45,7 +45,7 @@ const verticals = [
   },
   {
     id: "capfin",
-    logo: { src: "/logos/icasper.webp", width: 1249, height: 274 },
+    logo: { src: "/logos/icasper.webp", width: 1223, height: 260 },
     href: "https://www.icasper.in",
     bg: "/assets/hero-financial.jpg",
     no: "02",
