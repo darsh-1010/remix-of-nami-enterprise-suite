@@ -2,18 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { SplitReveal } from "@/components/motion/SplitReveal";
-import {
-  ArrowUpRight,
-  Landmark,
-  Briefcase,
-  LineChart,
-  Plane,
-  Ship,
-  Network,
-  TrendingUp,
-  HeartPulse,
-  Globe2,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "NAMI Group Businesses — Specialized Financial & Leasing Desks",
@@ -39,9 +28,9 @@ export const metadata: Metadata = {
 const verticals = [
   {
     id: "investment-banking",
+    logo: { src: "/logos/nami-ib.webp", width: 2000, height: 447, onDark: false },
     href: "/investment-banking",
     bg: "/assets/boardroom.jpg",
-    icon: Landmark,
     no: "01",
     name: "NAMI Investment Banking",
     lead: "High-impact financial blueprints and transaction advisory models designed to secure major capital placements and execute mergers.",
@@ -56,9 +45,9 @@ const verticals = [
   },
   {
     id: "capfin",
+    logo: { src: "/logos/icasper.webp", width: 915, height: 200, onDark: true },
     href: "https://www.icasper.in",
     bg: "/assets/hero-financial.jpg",
-    icon: Briefcase,
     no: "02",
     name: "ICASPER Capfin Advisors",
     lead: "Global & Cross Border Lending pipelines & mobilisation of funds across key financial Markets.",
@@ -73,9 +62,9 @@ const verticals = [
   },
   {
     id: "treasury",
+    logo: { src: "/logos/nami-bonds-treasury.webp", width: 2000, height: 525, onDark: false },
     href: "https://www.anmolfinsec.com",
     bg: "/assets/treasury-gold.jpg",
-    icon: LineChart,
     no: "03",
     name: "NAMI Bond & Treasury",
     lead: "Institutional-grade sovereign fixed income, T-bills, corporate debt stacks, and active yield curve positioning.",
@@ -90,9 +79,9 @@ const verticals = [
   },
   {
     id: "aviation",
+    logo: { src: "/logos/nami-ship-aviation.webp", width: 2000, height: 541, onDark: false },
     href: "https://www.namiaviation.com",
     bg: "/assets/aviation.jpg",
-    icon: Plane,
     no: "04",
     name: "NAMI Aviation",
     lead: "Structure Aviation Funding, Operating & Financial Lease structures.",
@@ -107,9 +96,9 @@ const verticals = [
   },
   {
     id: "ship",
+    logo: { src: "/logos/nami-ship-aviation.webp", width: 2000, height: 541, onDark: false },
     href: "https://www.namiship.in",
     bg: "/assets/maritime.jpg",
-    icon: Ship,
     no: "05",
     name: "NAMI Ship",
     lead: "Customized maritime operating leases, ship acquisitions, and cross-border shipping finance.",
@@ -124,9 +113,9 @@ const verticals = [
   },
   {
     id: "kpo",
+    logo: { src: "/logos/nami-group.webp", width: 2000, height: 527, onDark: false },
     href: "/contact",
     bg: "/assets/boardroom.jpg",
-    icon: Network,
     no: "06",
     name: "KPO & BPO Desk",
     lead: "Institutional-grade financial valuation modeling, validation reports, investor memorandum packs, and diligence rooms.",
@@ -141,9 +130,9 @@ const verticals = [
   },
   {
     id: "ifactor",
+    logo: { src: "/logos/nami-group.webp", width: 2000, height: 527, onDark: false },
     href: "/contact",
     bg: "/assets/world-map.jpg",
-    icon: TrendingUp,
     no: "07",
     name: "1Factor Global",
     lead: "Global Supply Chain Finance & Allied Services Platform.",
@@ -158,9 +147,9 @@ const verticals = [
   },
   {
     id: "emark",
+    logo: { src: "/logos/emark.png", width: 1648, height: 573, onDark: false },
     href: "https://emark.health/",
     bg: "/assets/healthcare-corridor.jpg",
-    icon: HeartPulse,
     no: "08",
     name: "eMark HealthTech",
     lead: "Specialized healthcare financing solutions, clinical equipment leasing, and digital billing pipelines.",
@@ -175,9 +164,9 @@ const verticals = [
   },
   {
     id: "1bfi",
+    logo: { src: "/logos/1bfi.webp", width: 2000, height: 507, onDark: false },
     href: "/contact",
     bg: "/assets/world-map.jpg",
-    icon: Globe2,
     no: "09",
     name: "1BFI",
     lead: "Focusing Global Banking, Finance & Investments Advisory & Consulting arm.",
@@ -215,7 +204,6 @@ export default function BusinessesPage() {
       <section className="pb-32">
         <div className="container-x flex flex-col">
           {verticals.map((v, i) => {
-            const Icon = v.icon;
             return (
               <article
                 key={v.id}
@@ -230,17 +218,19 @@ export default function BusinessesPage() {
                   </span>
                 </div>
                 <div className="relative lg:col-span-5">
-                  {v.id === "investment-banking" ? (
+                  <div
+                    className={
+                      v.logo.onDark ? "mb-6" : "mb-6 inline-block rounded-md bg-white/95 px-4 py-2"
+                    }
+                  >
                     <Image
-                      src="/logo.png"
-                      alt="NAMI Group"
-                      width={737}
-                      height={408}
-                      className="h-14 w-auto mb-6"
+                      src={v.logo.src}
+                      alt={v.name}
+                      width={v.logo.width}
+                      height={v.logo.height}
+                      className="h-10 w-auto"
                     />
-                  ) : (
-                    <Icon className="h-8 w-8 text-gold mb-6" strokeWidth={1.2} />
-                  )}
+                  </div>
                   <h2 className="font-display text-3xl md:text-4xl text-foreground font-light tracking-tight">
                     {v.name}
                   </h2>
