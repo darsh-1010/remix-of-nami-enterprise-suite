@@ -138,12 +138,12 @@ export default function AboutPage() {
               <div className="mt-3 text-sm tracking-[0.32em] uppercase text-sky">
                 CA · CS · Chairman
               </div>
-              <blockquote className="mt-10 text-xl md:text-2xl text-navy-deep/85 font-light italic leading-relaxed border-l border-sky pl-6">
+              <blockquote className="mt-10 text-xl md:text-2xl text-navy-deep/85 font-light italic leading-relaxed rounded-xl bg-card border border-border/40 p-6 md:p-8">
                 &quot;We are building an institutional platform that combines the trust of
                 traditional finance with the precision of modern technology — a corridor for global
                 capital, advisory and execution.&quot;
               </blockquote>
-              <div className="mt-8 inline-block rounded-xl bg-white p-3">
+              <div className="mt-8 inline-block">
                 <Image
                   src="/images/experience-logos.png"
                   alt="Experience: ING, KC Mehta & Co LLP, Kotak Mahindra Bank"
