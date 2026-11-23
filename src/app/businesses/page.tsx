@@ -208,10 +208,11 @@ export default function BusinessesPage() {
               <article
                 key={v.id}
                 id={v.id}
-                className="relative overflow-hidden border-t border-border/60 py-16 px-6 lg:px-10 grid lg:grid-cols-12 gap-10 group bg-cover bg-center"
+                className="relative overflow-hidden py-16 px-6 lg:px-10 grid lg:grid-cols-12 gap-10 group bg-cover bg-center"
                 style={{ backgroundImage: `url(${v.bg})` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/70" />
+                <div className="hairline absolute top-0 left-0 right-0 z-10" />
                 <div className="relative lg:col-span-2 flex items-start gap-4">
                   <span className="font-display text-xs tracking-[0.3em] text-gold tabular-nums">
                     {v.no}
@@ -257,7 +258,7 @@ export default function BusinessesPage() {
                   })()}
                 </div>
                 {i === verticals.length - 1 && (
-                  <div className="lg:col-span-12 border-b border-border/60 mt-8" />
+                  <div className="hairline lg:col-span-12 relative z-10 mt-8" />
                 )}
               </article>
             );
