@@ -146,7 +146,7 @@ export function Footer() {
               <Phone className="h-4 w-4 text-gold mt-0.5 shrink-0" />
               <div className="flex flex-col gap-1">
                 <a href="tel:+919725053938" className="hover:text-gold transition-colors">
-                  +91-97250 53938 (India)
+                  +91-97250 53938
                 </a>
               </div>
             </li>
