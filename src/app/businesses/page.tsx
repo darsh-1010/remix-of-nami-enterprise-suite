@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const verticals = [
   {
     id: "investment-banking",
-    logo: { src: "/logos/nami-ib.webp", width: 2000, height: 447, onDark: false },
+    logo: { src: "/logos/nami-ib.webp", width: 2000, height: 447 },
     href: "/investment-banking",
     bg: "/assets/boardroom.jpg",
     no: "01",
@@ -45,7 +45,7 @@ const verticals = [
   },
   {
     id: "capfin",
-    logo: { src: "/logos/icasper.webp", width: 915, height: 200, onDark: true },
+    logo: { src: "/logos/icasper.webp", width: 915, height: 200 },
     href: "https://www.icasper.in",
     bg: "/assets/hero-financial.jpg",
     no: "02",
@@ -62,7 +62,7 @@ const verticals = [
   },
   {
     id: "treasury",
-    logo: { src: "/logos/nami-bonds-treasury.webp", width: 2000, height: 525, onDark: false },
+    logo: { src: "/logos/nami-bonds-treasury.webp", width: 2000, height: 525 },
     href: "https://www.anmolfinsec.com",
     bg: "/assets/treasury-gold.jpg",
     no: "03",
@@ -79,7 +79,7 @@ const verticals = [
   },
   {
     id: "aviation",
-    logo: { src: "/logos/nami-ship-aviation.webp", width: 2000, height: 541, onDark: false },
+    logo: { src: "/logos/nami-ship-aviation.webp", width: 2000, height: 541 },
     href: "https://www.namiaviation.com",
     bg: "/assets/aviation.jpg",
     no: "04",
@@ -96,7 +96,7 @@ const verticals = [
   },
   {
     id: "ship",
-    logo: { src: "/logos/nami-ship-aviation.webp", width: 2000, height: 541, onDark: false },
+    logo: { src: "/logos/nami-ship-aviation.webp", width: 2000, height: 541 },
     href: "https://www.namiship.in",
     bg: "/assets/maritime.jpg",
     no: "05",
@@ -113,7 +113,7 @@ const verticals = [
   },
   {
     id: "kpo",
-    logo: { src: "/logos/nami-group.webp", width: 2000, height: 527, onDark: false },
+    logo: { src: "/logos/nami-group.webp", width: 2000, height: 527 },
     href: "/contact",
     bg: "/assets/boardroom.jpg",
     no: "06",
@@ -130,7 +130,7 @@ const verticals = [
   },
   {
     id: "ifactor",
-    logo: { src: "/logos/nami-group.webp", width: 2000, height: 527, onDark: false },
+    logo: { src: "/logos/nami-group.webp", width: 2000, height: 527 },
     href: "/contact",
     bg: "/assets/world-map.jpg",
     no: "07",
@@ -147,7 +147,7 @@ const verticals = [
   },
   {
     id: "emark",
-    logo: { src: "/logos/emark.png", width: 1648, height: 573, onDark: false },
+    logo: { src: "/logos/emark.png", width: 1648, height: 573 },
     href: "https://emark.health/",
     bg: "/assets/healthcare-corridor.jpg",
     no: "08",
@@ -164,7 +164,7 @@ const verticals = [
   },
   {
     id: "1bfi",
-    logo: { src: "/logos/1bfi.webp", width: 2000, height: 507, onDark: false },
+    logo: { src: "/logos/1bfi.webp", width: 2000, height: 507 },
     href: "/contact",
     bg: "/assets/world-map.jpg",
     no: "09",
@@ -218,11 +218,7 @@ export default function BusinessesPage() {
                   </span>
                 </div>
                 <div className="relative lg:col-span-5">
-                  <div
-                    className={
-                      v.logo.onDark ? "mb-6" : "mb-6 inline-block rounded-md bg-white/95 px-4 py-2"
-                    }
-                  >
+                  <div className="mb-6">
                     <Image
                       src={v.logo.src}
                       alt={v.name}
