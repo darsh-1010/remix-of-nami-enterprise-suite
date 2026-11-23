@@ -4,7 +4,6 @@ import "./globals.css";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { TranslateLoader } from "@/components/site/LanguageSwitcher";
-import { LenisProvider } from "@/components/LenisProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
@@ -44,13 +43,11 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         <TranslateLoader />
-        <LenisProvider>
-          <div className="min-h-screen flex flex-col bg-background text-foreground">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </LenisProvider>
+        <div className="min-h-screen flex flex-col bg-background text-foreground">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { SectionNav } from "@/components/site/SectionNav";
+import { ExperienceLogos } from "@/components/sections/ExperienceLogos";
 import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -143,15 +144,7 @@ export default function AboutPage() {
                 traditional finance with the precision of modern technology — a corridor for global
                 capital, advisory and execution.&quot;
               </blockquote>
-              <div className="mt-8 inline-block">
-                <Image
-                  src="/images/experience-logos.png"
-                  alt="Experience: ING, KC Mehta & Co LLP, Kotak Mahindra Bank"
-                  width={438}
-                  height={150}
-                  className="h-auto w-full max-w-sm"
-                />
-              </div>
+              <ExperienceLogos />
               <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3 max-w-2xl">
                 {[
                   { v: "CA", l: "Chartered Accountant" },
