@@ -51,12 +51,12 @@ export function Gift() {
                 <Reveal
                   key={it}
                   delay={(i % 4) * 0.08}
-                  className="rounded-xl bg-muted/40 p-6 flex items-center gap-4"
+                  className="rounded-xl bg-muted/40 p-7 flex items-center gap-5"
                 >
-                  <span className="font-display text-xs text-gold tabular-nums">
+                  <span className="font-display text-sm text-gold tabular-nums">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-foreground/90 text-sm">{it}</span>
+                  <span className="text-foreground/90 text-lg">{it}</span>
                 </Reveal>
               ))}
             </div>

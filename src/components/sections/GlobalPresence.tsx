@@ -39,20 +39,6 @@ export function GlobalPresence() {
 
         <div className="relative">
           <WorldMap markers={markets} focus={focus} onFocus={setFocus} className="mx-auto w-full" />
-
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {markets.map((m, i) => (
-              <div
-                key={m.name}
-                onMouseEnter={() => setFocus(i)}
-                onMouseLeave={() => setFocus(null)}
-              >
-                <Reveal delay={i * 0.08}>
-                  <div className="font-display text-foreground text-2xl">{m.name}</div>
-                </Reveal>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
