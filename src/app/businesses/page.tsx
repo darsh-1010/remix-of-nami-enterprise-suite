@@ -149,7 +149,7 @@ const verticals = [
     id: "emark",
     logo: { src: "/logos/emark.png", width: 1648, height: 573 },
     href: "https://emark.health/",
-    bg: "/assets/healthcare-corridor.jpg",
+    bg: "/assets/healthcare-corridor-dark.jpg",
     no: "08",
     name: "eMark HealthTech",
     lead: "Specialized healthcare financing solutions, clinical equipment leasing, and digital billing pipelines.",
