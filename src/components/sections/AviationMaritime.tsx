@@ -35,10 +35,14 @@ export function AviationMaritime() {
                 tabIndex={0}
                 role="button"
                 aria-expanded={on}
-                onMouseEnter={() => setActive(i)}
+                // Hover only on real pointer movement: panels resize while open, and content scrolling
+                // under a parked cursor would otherwise re-trigger hover and thrash layout mid-scroll.
+                onMouseMove={(e) => {
+                  if (!on && (e.movementX || e.movementY)) setActive(i);
+                }}
                 onFocus={() => setActive(i)}
                 onClick={() => setActive(i)}
-                className={`group relative overflow-hidden min-w-0 cursor-pointer outline-none border-r border-white/5 transition-[flex-grow,height,box-shadow] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                className={`group relative overflow-hidden min-w-0 cursor-pointer outline-none border-r border-white/5 transition-[flex-grow,height] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                   on
                     ? "z-10 h-64 md:h-auto md:flex-[4] shadow-[0_0_60px_rgba(0,0,0,0.8)]"
                     : "h-20 md:h-auto md:flex-1"
@@ -50,20 +54,18 @@ export function AviationMaritime() {
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   style={{ objectPosition: c.pos }}
-                  className={`object-cover transition-all duration-700 ${
-                    on ? "scale-100 brightness-100" : "scale-110 grayscale brightness-[0.35]"
-                  }`}
+                  className="object-cover"
                   loading="lazy"
                 />
                 <div
                   className={`absolute inset-0 transition-opacity duration-700 ${
                     on
                       ? "opacity-100 bg-gradient-to-b from-black/70 via-transparent to-[#090e1a]/60"
-                      : "opacity-100 bg-[#090e1a]/60"
+                      : "opacity-100 bg-[#090e1a]/80"
                   }`}
                 />
                 <h3
-                  className={`absolute top-4 left-3 right-2 font-display leading-snug break-words transition-all duration-500 ${
+                  className={`absolute top-4 left-3 right-2 font-display leading-snug break-words transition-colors duration-500 ${
                     on ? "text-xl text-white md:left-6 md:top-6" : "text-[11px] text-white/70"
                   }`}
                 >
