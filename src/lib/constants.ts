@@ -3,8 +3,6 @@ export const NAVIGATION = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/businesses", label: "Businesses" },
-  { href: "/who-we-serve", label: "Who We Serve" },
-  { href: "/leadership", label: "Leadership" },
   { href: "/careers", label: "Careers" },
   { href: "/insights", label: "Insights" },
 ] as const;
@@ -90,8 +88,6 @@ export const FOOTER_VERTICALS = [
 
 export const FOOTER_COMPANY = [
   { name: "About", href: "/about" },
-  { name: "Who We Serve", href: "/who-we-serve" },
-  { name: "Leadership & Awards", href: "/leadership" },
   { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/#contact" },
 ] as const;
