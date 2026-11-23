@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ContactForm } from "./ContactForm";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 
@@ -10,9 +11,22 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="relative min-h-screen flex flex-col overflow-hidden">
+      <div className="absolute inset-0">
+        <Image
+          src="/assets/world-map.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background dark:from-black/55 dark:via-black/75 dark:to-black/95" />
+        <div className="absolute inset-0" style={{ background: "var(--gradient-radial-gold)" }} />
+      </div>
+
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 container-x">
+      <section className="relative py-20 lg:py-32 container-x">
         <div className="max-w-2xl">
           <SplitReveal
             as="h1"
@@ -28,7 +42,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-12 lg:py-20 container-x flex-grow">
+      <section className="relative py-12 lg:py-20 container-x flex-grow">
         <div className="max-w-2xl mx-auto">
           <ContactForm />
         </div>
