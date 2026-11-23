@@ -20,8 +20,18 @@ const LANGS = [
   ["ja", "日本語"],
 ] as const;
 
-// Loads Google Translate (hidden UI); it reads the `googtrans` cookie set below.
+// Loads Google Translate (hidden UI) only for visitors who already picked a language (the
+// `googtrans` cookie set below). Loading it for everyone added heavy third-party script work
+// and DOM mutation observers on every page, which caused scroll hitches for English visitors.
 export function TranslateLoader() {
+  const [needed, setNeeded] = useState(false);
+
+  useEffect(() => {
+    setNeeded(/googtrans=\/en\/(?!en)[^;]+/.test(document.cookie));
+  }, []);
+
+  if (!needed) return null;
+
   return (
     <>
       <div id="google_translate_element" className="hidden" />

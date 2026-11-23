@@ -81,7 +81,7 @@ export default function AboutPage() {
             <span className="eyebrow">Vision</span>
             <SplitReveal
               as="h2"
-              className="mt-6 font-display text-3xl md:text-4xl text-foreground font-light leading-tight"
+              className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light leading-tight"
             >
               <>
                 To Create a Single Global Financial Corridor for Capital, Finance, Investments &amp;
@@ -93,7 +93,7 @@ export default function AboutPage() {
             <span className="eyebrow">Mission</span>
             <SplitReveal
               as="h2"
-              className="mt-6 font-display text-3xl md:text-4xl text-foreground font-light leading-tight"
+              className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light leading-tight"
             >
               <>
                 Deliver institutional-grade Investment Banking, Treasury and Cross-Border Capital
