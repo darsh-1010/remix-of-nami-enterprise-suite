@@ -151,7 +151,10 @@ export default function AboutPage() {
                   { v: "CS", l: "Company Secretary" },
                   { v: "20+", l: "Years of Global Experience" },
                   { v: "5+", l: "Jurisdiction BFI & Capital Market Exposure" },
-                  { v: "4+", l: "Techno-Intelligent Regulatory Advisory & Consulting" },
+                  {
+                    v: "4+",
+                    l: "Jurisdiction Techno-Intelligent Regulatory Advisory & Consulting",
+                  },
                 ].map((s, i) => (
                   <Reveal
                     key={s.l}
