@@ -130,7 +130,7 @@ const verticals = [
   },
   {
     id: "ifactor",
-    logo: { src: "/logos/nami-group.webp", width: 2000, height: 527 },
+    logo: { src: "/logos/1factor.webp", width: 1865, height: 408 },
     href: "/contact",
     bg: "/assets/world-map.jpg",
     no: "07",
@@ -164,7 +164,7 @@ const verticals = [
   },
   {
     id: "1bfi",
-    logo: { src: "/logos/1bfi.webp", width: 2000, height: 507 },
+    logo: { src: "/logos/1bfi.webp", width: 2000, height: 624 },
     href: "/contact",
     bg: "/assets/world-map.jpg",
     no: "09",
