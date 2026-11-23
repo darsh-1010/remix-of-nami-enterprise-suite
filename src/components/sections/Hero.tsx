@@ -33,9 +33,9 @@ export function Hero() {
           </SplitReveal>
 
           <p className="mt-10 max-w-2xl text-lg md:text-xl text-foreground/75 leading-relaxed font-light">
-            A process-managed global financial ecosystem integrating Investment Banking, Capital
-            Markets, Cross-Border Capital, Leasing, Global BFI Advisory, Technology &amp; GIFT IFSC
-            Solutions.
+            A professionally managed global financial ecosystem integrating Investment Banking,
+            Capital Markets, Cross-Border Capital, Leasing, Global BFI Advisory, Technology &amp;
+            GIFT IFSC Solutions.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-4">
