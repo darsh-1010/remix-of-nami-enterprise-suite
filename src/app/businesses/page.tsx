@@ -224,12 +224,10 @@ export default function BusinessesPage() {
                       alt={v.name}
                       width={v.logo.width}
                       height={v.logo.height}
-                      className="h-10 w-auto"
+                      className="h-20 md:h-24 w-auto"
                     />
                   </div>
-                  <h2 className="font-display text-3xl md:text-4xl text-foreground font-light tracking-tight">
-                    {v.name}
-                  </h2>
+                  <h2 className="sr-only">{v.name}</h2>
                   <p className="mt-4 text-muted-foreground leading-relaxed max-w-xl">{v.lead}</p>
                 </div>
                 <div className="relative lg:col-span-5">
