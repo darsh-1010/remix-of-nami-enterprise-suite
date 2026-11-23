@@ -79,10 +79,10 @@ export default function AboutPage() {
       <section id="vision-mission" className="py-24 border-y border-border/40 bg-muted/10">
         <div className="container-x grid lg:grid-cols-2 gap-16">
           <div>
-            <span className="eyebrow">Vision</span>
+            <span className="eyebrow text-base md:text-lg">Vision</span>
             <SplitReveal
               as="h2"
-              className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light leading-tight"
+              className="mt-6 font-display text-3xl md:text-4xl text-foreground font-light leading-tight"
             >
               <>
                 To Create a Single Global Financial Corridor for Capital, Finance, Investments &amp;
@@ -91,10 +91,10 @@ export default function AboutPage() {
             </SplitReveal>
           </div>
           <div>
-            <span className="eyebrow">Mission</span>
+            <span className="eyebrow text-base md:text-lg">Mission</span>
             <SplitReveal
               as="h2"
-              className="mt-6 font-display text-4xl md:text-5xl text-foreground font-light leading-tight"
+              className="mt-6 font-display text-3xl md:text-4xl text-foreground font-light leading-tight"
             >
               <>
                 Deliver institutional-grade Investment Banking, Treasury and Cross-Border Capital
