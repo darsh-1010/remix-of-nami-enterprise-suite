@@ -9,7 +9,7 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
+  { to: "/about", label: "About NAMI Group" },
   { to: "/businesses", label: "Businesses" },
   { to: "/careers", label: "Careers" },
   { to: "/insights", label: "Insights" },
@@ -91,7 +91,7 @@ export function Header() {
                   key={n.to}
                   href={n.to}
                   aria-current={isActive ? "page" : undefined}
-                  className={`rounded-full px-4 py-2 text-[12px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
+                  className={`whitespace-nowrap rounded-full px-3 xl:px-4 py-2 text-[12px] tracking-[0.12em] xl:tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
                     isActive
                       ? "bg-gold text-ink font-semibold"
                       : "text-foreground/70 hover:text-gold"

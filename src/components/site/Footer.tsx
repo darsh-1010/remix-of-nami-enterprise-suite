@@ -108,7 +108,7 @@ export function Footer() {
             </li>
             <li>
               <Link href="/about" className="hover:text-gold transition-colors">
-                About
+                About NAMI Group
               </Link>
             </li>
             <li>

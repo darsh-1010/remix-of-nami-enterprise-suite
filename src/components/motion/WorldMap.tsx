@@ -36,77 +36,84 @@ export function WorldMap({
   onFocus?: (i: number | null) => void;
   className?: string;
 }) {
+  // Two stacked SVGs: the ~thousands-of-dots land layer is static (rasterised once), while the
+  // pulsing/dashed marker animations live in a light overlay. Animating inside one SVG forced the
+  // whole dot map to be repainted every frame, which made page scrolling stutter.
   return (
-    <svg
-      viewBox="0 0 1400 700"
-      role="img"
-      aria-label="World map showing NAMI Group's global presence"
-      className={className}
-    >
-      <path
-        d={LAND}
-        stroke="currentColor"
-        strokeWidth={4}
-        strokeLinecap="round"
-        className="text-foreground/25"
-      />
-      {markers.map((m, i) => {
-        const active = focus === i;
-        const dim = focus !== null && !active;
-        const lx = m.side === "left" ? 260 : 1140; // where the leader line leaves the label
-        const tx = m.side === "left" ? 40 : 1360;
-        return (
-          <g
-            key={m.name}
-            onMouseEnter={() => onFocus?.(i)}
-            onMouseLeave={() => onFocus?.(null)}
-            style={{ opacity: dim ? 0.35 : 1, transition: "opacity .3s" }}
-          >
-            <path
-              d={`M${lx} ${m.labelY}H${m.pin[0]}V${m.pin[1]}`}
-              fill="none"
-              strokeWidth={active ? 2 : 1.25}
-              strokeDasharray="6 5"
-              className="stroke-gold max-md:hidden"
+    <div className="relative">
+      <svg viewBox="0 0 1400 700" aria-hidden className={className}>
+        <path
+          d={LAND}
+          stroke="currentColor"
+          strokeWidth={4}
+          strokeLinecap="round"
+          className="text-foreground/25"
+        />
+      </svg>
+      <svg
+        viewBox="0 0 1400 700"
+        role="img"
+        aria-label="World map showing NAMI Group's global presence"
+        className={`absolute inset-0 h-full w-full ${className}`}
+      >
+        {markers.map((m, i) => {
+          const active = focus === i;
+          const dim = focus !== null && !active;
+          const lx = m.side === "left" ? 260 : 1140; // where the leader line leaves the label
+          const tx = m.side === "left" ? 40 : 1360;
+          return (
+            <g
+              key={m.name}
+              onMouseEnter={() => onFocus?.(i)}
+              onMouseLeave={() => onFocus?.(null)}
+              style={{ opacity: dim ? 0.35 : 1, transition: "opacity .3s" }}
             >
-              <animate
-                attributeName="stroke-dashoffset"
-                from="22"
-                to="0"
-                dur="2s"
-                repeatCount="indefinite"
-              />
-            </path>
-            <circle cx={m.pin[0]} cy={m.pin[1]} r={6} className="fill-gold" />
-            <circle
-              cx={m.pin[0]}
-              cy={m.pin[1]}
-              r={6}
-              fill="none"
-              strokeWidth={1.5}
-              className="stroke-gold"
-            >
-              <animate attributeName="r" from="6" to="22" dur="2.4s" repeatCount="indefinite" />
-              <animate
-                attributeName="opacity"
-                from="0.9"
-                to="0"
-                dur="2.4s"
-                repeatCount="indefinite"
-              />
-            </circle>
-            <text
-              x={tx}
-              y={m.labelY + 8}
-              textAnchor={m.side === "left" ? "start" : "end"}
-              className="fill-foreground font-display max-md:hidden"
-              fontSize={24}
-            >
-              {m.name}
-            </text>
-          </g>
-        );
-      })}
-    </svg>
+              <path
+                d={`M${lx} ${m.labelY}H${m.pin[0]}V${m.pin[1]}`}
+                fill="none"
+                strokeWidth={active ? 2 : 1.25}
+                strokeDasharray="6 5"
+                className="stroke-gold max-md:hidden"
+              >
+                <animate
+                  attributeName="stroke-dashoffset"
+                  from="22"
+                  to="0"
+                  dur="2s"
+                  repeatCount="indefinite"
+                />
+              </path>
+              <circle cx={m.pin[0]} cy={m.pin[1]} r={6} className="fill-gold" />
+              <circle
+                cx={m.pin[0]}
+                cy={m.pin[1]}
+                r={6}
+                fill="none"
+                strokeWidth={1.5}
+                className="stroke-gold"
+              >
+                <animate attributeName="r" from="6" to="22" dur="2.4s" repeatCount="indefinite" />
+                <animate
+                  attributeName="opacity"
+                  from="0.9"
+                  to="0"
+                  dur="2.4s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+              <text
+                x={tx}
+                y={m.labelY + 8}
+                textAnchor={m.side === "left" ? "start" : "end"}
+                className="fill-foreground font-display max-md:hidden"
+                fontSize={24}
+              >
+                {m.name}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+    </div>
   );
 }

@@ -47,7 +47,7 @@ export default function AboutPage() {
           <div className="absolute inset-0" style={{ background: "var(--gradient-radial-gold)" }} />
         </div>
         <div className="container-x relative">
-          <span className="eyebrow">About</span>
+          <span className="eyebrow">About NAMI Group</span>
           <SplitReveal
             as="h1"
             className="mt-6 font-display text-5xl md:text-7xl lg:text-8xl text-foreground font-light tracking-tight leading-[0.98] max-w-5xl"
@@ -166,7 +166,7 @@ export default function AboutPage() {
                     className="rounded-xl bg-card border border-border/40 p-5"
                   >
                     <div className="font-display text-2xl text-sky">{s.v}</div>
-                    <div className="mt-1 text-[10px] tracking-[0.18em] uppercase text-muted-foreground">
+                    <div className="mt-1 text-[10px] tracking-[0.28em] uppercase text-muted-foreground">
                       {s.l}
                     </div>
                   </Reveal>

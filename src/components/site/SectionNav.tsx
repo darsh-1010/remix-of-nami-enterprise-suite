@@ -43,7 +43,7 @@ export function SectionNav({ sections }: { sections: SectionLink[] }) {
   return (
     <nav
       aria-label="Section navigation"
-      className="sticky top-20 z-40 bg-background/90 backdrop-blur border-b border-border/40"
+      className="sticky top-20 z-40 bg-background/95 border-b border-border/40"
     >
       <div className="container-x">
         <div className="flex items-center gap-x-6 overflow-x-auto py-3 whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
