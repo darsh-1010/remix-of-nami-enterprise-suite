@@ -113,7 +113,7 @@ const verticals = [
   },
   {
     id: "kpo",
-    logo: { src: "/logos/nami-group.webp", width: 2000, height: 527 },
+    logo: { src: "/logos/nami-group.webp", width: 816, height: 335 },
     href: "/contact",
     bg: "/assets/boardroom.jpg",
     no: "06",
