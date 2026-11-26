@@ -43,7 +43,7 @@ export function CTA() {
                     info@namigroup.in
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/nami-investment-banking/"
+                    href="https://www.linkedin.com/company/nami-grp/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gold text-xs font-medium hover:underline flex items-center gap-1"

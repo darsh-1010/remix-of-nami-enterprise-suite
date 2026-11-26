@@ -104,12 +104,12 @@ export const SOCIAL_LINKS = [
   {
     name: "LinkedIn",
     icon: "LinkedinIcon",
-    href: "https://linkedin.com/company/nami-group",
+    href: "https://www.linkedin.com/company/nami-grp/",
   },
   {
     name: "Instagram",
     icon: "InstagramIcon",
-    href: "https://instagram.com/namigroup",
+    href: "https://www.instagram.com/namigroup1509?jplx=dGIxMDNvZG51MDlk&utm_source=qr",
   },
   {
     name: "Email",

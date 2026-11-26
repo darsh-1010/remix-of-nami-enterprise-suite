@@ -153,7 +153,7 @@ export function Footer() {
             <li className="flex gap-3 items-center">
               <Linkedin className="h-4 w-4 text-gold shrink-0" />
               <a
-                href="https://www.linkedin.com/company/nami-investment-banking/"
+                href="https://www.linkedin.com/company/nami-grp/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gold transition-colors"
@@ -164,7 +164,7 @@ export function Footer() {
             <li className="flex gap-3 items-center">
               <Instagram className="h-4 w-4 text-gold shrink-0" />
               <a
-                href="https://instagram.com/nami.group"
+                href="https://www.instagram.com/namigroup1509?jplx=dGIxMDNvZG51MDlk&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gold transition-colors"
