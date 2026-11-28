@@ -1,23 +1,17 @@
-import {
-  Landmark,
-  Briefcase,
-  LineChart,
-  Plane,
-  Ship,
-  Network,
-  TrendingUp,
-  HeartPulse,
-  Globe2,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 
+interface VerticalLogo {
+  src: string;
+  width: number;
+  height: number;
+}
+
 interface Vertical {
   no: string;
   name: string;
-  icon: LucideIcon;
+  logo: VerticalLogo;
   desc: string;
   tags: string[];
   img: string;
@@ -29,7 +23,7 @@ const verticals: Vertical[] = [
   {
     no: "01",
     name: "NAMI Investment Banking",
-    icon: Landmark,
+    logo: { src: "/logos/nami-ib.webp", width: 2000, height: 447 },
     desc: "Equity & Debt Capital Market, M&A Advisory, Valuations & Structured Finance.",
     tags: ["ECM", "M&A", "Valuation", "Capital Markets"],
     img: "/assets/hero-financial.jpg",
@@ -38,7 +32,7 @@ const verticals: Vertical[] = [
   {
     no: "02",
     name: "ICASPER Capfin Advisors",
-    icon: Briefcase,
+    logo: { src: "/logos/icasper.webp", width: 1223, height: 260 },
     desc: "Cross-Border Debt Syndication, Structured Debt and Fund Raising for Global AIFs.",
     tags: ["Syndication", "Structured Debt", "AIF / Fund"],
     img: "/assets/boardroom.jpg",
@@ -48,7 +42,7 @@ const verticals: Vertical[] = [
   {
     no: "03",
     name: "NAMI Bond & Treasury",
-    icon: LineChart,
+    logo: { src: "/logos/nami-bonds-treasury.webp", width: 2000, height: 525 },
     desc: "G-Secs, SDLs, Corporate Bonds, Treasury Advisory and Yield Strategy.",
     tags: ["Fixed Income", "Treasury"],
     img: "/assets/world-map.jpg",
@@ -58,7 +52,7 @@ const verticals: Vertical[] = [
   {
     no: "04",
     name: "NAMI Aviation",
-    icon: Plane,
+    logo: { src: "/logos/nami-ship-aviation.webp", width: 2000, height: 541 },
     desc: "Aviation Finance & Structured Lease, Aviation Advisory.",
     tags: ["Finance & Leasing", "Advisory"],
     img: "/assets/aviation.jpg",
@@ -68,7 +62,7 @@ const verticals: Vertical[] = [
   {
     no: "05",
     name: "NAMI Ship",
-    icon: Ship,
+    logo: { src: "/logos/nami-ship-aviation.webp", width: 2000, height: 541 },
     desc: "Ship Leasing, Vessel Finance and Global Shipping Advisory.",
     tags: ["Maritime", "Vessel Finance"],
     img: "/assets/maritime.jpg",
@@ -78,7 +72,7 @@ const verticals: Vertical[] = [
   {
     no: "06",
     name: "Global Capacity Center",
-    icon: Network,
+    logo: { src: "/logos/nami-group.webp", width: 816, height: 335 },
     desc: "Market Entry & Distributor Search, Credit Operation Outsourcing, Process Automation.",
     tags: ["Market Entry", "Credit", "Automation"],
     img: "/assets/boardroom.jpg",
@@ -87,7 +81,7 @@ const verticals: Vertical[] = [
   {
     no: "07",
     name: "1Factor Global",
-    icon: TrendingUp,
+    logo: { src: "/logos/1factor.webp", width: 1908, height: 450 },
     desc: "International Trade Finance: Export & Import Finance, Vendor Finance, Invoice Discounting, Global Supply Chain Allied Services.",
     tags: ["Trade Finance", "Domestic Supply Chain Finance", "Supply Chain Services"],
     img: "/assets/maritime.jpg",
@@ -96,7 +90,7 @@ const verticals: Vertical[] = [
   {
     no: "08",
     name: "eMark HealthTech",
-    icon: HeartPulse,
+    logo: { src: "/logos/emark.png", width: 1648, height: 573 },
     desc: "Healthcare Finance, Cashless Treatment, EMI Solutions and Hospital Lending.",
     tags: ["Healthcare Finance", "EMI"],
     img: "/assets/hero-financial.jpg",
@@ -106,7 +100,7 @@ const verticals: Vertical[] = [
   {
     no: "09",
     name: "1BFI",
-    icon: Globe2,
+    logo: { src: "/logos/1bfi.webp", width: 2000, height: 624 },
     desc: "Global Banking, Finance & Investments Advisory Desk, GIFT IFSC Desk, Virtual CFO Consulting, NBFC Advisory.",
     tags: ["BFI Sector", "GIFT IFSC", "Virtual CFO", "NBFC"],
     img: "/assets/world-map.jpg",
@@ -138,7 +132,6 @@ export function Verticals() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
           {verticals.map((v, i) => {
-            const Icon = v.icon;
             return (
               <Reveal
                 key={v.no}
@@ -168,7 +161,13 @@ export function Verticals() {
                   <span className="absolute top-6 left-6 font-display text-xs tracking-[0.3em] text-gold">
                     {v.no}
                   </span>
-                  <Icon className="h-10 w-10 text-gold mb-5" strokeWidth={1.1} />
+                  <Image
+                    src={v.logo.src}
+                    alt={v.name}
+                    width={v.logo.width}
+                    height={v.logo.height}
+                    className="h-12 w-auto mb-5 object-contain"
+                  />
                   <h3 className="font-display text-xl text-white leading-tight mb-3 uppercase">
                     {v.name}
                   </h3>
